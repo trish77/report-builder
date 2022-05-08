@@ -20,6 +20,7 @@ h5, .h5 {
   font-size: 12px !important;
   font-weight: 600 !important;
   text-align: left;
+  text-transform: uppercase;
 }
 
 .table td {
@@ -5744,7 +5745,7 @@ progress {
   --bs-table-bg: transparent;
   --bs-table-border-color: #E6EAEA;
   --bs-table-accent-bg: transparent;
-  --bs-table-striped-color: #6D7E82;
+  --bs-table-striped-color: #fafafa;
   --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
   --bs-table-active-color: #6D7E82;
   --bs-table-active-bg: rgba(0, 0, 0, 0.1);

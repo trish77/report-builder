@@ -146,6 +146,7 @@ $box-shadow-sm: 0 .13rem .13rem rgba($black, .075);
 $table-th-font-weight:  500;
 
 $table-color:  $body-color;
+$table-striped-color:  $gray-100;
 // scss-docs-start border-radius-variables
 $border-radius: .25rem;
 $border-radius-sm: .2rem;
@@ -222,6 +223,7 @@ h5 {
   font-size: 12px !important;
   font-weight: 600 !important;
   text-align: left;
+  text-transform: uppercase;
 }
 
 .table td {
