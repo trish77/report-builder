@@ -143,6 +143,9 @@ $form-label-color: $gray-800;
 $form-label-font-weight: 600;
 $box-shadow-sm: 0 .13rem .13rem rgba($black, .075);
 
+$table-th-font-weight:  500;
+
+$table-color:  $body-color;
 // scss-docs-start border-radius-variables
 $border-radius: .25rem;
 $border-radius-sm: .2rem;
@@ -214,12 +217,36 @@ h5 {
   font-size: 1rem !important;
 }
 
+.table th {
+  color: $gray-700 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-align: left;
+}
+
+.table td {
+  color: $gray-700 !important;
+  font-size: 14px !important;
+  text-align: left;
+}
+
+.assg {
+  color: $gray-900 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-align: left;
+}
+
 .col-3 {
   width: 24% !important
 }
 
 .fw-semi {
   font-weight: 600;
+}
+
+.form-check-input {
+  font-size: 12px;
 }
 
 .dropdown-item {
