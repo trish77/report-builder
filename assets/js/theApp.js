@@ -8,7 +8,7 @@ $(function () {
   }
 
   $('.datePick').daterangepicker({
-    autoUpdateInput: true,
+    autoUpdateInput: false,
     autoApply: true,
     startDate: start,
     endDate: end,
