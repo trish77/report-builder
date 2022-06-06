@@ -60,15 +60,17 @@ gulp.task('vendor:build', function() {
     './assets/js/vendor/b-popper.js',
     './assets/js/vendor/bootstrap.js',
     './assets/js/vendor/datatables.js',
-    './assets/js/vendor/prototype.datatables.js',
-    './assets/js/vendor/tempusdominus-bootstrap-4.js',
+    './assets/js/vendor/filter-multi-select-bundle.js',
+    './assets/js/vendor/moment.min.js',
+    './assets/js/vendor/p-daterangepicker.js',
+    /*  './assets/js/vendor/tempusdominus-bootstrap-4.js',*/
     './assets/js/vendor/theApp.js',
   ])
     .pipe(gulp.dest('./dist/assets/js'));
 
 
   var fontStream = gulp.src(['./assets/fonts/**/*.*']).pipe(gulp.dest('./dist/assets/fonts/'));
-  return merge (jsStream, fontStream, cssStream);
+  return merge (jsStream, fontStream);
 });
 
 // Copy Bootstrap SCSS(SASS) from node_modules to /assets/scss/bootstrap

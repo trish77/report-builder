@@ -123,8 +123,15 @@ a:focus, :focus, .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.f
 }
 
 .h6 {
-  font-size: 14px;
+  font-size: 11px !important;
+  color: #3E5359 !important;
+  font-weight: 600 !important;
 }
+
+hr {
+ color: #E6EAEA !important
+}
+
 
 .link-deco {
   color: #9EA9AC;
@@ -134,6 +141,16 @@ a:focus, :focus, .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.f
   border-bottom: 2px #00ba7c solid;
   color: #0C272F;
 }
+
+.link-deco.inactive {
+  border-bottom: 2px #E6EAEA solid;
+  color: #9EA9AC;
+}
+
+.none {
+  border-bottom: 2px #fff solid;
+}
+
 .input-group-text {
   background-color: #fff !important;
 }
@@ -466,7 +483,6 @@ a.icon-edit, a.icon-pencil, a.icon-trash-o {
     margin-bottom: 20px;
 } */
 
-
 .import-result-noresults {
   text-align: center;
   padding: 10px;
@@ -483,6 +499,14 @@ a.icon-edit, a.icon-pencil, a.icon-trash-o {
   height: 80vh;
   overflow-y: auto;
 }
+
+.selectAllCheck {
+  display: flex;
+  position: relative;
+  top: 30px;
+  left: 8px;
+}
+
 
 div.dataTables_wrapper div.dataTables_filter {
   text-align: right;
@@ -505,6 +529,10 @@ div.dataTables_wrapper div.dataTables_filter input {
 
 .dataTable .employee {
   width: 250px;
+}
+
+table.dataTable {
+  margin-top: 0 !important;
 }
 
 .dataTable th {
@@ -568,6 +596,7 @@ table.dataTable thead .sorting:after,
 table.dataTable thead .sorting:before,
 table.dataTable thead .icon-sort:before {
   content: "";
+  font-size: 16px;
 }
 
 table.dataTable thead .sorting_asc:after,
@@ -1010,6 +1039,9 @@ content: "\f058";
   overflow-x: hidden;
 }
 
+.text-xsmall {
+  font-size: 11px !important;
+}
 
 /****************** custom fonts *****************/
 
@@ -1043,9 +1075,9 @@ content: "\f058";
 @font-face {
   font-family: 'report-icons';
   src:
-          url('fonts/report-icons.ttf?vgkuku') format('truetype'),
-          url('fonts/report-icons.woff?vgkuku') format('woff'),
-          url('fonts/report-icons.svg?vgkuku#report-icons') format('svg');
+          url('../fonts/report-icons.ttf') format('truetype'),
+          url('../fonts/report-icons.woff') format('woff'),
+          url('../fonts/report-icons.svg#report-icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;

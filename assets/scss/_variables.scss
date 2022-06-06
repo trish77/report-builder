@@ -144,7 +144,7 @@ $form-label-font-weight: 600;
 $box-shadow-sm: 0 .13rem .13rem rgba($black, .075);
 
 $table-th-font-weight:  500;
-
+$table-border-color : #f4f4f4;
 $table-color:  $body-color;
 $table-striped-color:  $gray-100;
 // scss-docs-start border-radius-variables
@@ -163,7 +163,7 @@ $h2-font-size: $font-size-base * 1.88;
 $h3-font-size: $font-size-base * 1.7;
 $h4-font-size: $font-size-base * 1.5;
 $h5-font-size: $font-size-base * .89;
-$h6-font-size: $font-size-base;
+$h6-font-size: .7;
 
 $border-width: 1px;
 $border-widths: (
@@ -230,6 +230,7 @@ h5 {
   color: $gray-700 !important;
   font-size: 14px !important;
   text-align: left;
+  border-bottom-color: $table-border-color !important;
 }
 
 .assg {
@@ -252,7 +253,8 @@ h5 {
 }
 
 .dropdown-item {
-  color: $gray-900 !important;
+  color: $gray-700 !important;
+  font-size: 13px !important;
 }
 .btn-outline-secondary {
   color: #6c757d;

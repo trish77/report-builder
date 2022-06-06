@@ -1,86 +1,479 @@
+$(function () {
 
-$(document).ready(function() {
+  var start = moment();
+  var end = moment();
 
-  data = [
-    {"id":1,"assignment":"Local-rel symptc epi w simple part seiz, ntrct, w stat epi","type":"One-time","affiliation":"Avamba","updated_on":"10/23/2021","updated_by":"Ynes Thundercliffe"},
-    {"id":2,"assignment":"Disp fx of navicular of left foot, subs for fx w nonunion","type":"One-time","affiliation":"Jabbercube","updated_on":"10/9/2021","updated_by":"Floria Kubin"},
-    {"id":3,"assignment":"Migraine with aura, intractable, with status migrainosus","type":"One-time","affiliation":"Abatz","updated_on":"3/30/2022","updated_by":"Marnia Sturrock"},
-    {"id":4,"assignment":"Corrosions of right ear drum, sequela","type":"Recurring","affiliation":"Miboo","updated_on":"4/14/2022","updated_by":"Kerwinn Sarjant"},
-    {"id":5,"assignment":"Mtrcy driver injured in collision w rail trn/veh nontraf","type":"Recurring","affiliation":"Meedoo","updated_on":"5/6/2021","updated_by":"Conney Brodbin"},
-    {"id":6,"assignment":"Fracture of calcaneus","type":"Recurring","affiliation":"Trilia","updated_on":"7/19/2021","updated_by":"Lanna Mucklestone"},
-    {"id":7,"assignment":"Congenital absence, atresia and stenosis of ileum","type":"Recurring","affiliation":"Camimbo","updated_on":"6/12/2021","updated_by":"Ebeneser Garrett"},
-    {"id":8,"assignment":"Heat syncope, subsequent encounter","type":"One-time","affiliation":"Talane","updated_on":"4/26/2022","updated_by":"Eileen Mahaddie"},
-    {"id":9,"assignment":"Unspecified entropion of unspecified eye, unspecified eyelid","type":"One-time","affiliation":"Podcat","updated_on":"6/26/2021","updated_by":"Betsey Larmuth"},
-    {"id":10,"assignment":"Staphylococcal arthritis, left hip","type":"Recurring","affiliation":"Zoomdog","updated_on":"3/21/2022","updated_by":"Tiffany Meagher"},
-    {"id":11,"assignment":"Hereditary nephropathy, NEC w minor glomerular abnormality","type":"Recurring","affiliation":"Meevee","updated_on":"8/4/2021","updated_by":"Mariellen Peever"},
-    {"id":12,"assignment":"Cont preg aft spon abort of one fts or more, third tri, oth","type":"One-time","affiliation":"Skyvu","updated_on":"5/25/2021","updated_by":"Rheba Jeafferson"},
-    {"id":13,"assignment":"Subluxation of distal interphaln joint of l mid finger, init","type":"One-time","affiliation":"Ntag","updated_on":"4/10/2022","updated_by":"Fae Nathan"},
-    {"id":14,"assignment":"Nondisp spiral fx shaft of rad, r arm, 7thE","type":"Recurring","affiliation":"Thoughtsphere","updated_on":"9/27/2021","updated_by":"Thornie Vivers"},
-    {"id":15,"assignment":"Malignant neoplasm of lower-outer quadrant of breast","type":"One-time","affiliation":"Yambee","updated_on":"3/13/2022","updated_by":"Donn McLane"},
-    {"id":16,"assignment":"Lacerat flexor musc/fasc/tend l idx fngr at wrs/hnd lv, init","type":"One-time","affiliation":"Dynava","updated_on":"8/9/2021","updated_by":"Paule Dewerson"},
-    {"id":17,"assignment":"Greenstick fx shaft of humer, r arm, subs for fx w nonunion","type":"One-time","affiliation":"Skyvu","updated_on":"10/4/2021","updated_by":"Feodor Arnaldy"},
-    {"id":18,"assignment":"Milt op w dest arcrft d/t acc deton onbrd munit, milt, sqla","type":"One-time","affiliation":"Youbridge","updated_on":"8/17/2021","updated_by":"Clemens Dowyer"},
-    {"id":19,"assignment":"Sequelae of hyperalimentation","type":"Recurring","affiliation":"Realfire","updated_on":"6/29/2021","updated_by":"Wandis MacDavitt"},
-    {"id":20,"assignment":"Oth infect w sexl mode of transmiss comp preg, second tri","type":"One-time","affiliation":"Dynava","updated_on":"10/24/2021","updated_by":"Thaddus Orford"},
-    {"id":21,"assignment":"Ptosis of breast","type":"Recurring","affiliation":"Photospace","updated_on":"11/8/2021","updated_by":"Maximilianus Rawlison"},
-    {"id":22,"assignment":"Bilateral inguinal hernia, with gangrene","type":"Recurring","affiliation":"Fivebridge","updated_on":"6/5/2021","updated_by":"Morry Sallinger"},
-    {"id":23,"assignment":"Oth fracture of shaft of unsp ulna, init for clos fx","type":"Recurring","affiliation":"Ozu","updated_on":"3/6/2022","updated_by":"Nani Barribal"},
-    {"id":24,"assignment":"Cont preg aft spon abort of one fts or more, first tri, fts2","type":"Recurring","affiliation":"Twitternation","updated_on":"8/20/2021","updated_by":"Ulberto Christofor"},
-    {"id":25,"assignment":"Displ seg fx shaft of ulna, unsp arm, 7thR","type":"One-time","affiliation":"InnoZ","updated_on":"4/28/2022","updated_by":"Moira Lerohan"},
-    {"id":26,"assignment":"Oth injury of quadriceps muscle, fascia and tendon","type":"One-time","affiliation":"Divavu","updated_on":"7/15/2021","updated_by":"Sabina Critchell"},
-    {"id":27,"assignment":"Subluxation of proximal interphaln joint of finger, subs","type":"One-time","affiliation":"Flashset","updated_on":"6/8/2021","updated_by":"Jehu Hail"},
-    {"id":28,"assignment":"Nondisp fx of olecran pro w intartic extn unsp ulna, 7thM","type":"Recurring","affiliation":"Photofeed","updated_on":"2/1/2022","updated_by":"Mahalia Baldam"},
-    {"id":29,"assignment":"Other diseases of upper respiratory tract","type":"One-time","affiliation":"Izio","updated_on":"9/27/2021","updated_by":"Wynne Harriott"},
-    {"id":30,"assignment":"Oth diabetes w severe nonproliferative diabetic retinopathy","type":"Recurring","affiliation":"Pixope","updated_on":"3/23/2022","updated_by":"Blair Barclay"},
-    {"id":31,"assignment":"Poisoning by unsp drugs acting on muscles, acc, sequela","type":"Recurring","affiliation":"Realcube","updated_on":"7/9/2021","updated_by":"Dolley Razzell"},
-    {"id":32,"assignment":"Poisoning by antimycobac drugs, accidental (unintentional)","type":"One-time","affiliation":"Yata","updated_on":"10/16/2021","updated_by":"Maxy Aloshkin"},
-    {"id":33,"assignment":"Chronic gout due to renal impairment, elbow","type":"Recurring","affiliation":"Skimia","updated_on":"7/29/2021","updated_by":"Milzie Aujouanet"},
-    {"id":34,"assignment":"Other infective bursitis, ankle and foot","type":"Recurring","affiliation":"Fiveclub","updated_on":"2/11/2022","updated_by":"Eugenius Isaacs"},
-    {"id":35,"assignment":"Nondisp fx of neck of third metacarpal bone, right hand","type":"One-time","affiliation":"Browsetype","updated_on":"11/9/2021","updated_by":"Ricardo Emberson"},
-    {"id":36,"assignment":"Bent bone of unsp radius, init for opn fx type I/2","type":"One-time","affiliation":"Feedfish","updated_on":"2/10/2022","updated_by":"Mathian Oldridge"},
-    {"id":37,"assignment":"Other and unspecified syphilis","type":"One-time","affiliation":"Wikizz","updated_on":"7/4/2021","updated_by":"Bendick Isakowicz"},
-    {"id":38,"assignment":"Blister (nonthermal) of breast, left breast, subs encntr","type":"Recurring","affiliation":"Thoughtworks","updated_on":"10/20/2021","updated_by":"Tab Draude"},
-    {"id":39,"assignment":"Adverse effect of unspecified systemic antibiotic, sequela","type":"Recurring","affiliation":"Yotz","updated_on":"9/13/2021","updated_by":"Billy McCloud"},
-    {"id":40,"assignment":"Subluxation and dislocation of T4/T5-T5/T6 thoracic vertebra","type":"Recurring","affiliation":"Mudo","updated_on":"6/9/2021","updated_by":"Langsdon Tolhurst"},
-    {"id":41,"assignment":"Merkel cell carcinoma of nose","type":"Recurring","affiliation":"Realbridge","updated_on":"11/6/2021","updated_by":"Sloan Petrelli"},
-    {"id":42,"assignment":"Rider of nonpowr watercraft struck by oth nonpowr watercraft","type":"One-time","affiliation":"Demizz","updated_on":"6/26/2021","updated_by":"Debbi Rannigan"},
-    {"id":43,"assignment":"Congenital deformity of feet, unspecified","type":"Recurring","affiliation":"Thoughtworks","updated_on":"2/20/2022","updated_by":"Lion Tesdale"},
-    {"id":44,"assignment":"Fracture of condylar process of left mandible, 7thB","type":"One-time","affiliation":"Kazio","updated_on":"7/13/2021","updated_by":"Arliene Hurburt"},
-    {"id":45,"assignment":"Filamentary keratitis, left eye","type":"Recurring","affiliation":"Wordtune","updated_on":"4/18/2022","updated_by":"Milt Frean"},
-    {"id":46,"assignment":"Inj unsp muscles, fascia and tendons at forearm level","type":"One-time","affiliation":"Quatz","updated_on":"10/5/2021","updated_by":"Allissa Limpertz"},
-    {"id":47,"assignment":"Pressure ulcer of hip","type":"One-time","affiliation":"Voonte","updated_on":"4/15/2022","updated_by":"Myrtie Ritelli"},
-    {"id":48,"assignment":"Legal intervnt w oth sharp objects, bystand injured, subs","type":"One-time","affiliation":"Quatz","updated_on":"10/16/2021","updated_by":"Joletta Capp"},
-    {"id":49,"assignment":"Complete traumatic amp at level betw unsp hip and knee, subs","type":"One-time","affiliation":"Wordware","updated_on":"11/27/2021","updated_by":"Elbertine Cristofor"},
-    {"id":50,"assignment":"Disp fx of navicular of right foot, init for clos fx","type":"One-time","affiliation":"Skibox","updated_on":"11/17/2021","updated_by":"Devonna Ashwell"}
-  ]
+  function cb( start, end ) {
+    $('.datePick span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+  }
 
-  $('#assignments').DataTable( {
-
-    "data": data,
-
-    rowCallback: function ( row, data ) {
-
-      if (data[4] == 1){
-        $('td:nth-child(0) input', row).attr('checked','checked');
-        saveChecksPreAEOG.push(data[0]);
-        preAECount += 1;
-      }
-
-    },
-    'columnDefs': [
-      {
-        'targets': 0,
-        'checkboxes': {
-          'selectRow': false
-        }
-      }
-    ],
-    'select': {
-      'style': 'multi'
-    },
-    'order': []
-
+  $('.datePick').daterangepicker({
+    autoUpdateInput: true,
+    autoApply: true,
+    startDate: start,
+    endDate: end,
+    ranges: {
+      'Today': [ moment() ],
+      'Yesterday': [ moment().subtract(1, 'days') ],
+      'Last 7 Days': [ moment().subtract(6, 'days'), moment() ],
+      'Last 30 Days': [ moment().subtract(29, 'days'), moment() ],
+      'This Month': [ moment().startOf('month'), moment().endOf('month') ],
+      'Last Month': [ moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month') ],
+      'Year to Date': [ moment().subtract(6, 'M'), moment() ],
+      'Last Year': [ moment().subtract(1, 'year'), moment() ]
+    }
   });
 
-  } );
+  $('.datePick').on('.apply.daterangepicker', function ( ev, picker ) {
+    $('.datePick span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+  });
+
+  $('.datePickEff').on('.apply.daterangepicker', function ( ev, picker ) {
+    $('.datePick span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+  });
+
+  var saveChecks = [];
+  var chkCount = 0;
+  var assgTable = $('#assgTable').DataTable({
+    ajax: function ( d, cb ) {
+      fetch('./MOCK_DATA.json').then(response => response.json()).then(data => cb(data));
+    },
+    //data: data,
+    paging: true,
+    pageLength: 500,
+    lengthMenu: [ [ 50, 100, 500 - 1 ], [ 50, 100, 500, "All" ] ],
+    info: true,
+    // searching: true,
+    processing: true,
+    responsive: true,
+    dom: '<"d-flex"l<"ms-auto"i>>rt<"d-flex"l<"ms-auto"p>>',
+    language: {
+      search: "_INPUT_",
+      info: "Showing _START_ to _END_ of _MAX_ records",
+      searchPlaceholder: "Quick Search",
+      //  lengthMenu: "Show _MENU_ records",
+      paginate: {
+        previous: '<i class="angle-left"></i>',
+        next: '<i class="angle-right"></i>'
+      },
+    },
+    columns: [
+      {
+        data: null,
+        defaultContent: '<input type="checkbox" name="chkbx">',
+      },
+      { data: 'assignment' },
+      { data: 'type' },
+      { data: 'affiliation' },
+      { data: 'updated_on' },
+      { data: 'updated_by' }
+    ],
+
+    columnDefs: [ {
+      targets: 0,
+      orderable: false,
+      checkboxes: {
+        selectRow: true
+      }
+    } ],
+    select: {
+      style: 'multi',
+      selector: 'td:first-child',
+    },
+    order: [ [ 1, 'asc' ] ]
+  });
+
+  var groupTable = $('#groupTable').DataTable({
+    ajax: function ( d, cb ) {
+      fetch('./group_mock_data.json').then(response => response.json()).then(data => cb(data));
+    },
+    //data: data,
+    paging: true,
+    pageLength: 500,
+    lengthMenu: [ [ 50, 100, 500 - 1 ], [ 50, 100, 500, "All" ] ],
+    info: true,
+    // searching: true,
+    processing: true,
+    responsive: true,
+    dom: '<"d-flex"l<"ms-auto"i>>rt<"d-flex"l<"ms-auto"p>>',
+    language: {
+      search: "_INPUT_",
+      info: "Showing _START_ to _END_ of _MAX_ records",
+      searchPlaceholder: "Quick Search",
+      //  lengthMenu: "Show _MENU_ records",
+      paginate: {
+        previous: '<i class="angle-left"></i>',
+        next: '<i class="angle-right"></i>'
+      },
+    },
+    columns: [
+      {
+        data: null,
+        defaultContent: '<input type="checkbox" name="chkbx">',
+      },
+      { data: 'group' },
+      { data: 'count' },
+      { data: 'affiliation' },
+      { data: 'updated_on' },
+      { data: 'updated_by' }
+    ],
+
+    columnDefs: [ {
+      targets: 0,
+      orderable: false,
+      checkboxes: {
+        selectRow: true
+      }
+    } ],
+    select: {
+      style: 'multi',
+      selector: 'td:first-child',
+    },
+    order: [ [ 1, 'asc' ] ]
+  });
+
+  var studentTable = $('#studentTable').DataTable({
+    ajax: function ( d, cb ) {
+      fetch('./studentselect.json').then(response => response.json()).then(data => cb(data));
+    },
+    //data: data,
+    paging: true,
+    pageLength: 500,
+    lengthMenu: [ [ 50, 100, 500 - 1 ], [ 50, 100, 500, "All" ] ],
+    info: true,
+    // searching: true,
+    processing: true,
+    dom: '<"d-flex"l<"ms-auto"i>>rt<"d-flex"l<"ms-auto"p>>',
+    language: {
+      search: "_INPUT_",
+      info: "Showing _START_ to _END_ of _MAX_ records",
+      searchPlaceholder: "Quick Search",
+      //  lengthMenu: "Show _MENU_ records",
+      paginate: {
+        previous: '<i class="angle-left"></i>',
+        next: '<i class="angle-right"></i>'
+      },
+      // processing:  '<div class="d-flex justify-content-center"><div class="spinner-border text-success" role="status"><span class="visually-hidden">Loading...</span></div></div>'
+    },
+
+    responsive: true,
+    columns: [
+      {
+        data: null,
+        defaultContent: '<input type="checkbox" name="chkbx">',
+      },
+      { data: 'name' },
+      { data: 'ID' },
+      { data: 'job_category' },
+      { data: 'job_title' },
+      { data: 'affiliation' },
+      { data: 'last_login' }
+    ],
+    columnDefs: [ {
+      targets: 0,
+      orderable: false,
+      checkboxes: {
+        selectRow: true
+      }
+    } ],
+    select: {
+      style: 'multi',
+      selector: 'td:first-child',
+    },
+    order: [ [ 1, 'asc' ] ]
+  });
+
+  $('.filter-search').on('keyup change', function () {
+    studentTable.search(this.value).draw();
+  });
+
+  $('.group-filter-search').on('keyup change', function () {
+    groupTable.search(this.value).draw();
+  });
+
+  $('.assg-filter-search').on('keyup change', function () {
+    assgTable.search(this.value).draw();
+  });
+
+
+  $("<div class=\"d-flex selectAllCheck\">\n" +
+    "          <input type=\"checkbox\" id=\"select-all\">\n" +
+    "        </div>").insertBefore("#assgTable");
+
+  $("<div class=\"d-flex selectAllCheck\">\n" +
+    "          <input type=\"checkbox\" id=\"select-all-grp\">\n" +
+    "        </div>").insertBefore("#groupTable");
+
+  $("<div class=\"d-flex selectAllCheck\">\n" +
+    "          <input type=\"checkbox\" id=\"select-all-stu\">\n" +
+    "        </div>").insertBefore("#studentTable");
+
+
+  selectPersistedRows(assgTable, groupTable);
+
+// select checkboxes
+  $('#get-selected').on('click', function () {
+    var data = table.rows(function ( idx, data, node ) {
+      return $(node).find('input[type="checkbox"][name="chkbx"]').prop('checked');
+    }).data().toArray();
+
+    console.log(data);
+  });
+
+  $('#select-all').on('change', function () {
+    var checked = $(this).prop('checked');
+
+    assignTable.cells(null, 0).every(function () {
+      var cell = this.node();
+      $(cell).find('input[type="checkbox"][name="chkbx"]').prop('checked', checked);
+      persistSelection(assignTable.row(this).index(), $(this).prop('checked'));
+    });
+  })
+
+  $('#select-all-grp').on('change', function () {
+    var checked = $(this).prop('checked');
+
+    groupTable.cells(null, 0).every(function () {
+      var cell = this.node();
+      $(cell).find('input[type="checkbox"][name="chkbx"]').prop('checked', checked);
+      persistSelection(groupTable.row(this).index(), $(this).prop('checked'));
+    });
+  })
+
+  $('#select-all-stu').on('change', function () {
+    var checked = $(this).prop('checked');
+
+    studentTable.cells(null, 0).every(function () {
+      var cell = this.node();
+      $(cell).find('input[type="checkbox"][name="chkbx"]').prop('checked', checked);
+      persistSelection(studentTable.row(this).index(), $(this).prop('checked'));
+    });
+  })
+
+
+  function selectPersistedRows( table ) {
+    if ( !( sessionStorage.rowKeyStore ) )
+      return;
+
+    var rowKeys = JSON.parse(sessionStorage.rowKeyStore);
+    for ( var key in rowKeys ) {
+      $(table.row(key).node()).prop('checked');
+    }
+  }
+
+  function persistSelection( index, isSelected ) {
+    var ss = sessionStorage;
+    if ( !( ss.rowKeyStore ) ) {
+      ss.rowKeyStore = "{}";
+    }
+    var rowKeys = JSON.parse(ss.rowKeyStore);
+    if ( isSelected === false && rowKeys.hasOwnProperty(index) ) {
+      console.log('removing row ' + index + ' from selection list');
+      delete rowKeys[ index ];
+    } else if ( isSelected ) {
+      rowKeys[ index ] = true;
+    }
+  }
+
+  /*
+   $('th:nth-child(0) input').on('click', function () {
+   chkCount = 0;
+   if ( $(this).is(':checked') ) {
+
+   $('td:nth-child(0) input').attr('checked', 'checked');
+
+   // Store all checkboxes checked into array
+   $('tr td:nth-child(0) input').each(function () {
+   chkCount += 1;
+   var currentRow = $(this).closest('tr');
+   var col0Chk = currentRow.find('td:eq(0)').html();
+   $('td:nth-child(0) input', currentRow).attr('checked', 'checked');
+   saveChecks.push(col0Chk);
+   });
+
+   } else {
+   saveChecks = [];
+   $('td:nth-child(0) input').attr('checked', false);
+   $('tr td:nth-child(0) input').each(function () {
+
+
+   var rowChk = $(this).closest('tr');
+   var preChkD = rowChk.find('td:eq(0)').html();
+
+   $.each(saveChecks, function ( indexChks, valueChks ) {
+   if ( valueChks == preChkD ) {
+   chkCount -= 1;
+   $('td:nth-child(5) input', rowPAE).attr('checked', 'checked');
+   }
+   });
+
+   });
+   }
+
+   //chkCount = Math.abs(chkCount);
+   // document.getElementById('PreAlgEI').value = preAECount;
+
+   });
+
+   /!***. Handle individual checkboxes checked/un-checked, column 5 *****!/
+   $('td:nth-child(0) input').on('click', function () {
+   if ( $(this).is(':checked') ) {
+   chkCount += 1;
+   } else {
+   chkCount -= 1;
+   }
+
+   //chkCount = Math.abs(chkCount);
+   //document.getElementById('PreAlgEI').value = preAECount;
+   });*/
+
+//charts
+  const assgNum = [ 35, 30, 20, 15 ];
+  const assgNumPercent = assgNum[ 0 ] + assgNum[ 1 ] + assgNum[ 2 ];
+  const counter = {
+    id: 'counter',
+    beforeDraw( chart, args, options ) {
+      const { ctx, chartArea: { top, right, bottom, left, width, height } } = chart;
+      ctx.save();
+      ctx.fillStyle = options.fontColor;
+      ctx.fillRect(width / 2, top + ( height / 2 ), 10, 10)
+      ctx.font = options.fontSize + ' ' + options.fontFamily;
+      ctx.textAlign = 'center';
+      ctx.fillText(assgNumPercent + '%', width / 2, top + ( height / 2 ));
+
+    }
+  };
+
+  // chart setup Completed
+  
+  const data = {
+    labels: [ 'On Time', 'Late', 'Failed' ],
+    datasets: [ {
+      data: assgNum,
+      cutout: '75%',
+      borderRadius: [ 10, 10, 10, 0 ],
+      backgroundColor: [
+        'rgba(87,200,150,1)',
+        'rgba(133,214,177,0.8)',
+        'rgba(175,227,204, 0.5)',
+        'rgba(240,241,241,1)',
+      ],
+      borderColor: [
+        'rgba(87,200,150,1)',
+        'rgba(133,214,177, 0.8)',
+        'rgba(175,227,204, 0.5)',
+        'rgba(240,241,241,1)',
+      ]
+    } ]
+  };
+
+  // config block
+  const config = {
+    type: "doughnut",
+    data,
+    options: {
+      plugins: {
+        counter: {
+          fontColor: '#3E5359',
+          fontSize: '120px',
+          fontFamily: 'serif'
+        }
+      }
+    },
+    plugins: {
+      counter: [ counter ],
+      responsive: true,
+      title: {
+        display: true,
+        text: 'COMPLETED',
+      },
+      legend: {
+        position: 'bottom',
+        labels: {
+          boxWidth: 15,
+        },
+      },
+    }
+  };
+
+// init assgCompleted chart block
+  const assgCompleted = new Chart(
+    document.getElementById("assgCompleted"),
+    config
+  );
+
+
+  let canvas2 = document.getElementById("other");
+  let assgNum2 = [ 35, 65 ];
+  let other = new Chart(canvas2, {
+    type: "doughnut",
+    data: {
+      labels: [ 'Past Due' ],
+      datasets: [ {
+        label: "Quantity",
+        cutout: '75%',
+        borderRadius: 10,
+        //offset: -2,
+        data: assgNum2,
+        backgroundColor: [
+          'rgba(254,152,129,8)',
+          'rgba(240,241,241,1)',
+        ],
+      } ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            boxWidth: 15,
+          }
+        },
+        title: {
+          display: true,
+          text: 'PAST DUE'
+        }
+      }
+    }
+  });
+
+  let canvas3 = document.getElementById("pastDueCompleted");
+  let assgNum3 = [ 10, 30, 60 ];
+  let pastDueCompleted = new Chart(canvas3, {
+    type: "doughnut",
+    data: {
+      labels: [ 'Exempt', 'Delinquent' ],
+      datasets: [ {
+        label: "Quantity",
+        cutout: "75%",
+        borderRadius: 10,
+        data: assgNum3,
+        backgroundColor: [
+          'rgba(122,172,237, 0.8)',
+          'rgba(209,219,231, 0.8)',
+          'rgba(240,241,241,1)',
+        ]
+      } ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            boxWidth: 15,
+          },
+        },
+        title: {
+          display: true,
+          text: 'OTHER'
+        }
+      }
+    }
+  });
+
+})
+;
+
 
