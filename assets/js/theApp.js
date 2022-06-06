@@ -8,8 +8,6 @@ $(function () {
   }
 
   $('.datePick').daterangepicker({
-    autoUpdateInput: false,
-    autoApply: true,
     startDate: start,
     endDate: end,
     ranges: {
@@ -396,7 +394,7 @@ $(function () {
   };
 
 // init assgCompleted chart block
-  const assgCompleted = new Chart(
+ /* const assgCompleted = new Chart(
     document.getElementById("assgCompleted"),
     config
   );
@@ -435,8 +433,8 @@ $(function () {
         }
       }
     }
-  });
-
+  });*/
+/*
   let canvas3 = document.getElementById("pastDueCompleted");
   let assgNum3 = [ 10, 30, 60 ];
   let pastDueCompleted = new Chart(canvas3, {
@@ -470,7 +468,7 @@ $(function () {
         }
       }
     }
-  });
+  });*/
 
 })
 ;
