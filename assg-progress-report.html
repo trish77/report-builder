@@ -63,7 +63,7 @@
   </div>
   <div class="row bg-white align-items-center">
     <div class="col my-3 p-0 mb-0 d-flex align-items-center justify-content-start">
-      <i class="text-decoration-none text-secondary icon-arrow  mx-1"></i>
+      <i class="text-decoration-none text-secondary icon-arrow-left mx-1"></i>
       <a href="select-students.html" class="text-secondary text-xsmall">REPORT CONFIGURATION</a>
     </div>
     <div class="row">
@@ -118,22 +118,97 @@
   <div class="row align-items-center">
     <div class="col my-3 mx-3 p-0 mb-0 d-flex align-items-center justify-content-start">
       <i class="text-decoration-none text-success angle-right  mx-1"></i>
-      <a href="select-students.html" class="text-secondary text-xsmall">REPORT SUMMARY</a>
+      <a href="select-students.html" class="text-secondary text-decoration-none text-xsmall">REPORT SUMMARY</a>
     </div>
   </div>
   <div class="row shadow-sm rounded bg-white d-flex align-items-start py-4 mx-3 mt-1 mb-3">
     <div class="col">
-      <canvas id="assgCompleted"></canvas>
+      <div id="assgCompletedWrapper">
+        <div class="center-metric"></div>
+        <canvas id="assgCompleted"></canvas>
+      </div>
     </div>
     <div class="col">
-      <canvas id="other"></canvas>
+      <div id="assgPastWrapper">
+        <div class="center-metric"></div>
+        <canvas id="assgPast"></canvas>
+      </div>
     </div>
     <div class="col border-end ">
-      <canvas id="pastDueCompleted"></canvas>
+      <div id="assgOtherWrapper">
+        <div class="center-metric"></div>
+        <canvas id="assgOther"></canvas>
+      </div>
     </div>
-
     <div class="col-4">
-
+      <div class="text-small">TOTAL RECORDS</div>
+      <h1 class="border-bottom pb-3 total-records">122456</h1>
+      <table class="table condensed">
+        <tr>
+          <th>STATUS</th>
+          <th style="text-align: right">QUANTITY</th>
+          <th style="text-align: right">PERCENTAGE</th>
+        <tr>
+          <td>Completed</td>
+          <td>755</td>
+          <td>52%</td>
+        </tr>
+        <tr>
+          <td>On Time</td>
+          <td>155</td>
+          <td>22%</td>
+        </tr>
+        <tr>
+          <td>Late</td>
+          <td>55</td>
+          <td>12%</td>
+        </tr>
+        <tr>
+          <td>Failed</td>
+          <td>15</td>
+          <td>2%</td>
+        </tr>
+        <tr>
+          <td>Past Due</td>
+          <td>212</td>
+          <td>32%</td>
+        </tr>
+        <tr>
+          <td>Exempt</td>
+          <td>45</td>
+          <td>9%</td>
+        </tr>
+        <tr>
+          <td>Delinquent</td>
+          <td>75</td>
+          <td>15%</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row mx-1">
+    <div class="button-row d-flex">
+      <button data-bs-toggle="modal" data-bs-target="#savedReports" class="btn btn-white me-2">
+        <i class="text-decoration-none text-primary icon-saved-views1 mx-1"></i>
+        Saved reports
+      </button>
+      <a href="filter-compete-date" class="btn btn-success-lt me-2">
+        <i class="text-decoration-none text-success icon-filter mx-1"></i>
+        <span style="color: #3E5359">
+          Filtered by
+        </span>
+        Completion date
+      </a>
+      <a href="group-dept" class="btn btn-success-lt me-2">
+        <i class="text-decoration-none text-success icon-group mx-1"></i>
+        <span style="color: #3E5359">
+          Grouped by
+        </span>Departments
+      </a>
+      <a href="savedReports" class="btn btn-white">
+        <i class="text-decoration-none text-primary icon-column mx-1"></i>
+        Columns
+      </a>
     </div>
   </div>
   <div class="row bg-white mt-4 align-items-start">
@@ -451,14 +526,38 @@
       </div>
     </div>
   </div>
-  <div class="row iSchedule d-none">
-    <div class="col-12 text-center">
-      <h3 class="change-date-range"></h3>
-      <a href="#schedule-import" data-bs-toggle="modal" data-bs-target="#schedule-import"
-         id="newStudentImportReport"
-         title="Schedule Report"><span class="icon-calendar-plus-o text-primary" style="font-size: 60px"></span>
-        <h3 class="mt-2" style="text-decoration: underline">Choose Migration Date</h3>
-      </a>
+</div>
+
+<div id="savedReports" class="modal fade" tabindex="-1" aria-labelledby="savedReportsL" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <i class="text-decoration-none text-primary icon-saved-views1 mx-1"></i>
+        <h5 class="modal-title" id="savedReportsL">Save report</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="well form-horizontal" id="saveReport">
+          <div class="text-right">
+            Required <span class="icon-asterisk text-warning"></span>
+          </div>
+          <!-- Text input-->
+          <div class="mt-3">
+            <div class="col">
+              <label for="name" class="control-label text-left"> Name</label>
+              <sup><span class="icon-asterisk text-warning"></span></sup>
+              <input name="Name" placeholder="Request Name" class="form-control" type="text" />
+            </div>
+          </div>
+          <!-- Text input-->
+        </form>
+        <div class="modal-footer">
+          <div class="pull-left">
+            <button type="submit" id="saveBtn2" class="btn btn-primary align-items-end">Save Schedule</button>
+            <button class="btn btn-secondary" id="closeBtn" data-bs-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

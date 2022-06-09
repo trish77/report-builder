@@ -63,8 +63,9 @@ $theme-colors: map-merge(
                 (
                         "primary": $primary,
                         "secondary": $secondary,
+                        "attention": attention,
                         "success": $success,
-                  // "info": $info,
+                        "info": $info,
                         "warning": $warning,
                         "danger": $danger,
                         "light": $light,
@@ -77,15 +78,15 @@ $alert-bg-level:                    -10 !default;
 $alert-border-level:                -8 !default;
 $alert-color-level:                 6 !default;
 
-$btn-default-color: #333;
-$btn-default-bg: #fff;
-$btn-default-border: #ccc;
+$btn-default-color: $gray-700;
+$btn-default-bg: $white;
+$btn-default-border: $gray-500;
 $btn-focus-box-shadow:        $input-btn-focus-box-shadow !default;
 $btn-disabled-opacity:        .65 !default;
 $btn-active-box-shadow:       inset 0 3px 5px rgba($black, .125) !default;
 $input-btn-focus-width:       .2rem !default;
 $form-select-focus-width:     .2rem !default;
-$btn-primary-color: #fff;
+$btn-primary-color: $white;
 $form-select-focus-width:         .2rem !default;
 $input-btn-focus-box-shadow:    0 0 $input-btn-focus-blur .2rem $input-btn-focus-color !default;
 $form-select-focus-box-shadow:    0 0 0 .2rem $input-btn-focus-color !default;
@@ -117,6 +118,10 @@ $container-max-widths: (
         xl: 1140px
 ) !default;
 
+.btn {
+  --#{$variable-prefix}btn-color: #{$gray-700};
+  color: $gray-700 !important;
+}
 
 .btn-outline-secondary {
   color: #6c757d;

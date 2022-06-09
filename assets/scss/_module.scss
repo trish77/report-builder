@@ -677,7 +677,47 @@ div.dataTables_processing > div:last-child > div {
 
 // charts
 
-#assgCompleted, #other, #pastDueCompleted {
-  width: 220px !important;
-  height: 220px !important;
+#assgCompleted, #assgPast, #assgOther {
+
+
 }
+
+#assgOtherWrapper, #assgPastWrapper, #assgCompletedWrapper {
+  width: 250px !important;
+  height: 250px !important;
+  padding-top: 35px;
+  position: relative;
+  text-align: center;
+}
+
+.center-metric {
+  color: #707070;
+  position: absolute;
+  font-size: 60px;
+  font-family: Addington, serif;
+  width: 100%;
+  top: 115px;
+}
+
+// report page
+
+.total-records {
+  font-family: Addington, serif;
+  font-size: 36px;
+  color: #3E5359;
+}
+
+.condensed tr td{
+  padding: 4px;
+  font-size: 13px !important;
+  text-align: right;
+}
+
+.condensed tr th {
+  padding: 4px;
+}
+
+.condensed tr td:first-of-type{
+  text-align: left;
+}
+

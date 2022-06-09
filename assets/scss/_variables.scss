@@ -43,6 +43,7 @@ $yellow: #FEDF82;
 $green: #00BA7C;
 $teal: #4571A0;
 $cyan: #0dcaf0;
+$success-lt: #D8F2E5;
 // scss-docs-end color-variables
 
 $btn-font-weight: normal;
@@ -50,11 +51,13 @@ $btn-font-weight: normal;
 
 $primary: $gray-700;
 $secondary: $gray-600;
+$default: $gray-400;
 $attention: $orange;
 $success: $green;
 $info: $cyan;
 $warning: $yellow;
 $danger: $red;
+$success-lt: $success-lt;
 $light: $gray-100;
 $dark: $gray-900;
 
@@ -65,10 +68,12 @@ $theme-colors: map-merge(
   (
     "primary": $primary,
     "secondary": $secondary,
+    "default": $default,
     "success": $success,
     "info": $info,
     "warning": $warning,
     "danger": $danger,
+    "success-lt": $success-lt,
     "light": $light,
     "dark": $dark
   ),
@@ -79,7 +84,7 @@ $alert-bg-level: -10;
 $alert-border-level: -8;
 $alert-color-level: 6;
 
-$btn-default-color: #333;
+$btn-default-color: $gray-700 !important;
 $btn-default-bg: #fff;
 $btn-default-border: #ccc;
 
@@ -179,7 +184,7 @@ $dropdown-border-width: $border-width;
 
 // scss-docs-start display-headings
 $display-font-sizes: (
-        1: 4.5rem,
+        1: 5.5rem,
         2: 4.2rem,
         3: 4rem,
         4: 3.5rem,
@@ -256,6 +261,7 @@ h5 {
   color: $gray-700 !important;
   font-size: 13px !important;
 }
+
 .btn-outline-secondary {
   color: #6c757d;
   border-color: #dee2e6;
@@ -270,11 +276,31 @@ h5 {
 
 .btn {
   border-radius: 4px;
+  color: $gray-700 !important;
 }
 
 .btn.btn-white {
-  color: $green;
+  color: $gray-700;
   background: $white;
+  border: $white;
+  box-shadow:  0 0 2px rgba(0, 0, 0, 0.07), 0 1px 1px rgba(0, 0, 0, 0.12);
+}
+
+.btn-success-lt {
+  color: $gray-700 !important;
+  background-color: $success-lt;
+}
+
+.btn.btn-light {
+  color: $green !important;
+  background-color: $white;
+  border-color: $green;
+  box-shadow:  0 0 2px rgba(0, 0, 0, 0.07), 0 1px 1px rgba(0, 0, 0, 0.12);
+}
+
+.btn-light:hover {
+  background-color: #f9fafb;
+  border-color: #f9fafb;
 }
 
 .rounded, .dropdown-menu {

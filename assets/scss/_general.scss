@@ -122,10 +122,10 @@ a:focus, :focus, .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.f
   font-size: 16px;
 }
 
-.h6 {
+h6, .h6 {
   font-size: 11px !important;
   color: #3E5359 !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
 }
 
 hr {
@@ -1136,6 +1136,9 @@ i {
 .icon-arrow:before {
   content: "\e900";
 }
+.icon-arrow-left:before {
+  content: "\e901";
+}
 .icon-filter:before {
   content: "\e91d";
 }
@@ -1227,11 +1230,12 @@ i {
 .icon-class-live:before {
   content: "\e024";
 }
-
+.icon-column:before {
+  content: "\e90e";
+}
 .icon-video:before {
   content: "\e031";
 }
-
 .layer-group-solid-2:before {
   content: "\e902";
 }
