@@ -37,25 +37,32 @@ $blue: #0C75E0;
 $indigo: #6610f2;
 $purple: #8A71F6;
 $pink: #FA8A71;
+$peach: #FE9881;
 $red: #dc3545;
 $orange: #fd7e14;
 $yellow: #FEDF82;
 $green: #00BA7C;
+$green80: #57C896;
+$green60: #85D6B1;
+$green40: #AFE3CC;
 $teal: #4571A0;
 $cyan: #0dcaf0;
+$greyBlue: #7495B8;
+$ltGreyBlue: #A3B9D0;
+$exemptBlue: #A3B9D0;
+$darkBlue: #0D4E88;
+$darkBlue80: #4571A0;
 $success-lt: #D8F2E5;
-// scss-docs-end color-variables
-
-$btn-font-weight: normal;
-
-
 $primary: $gray-700;
 $secondary: $gray-600;
+$mute-blue: $greyBlue;
+$fade-blue: $ltGreyBlue;
+$delinquent: $greyBlue;
 $default: $gray-400;
-$attention: $orange;
 $success: $green;
 $info: $cyan;
 $warning: $yellow;
+$past-due: $peach;
 $danger: $red;
 $success-lt: $success-lt;
 $light: $gray-100;
@@ -68,10 +75,21 @@ $theme-colors: map-merge(
   (
     "primary": $primary,
     "secondary": $secondary,
+    "mute-blue": $greyBlue,
+    "fade-blue": $ltGreyBlue,
     "default": $default,
+    "attention": $orange,
     "success": $success,
     "info": $info,
     "warning": $warning,
+    "peach": $peach,
+    "past-due": $peach,
+    "on-time": $green80,
+    "late": $green60,
+    "failed": $green40,
+    "exempt": $ltGreyBlue,
+    "not-assg": $darkBlue80,
+    "delinquent": $delinquent,
     "danger": $danger,
     "success-lt": $success-lt,
     "light": $light,
@@ -80,28 +98,58 @@ $theme-colors: map-merge(
   $theme-colors
 );
 
+$border-width: 1px;
+$border-widths: (
+        1: 1px,
+        2: 2px,
+        3: 3px,
+        4: 4px,
+        5: 5px
+) !default;
+
+$body-bg: $white;
+$body-color: $gray-700;
+$body-text-align: null !default;
+
 $alert-bg-level: -10;
 $alert-border-level: -8;
 $alert-color-level: 6;
 
-$btn-default-color: $gray-700 !important;
+$btn-font-weight: normal;
+$btn-primary-color: #fff;
 $btn-default-bg: #fff;
 $btn-default-border: #ccc;
+$btn-active-box-shadow: inset 0 3px 5px rgba($green, .125);
+$btn-font-size-sm: 14px;
 
-$dropdown-link-color:    $gray-900!important ;
-$input-btn-focus-width: .2rem;
-$btn-active-box-shadow: inset 0 3px 5px rgba($black, .125);
-$input-btn-focus-width: .2rem;
 $form-select-focus-width: .2rem;
-$btn-primary-color: #fff;
-$form-select-focus-width: .2rem;
-$component-active-bg: $primary;
+$form-select-focus-box-shadow: 0 0 0 .2rem $green;
+$form-check-input-checked-color:  $green;
+$form-check-input-checked-bg-color: $green;
+$form-check-input-checked-border-color: $green;
+$form-check-input-width: 1.4em;
+$form-label-color: $gray-800;
+$form-label-font-weight: 600;
+
+$component-active-bg: $green;
+
+$dropdown-border-radius: .5rem;
+$dropdown-border-width: $border-width;
+$dropdown-link-color:    $gray-900 ;
+
+
 $input-btn-focus-color-opacity: .25;
-$input-btn-focus-color: rgba($component-active-bg, $input-btn-focus-color-opacity);
-$input-btn-focus-box-shadow: 0 0 .2 .2rem $input-btn-focus-color;
-$form-select-focus-box-shadow: 0 0 0 .2rem $input-btn-focus-color;
-$dropdown-link-color: $blue;
+$input-btn-focus-color: rgba($green, $input-btn-focus-color-opacity);
+$input-btn-focus-box-shadow: 0 0 .2 .2rem $green;
+$input-btn-focus-width: .2rem;
 
+$link-color: $gray-700;
+$link-decoration: underline;
+$link-shade-percentage: 20%;
+$link-hover-color: shift-color($link-color, $link-shade-percentage) !default;
+$link-hover-decoration: null;
+
+$striped-bg: #fafafa;
 $enable-reduced-motion: false;
 
 $font-size-base: .89rem; // Assumes the browser default, typically `16px`
@@ -132,21 +180,15 @@ $grid-breakpoints: (
         xxl: 1440px
 ) !default;
 
+
 $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value") !default;
 
-$body-bg: $white;
-$body-color: $gray-700;
-$body-text-align: null !default;
-$link-color: $gray-700;
-$link-decoration: underline;
-$link-shade-percentage: 20%;
-$link-hover-color: shift-color($link-color, $link-shade-percentage) !default;
-$link-hover-decoration: null;
-$component-active-bg: $green;
-$form-check-input-width: 1.4em;
-$form-label-color: $gray-800;
-$form-label-font-weight: 600;
-$box-shadow-sm: 0 .13rem .13rem rgba($black, .075);
+
+$box-shadow:  0 .5rem 1rem rgba( $gray-800, .075) !default;
+$box-shadow-green: 0 .125rem .25rem rgba($green, .075) !default;
+$box-shadow-lg:   0 1rem 3rem rgba($green, .175) !default;
+$box-shadow-inset: inset 0 1px 2px rgba($green, .075) !default;
+//$box-shadow-sm: 0 .13rem .13rem rgba($green, .075);
 
 $table-th-font-weight:  500;
 $table-border-color : #f4f4f4;
@@ -157,7 +199,6 @@ $border-radius: .25rem;
 $border-radius-sm: .2rem;
 $border-radius-lg: .3rem;
 $border-radius-pill: 50rem;
-
 $font-family-sans-serif: "Open Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif !default;
 
 $nav-tabs-link-active-color: $white;
@@ -170,17 +211,6 @@ $h4-font-size: $font-size-base * 1.5;
 $h5-font-size: $font-size-base * .89;
 $h6-font-size: .7;
 
-$border-width: 1px;
-$border-widths: (
-        1: 1px,
-        2: 2px,
-        3: 3px,
-        4: 4px,
-        5: 5px
-) !default;
-
-$dropdown-border-radius: .5rem;
-$dropdown-border-width: $border-width;
 
 // scss-docs-start display-headings
 $display-font-sizes: (
@@ -211,7 +241,6 @@ body {
   color: $gray-900 !important;
 }
 
-
 h1, .h1, h2, .h2, h3, .h3 {
   color: $gray-900 !important;
   font-weight: 600 !important
@@ -228,6 +257,7 @@ h5 {
   font-size: 12px !important;
   font-weight: 600 !important;
   text-align: left;
+  white-space: nowrap !important;
   text-transform: uppercase;
 }
 
@@ -249,12 +279,72 @@ h5 {
   width: 24% !important
 }
 
+hr {
+  opacity: .8 !important;
+  margin: .8rem 0 !important
+}
+
 .fw-semi {
   font-weight: 600;
 }
 
 .form-check-input {
   font-size: 12px;
+}
+
+.form-check-input:checked {
+  background-color: $green !important;
+  border-color: $white !important;
+}
+
+/*
+.form-check-input:focus {
+  border-color: $green !important;
+  outline: 0;
+  box-shadow: 0 0 0.2 0.2rem rgba($form-select-focus-box-shadow,$input-btn-focus-color-opacity) !important;
+}
+*/
+
+.form-check-input:checked[type=checkbox] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e") !important;
+  background-color: $green !important;
+}
+
+
+table.dataTable thead th.dt-checkboxes-select-all:first-of-type .form-check.checkbox{
+  margin-left: 4px !important;
+  margin-top: 6px !important;
+}
+
+table.dataTable.dt-checkboxes-select tbody tr,
+table.dataTable thead th.dt-checkboxes-select-all,
+table.dataTable tbody td.dt-checkboxes-cell {
+  cursor: pointer;
+}
+
+table.dataTable thead th.dt-checkboxes-select-all,
+table.dataTable tbody td.dt-checkboxes-cell {
+  text-align: center;
+}
+
+div.dataTables_wrapper span.select-info,
+div.dataTables_wrapper span.select-item {
+  margin-left: 0.5em;
+}
+
+table.dataTable thead th.dt-checkboxes-select-all input[type="checkbox"]:checked + label::before,
+table.dataTable tbody td.dt-checkboxes-cell input[type="radio"]:checked + label::before {
+  background-color: $green;
+  border: $green;
+  opacity: .8;
+}
+
+@media screen and (max-width: 640px) {
+  div.dataTables_wrapper span.select-info,
+  div.dataTables_wrapper span.select-item {
+    margin-left: 0;
+    display: block;
+  }
 }
 
 .dropdown-item {
@@ -276,31 +366,37 @@ h5 {
 
 .btn {
   border-radius: 4px;
-  color: $gray-700 !important;
+  color: $white !important;
 }
 
 .btn.btn-white {
-  color: $gray-700;
+  color: $gray-700 !important;
   background: $white;
   border: $white;
-  box-shadow:  0 0 2px rgba(0, 0, 0, 0.07), 0 1px 1px rgba(0, 0, 0, 0.12);
+  box-shadow:  $box-shadow;
 }
 
 .btn-success-lt {
   color: $gray-700 !important;
   background-color: $success-lt;
+  box-shadow: $box-shadow;
+;
 }
 
 .btn.btn-light {
   color: $green !important;
   background-color: $white;
   border-color: $green;
-  box-shadow:  0 0 2px rgba(0, 0, 0, 0.07), 0 1px 1px rgba(0, 0, 0, 0.12);
+  box-shadow: $box-shadow;
 }
 
 .btn-light:hover {
   background-color: #f9fafb;
   border-color: #f9fafb;
+}
+
+.btn.btn-sm {
+  padding: 2px;
 }
 
 .rounded, .dropdown-menu {
@@ -310,12 +406,29 @@ h5 {
 
 .dropdown-menu {
   font-size: 14px;
+    --bs-dropdown-min-width: inherit !important;
   padding: .5rem !important;
   color: #0C272F !important;
-  min-width: 15rem !important;
+  min-width: inherit!important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 5px 20px rgba(0, 0, 0, 0.04), 0px 1px 4px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04) !important;
 }
 
+.dropdown-menu-end[data-bs-popper] {
+  right: 0 !important;
+  left: auto;
+}
+
+.btn-primary {
+  color: $btn-primary-color !important;
+  background: $green !important;
+  border: 1px solid $btn-default-border !important;
+
+  &:hover {
+    color: $btn-primary-color !important;
+    background: $green !important;
+    border: 1px solid $btn-default-border !important;
+  }
+}
 /*// Default appears as grey
 .btn-default {
   color: $btn-default-color !important;
@@ -323,17 +436,7 @@ h5 {
   border: 1px solid $btn-default-border !important;
 }
 
-.btn-primary {
-  color: $btn-primary-color !important;
-  background: $bs-green !important;
-  border: 1px solid $btn-default-border !important;
 
-  &:hover {
-    color: $btn-primary-color !important;
-    background: $bs-green !important;
-    border: 1px solid $btn-default-border !important;
-  }
-}
 .progress-bar-success {
   background-color: #5cb85c;
 }
@@ -356,13 +459,4 @@ h5 {
   }
 }
 
-.w-80 {
-  width: 80% !important;
-}
-
-.alert-green {
-  color: #fff;
-  background-color: #0c9a0f;
-  border-color: rgba(16, 129, 30, 0.8);
-}
 */

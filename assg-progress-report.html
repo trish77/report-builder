@@ -21,6 +21,12 @@
           <path fill="#6d7e82" style="fill: var(--color1, #6d7e82)"
                 d="M17.143 17.143c0-0.631 0.512-1.143 1.143-1.143h6.857c0.631 0 1.143 0.512 1.143 1.143s-0.512 1.143-1.143 1.143h-6.857c-0.631 0-1.143-0.512-1.143-1.143z"></path>
         </symbol>
+        <symbol id="icon-saved-views" viewBox="0 0 32 32">
+          <path fill="#00ba7c" style="fill: var(--color2, #00ba7c)"
+                d="M6.857 9.143c-0.303 0-0.594 0.12-0.808 0.335s-0.335 0.505-0.335 0.808v18.087l6.113-5.24c0.428-0.367 1.060-0.367 1.488 0l6.113 5.24v-18.087c0-0.303-0.12-0.594-0.335-0.808s-0.505-0.335-0.808-0.335h-11.429zM4.433 7.861c0.643-0.643 1.515-1.004 2.424-1.004h11.429c0.909 0 1.781 0.361 2.424 1.004s1.004 1.515 1.004 2.424v20.571c0 0.446-0.26 0.852-0.665 1.038s-0.883 0.12-1.221-0.171l-7.256-6.22-7.256 6.22c-0.339 0.291-0.816 0.357-1.221 0.171s-0.665-0.592-0.665-1.038v-20.571c0-0.909 0.361-1.781 1.004-2.424z"></path>
+          <path fill="#9ea9ac" style="fill: var(--color3, #9ea9ac)"
+                d="M10.286 1.143c0-0.631 0.512-1.143 1.143-1.143h13.714c0.909 0 1.781 0.361 2.424 1.004s1.004 1.515 1.004 2.424v20.571c0 0.631-0.512 1.143-1.143 1.143s-1.143-0.512-1.143-1.143v-20.571c0-0.303-0.12-0.594-0.335-0.808s-0.505-0.335-0.808-0.335h-13.714c-0.631 0-1.143-0.512-1.143-1.143z"></path>
+        </symbol>
       </defs>
     </svg>
   </defs>
@@ -62,13 +68,13 @@
     </nav>
   </div>
   <div class="row bg-white align-items-center">
-    <div class="col my-3 p-0 mb-0 d-flex align-items-center justify-content-start">
-      <i class="text-decoration-none text-secondary icon-arrow-left mx-1"></i>
-      <a href="select-students.html" class="text-secondary text-xsmall">REPORT CONFIGURATION</a>
-    </div>
-    <div class="row">
-      <div class="col">
-        <h3 class="h3 sserif-bold">
+    <div class="my-3 col p-0 ms-3 mb-0 ">
+      <div>
+        <i class="text-decoration-none text-secondary icon-arrow-left mx-1"></i>
+        <a href="select-students.html" class="text-secondary text-xsmall">REPORT CONFIGURATION</a>
+      </div>
+      <div class="d-block">
+        <h3 class="h3 sserif-bold d-block">
           <svg class="svg mb-1 icon-assignment">
             <use xlink:href="#icon-assignment"></use>
           </svg>
@@ -77,51 +83,41 @@
           </span>
         </h3>
       </div>
-      <div class="col p-0 d-flex justify-content-end">
-        <div class="d-flex text-end3">
-          <div class="dropdown">
-            <button id="savedReports" class="btn btn-light border border-success dropdown-toggle fw-semi"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-              Saved Reports
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="savedReports" style="right:0">
-              <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Search"
-                       aria-label="Search" aria-describedby="search">
-                <span class="input-group-text" id="search"><i class="icon-search"></i></span>
-              </div>
-              <h6 class="h6">STANDARD</h6>
-              <li><a class="dropdown-item" href="#">Quarterly Report</a></li>
-              <li><a class="dropdown-item" href="#">All assignments</a></li>
-              <hr>
-              <h6 class="h6">CREATED BY ME</h6>
-              <li><a class="dropdown-item" href="#">My Report</a></li>
-              <li><a class="dropdown-item" href="#">My assignments</a></li>
-              <hr>
-              <h6 class="h6">CREATED BY OTHERS</h6>
-              <li><a class="dropdown-item" href="#">Report</a></li>
-              <li><a class="dropdown-item" href="#">All Acme assignments</a></li>
-              <li><a class="dropdown-item" href="#">Report</a></li>
-              <li><a class="dropdown-item" href="#">All Acme assignments</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="d-flex text-end">
-          <button class="ms-3 btn btn-success fw-semi">
-            Continue
-            <i class="text-white icon-arrow ms-1"></i>
+    </div>
+    <div class="col p-0 d-flex justify-content-end">
+      <div class="d-flex text-end3">
+        <div class="dropdown">
+          <button id="moreBtn" class="btn btn-light border border-success dropdown-toggle fw-semi"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+            More
           </button>
+          <ul class="dropdown-menu" aria-labelledby="moreBtn" style="right:0">
+            <li><a class="dropdown-item" href="#">Schedule</a></li>
+            <li><a class="dropdown-item" href="#">Save current report</a></li>
+          </ul>
         </div>
+      </div>
+      <div class="d-flex text-end">
+        <button id="exportBtn" class="btn btn-success ms-3 me-2 dropdown-toggle dropdown-toggle-split fw-semi"
+                data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="text-decoration-none text-white icon-share mx-1"></i>
+          Export
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="exportBtn" style="width: 150px!important;">
+          <li><a class="dropdown-item" href="#">CSV</a></li>
+          <li><a class="dropdown-item" href="#">Excel</a></li>
+          <li><a class="dropdown-item" href="#">Link </a></li>
+        </ul>
       </div>
     </div>
   </div>
   <div class="row align-items-center">
     <div class="col my-3 mx-3 p-0 mb-0 d-flex align-items-center justify-content-start">
-      <i class="text-decoration-none text-success angle-right  mx-1"></i>
+      <i class="text-decoration-none text-success angle-right mx-1"></i>
       <a href="select-students.html" class="text-secondary text-decoration-none text-xsmall">REPORT SUMMARY</a>
     </div>
   </div>
-  <div class="row shadow-sm rounded bg-white d-flex align-items-start py-4 mx-3 mt-1 mb-3">
+  <div id="assCompletionReport" class="row shadow-sm rounded bg-white d-flex align-items-start py-4 mx-2 mt-1 mb-3">
     <div class="col">
       <div id="assgCompletedWrapper">
         <div class="center-metric"></div>
@@ -183,380 +179,309 @@
           <td>75</td>
           <td>15%</td>
         </tr>
+        <tr>
+          <td>Not assigned</td>
+          <td>15</td>
+          <td>1%</td>
+        </tr>
       </table>
     </div>
   </div>
-  <div class="row mx-1">
-    <div class="button-row d-flex">
-      <button data-bs-toggle="modal" data-bs-target="#savedReports" class="btn btn-white me-2">
-        <i class="text-decoration-none text-primary icon-saved-views1 mx-1"></i>
-        Saved reports
-      </button>
-      <a href="filter-compete-date" class="btn btn-success-lt me-2">
-        <i class="text-decoration-none text-success icon-filter mx-1"></i>
-        <span style="color: #3E5359">
-          Filtered by
-        </span>
-        Completion date
-      </a>
-      <a href="group-dept" class="btn btn-success-lt me-2">
-        <i class="text-decoration-none text-success icon-group mx-1"></i>
-        <span style="color: #3E5359">
-          Grouped by
-        </span>Departments
-      </a>
-      <a href="savedReports" class="btn btn-white">
-        <i class="text-decoration-none text-primary icon-column mx-1"></i>
-        Columns
-      </a>
+  <div class="row">
+    <div class="button-row ms-2 d-flex">
+      <div class="dropdown">
+        <button id="savedReportBtn" class="btn btn-white me-2 dropdown-toggle fw-semi"
+                data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+          <i class="text-decoration-none text-primary icon-saved-views mx-1"></i>
+          Saved Reports
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="savedReportBtn" style="right:0">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search"
+                   aria-label="Search" aria-describedby="search">
+            <span class="input-group-text" id="search"><i class="icon-search"></i></span>
+          </div>
+          <h6 class="h6">STANDARD</h6>
+          <li><a class="dropdown-item" href="#">Quarterly Report</a></li>
+          <li><a class="dropdown-item" href="#">All assignments</a></li>
+          <hr>
+          <h6 class="h6">CREATED BY ME</h6>
+          <li><a class="dropdown-item" href="#">My Report</a></li>
+          <li><a class="dropdown-item" href="#">My assignments</a></li>
+          <hr>
+          <h6 class="h6">CREATED BY OTHERS</h6>
+          <li><a class="dropdown-item" href="#">Report</a></li>
+          <li><a class="dropdown-item" href="#">All Acme assignments</a></li>
+          <li><a class="dropdown-item" href="#">Report</a></li>
+          <li><a class="dropdown-item" href="#">All Acme assignments</a></li>
+          <hr>
+          <li><a class="dropdown-item text-success" data-bs-toggle="modal" data-bs-target="#savedReports"
+                 href="#savedReports">Save current report</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="filterBy" id="filterBy" class="btn btn-success-lt dropdown-toggle me-2" data-bs-toggle="dropdown"
+           data-bs-auto-close="outside" aria-expanded="false">
+          <i class="text-decoration-none text-success icon-filter mx-1"></i>
+          <span style="color: #3E5359; font-weight: bolder">
+            Filtered by
+          </span>
+          Completion date
+          <button type="button" class="btn-close-green ms-2" aria-label="Close"></button>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="filterBy" style="right:0">
+          <li class="dropdown-item">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="chkDept" checked>
+              <label class="form-check-label" for="chkDept">
+                Department
+              </label>
+            </div>
+          </li>
+          <li class="dropdown-item">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="chkJobTitle">
+              <label class="form-check-label" for="chkJobTitle">
+                Job Title
+              </label>
+            </div>
+          </li>
+          <li class="dropdown-item">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="chkJobCategory">
+              <label class="form-check-label" for="chkJobCategory">
+                Job Category
+              </label>
+            </div>
+          </li>
+          <li class="dropdown-item">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="chkManager">
+              <label class="form-check-label" for="chkManager">
+                Manager
+              </label>
+            </div>
+          </li>
+          <li class="dropdown-item">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="chkAssignment">
+              <label class="form-check-label" for="chkAssignment">
+                Assignment
+              </label>
+            </div>
+          </li>
+          <li class="dropdown-item">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="chkStudentGroup">
+              <label class="form-check-label" for="chkStudentGroup">
+                Student Group
+              </label>
+            </div>
+          </li>
+          <li class="dropdown-item">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="chkAssignmentVis">
+              <label class="form-check-label" for="chkAssignmentVis">
+                Assignment visibility
+              </label>
+            </div>
+          </li>
+          <li class="dropdown-item">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="chkAssignmentEndDate">
+              <label class="form-check-label" for="chkAssignmentEndDate">
+                Assignment end date
+              </label>
+            </div>
+          </li>
+          <li class="dropdown-item">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="chkAssignmentGolive">
+              <label class="form-check-label" for="chkAssignmentGolive">
+                Assignment go-live date
+              </label>
+            </div>
+          </li>
+          <li class="dropdown-item">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="chkCompletiondate">
+              <label class="form-check-label" for="chkCompletiondate">
+                Completion date
+              </label>
+            </div>
+          </li>
+          <li class="dropdown-item">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="chkAssignmenttype">
+              <label class="form-check-label" for="chkAssignmenttype">
+                Assignment type
+              </label>
+            </div>
+          </li>
+          <li class="dropdown-item">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="chkLearningItem">
+              <label class="form-check-label" for="chkLearningItem">
+                Learning item
+              </label>
+            </div>
+          </li>
+          <li class="dropdown-item">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="chkStudent">
+              <label class="label" for="chkStudent">
+                Student
+              </label>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="groupDept" id="groupDept" class="btn btn-success-lt dropdown-toggle me-2" data-bs-toggle="dropdown"
+           data-bs-auto-close="outside" aria-expanded="false">
+          <i class="text-decoration-none text-success icon-filter mx-1"></i>
+          <span style="color: #3E5359; font-weight: bolder;">
+            Grouped by
+          </span>
+          Department
+          <button type="button" class="btn-close-green ms-2" aria-label="Close"></button>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="savedReportBtn" style="right:0">
+          <div class="input-group d-flex align-items-center mb-3">
+            <i class="text-decoration-none text-success icon-menu mx-1"></i>
+            <select name="dept" class="form-select" aria-label="Departments">
+              <option value="1">Department</option>
+              <option value="2">Human Resources</option>
+              <option value="3">Legal</option>
+              <option value="4">Business Development</option>
+              <option value="5">Engineering</option>
+              <option value="6">Services</option>
+              <option value="7">Training</option>
+              <option value="8">Product Management</option>
+              <option value="9">Marketing</option>
+              <option value="10">Support</option>
+              <option value="11">MIS</option>
+              <option value="12">InfoSec</option>
+              <option value="13">Research</option>
+              <option value="14">Customer Support</option>
+              <option value="15">Nursing</option>
+              <option value="16">Surgical</option>
+              <option value="17">Maintenance</option>
+              <option value="18">Software Development</option>
+            </select>
+            <i class="text-decoration-none text-success icon-clear mx-1"></i>
+          </div>
+          <hr>
+          <div>
+            <a href="" class="text-success text-decoration-none">Add another group</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="row bg-white mt-4 align-items-start">
     <div class="col">
-      <div class="row bg-white align-items-start" style="height: 700px; overflow-y: scroll">
-        <table id="studentTable" class="table" cellspacing="0" style="width:100%;">
+      <div class="row bg-white align-items-start">
+        <table id="assgReport" class="table display nowrap" cellspacing="0" width="100%">
           <thead>
           <tr>
-            <th></th>
-            <th>Name</th>
-            <th>ID</th>
-            <th>Job category</th>
-            <th>Job title</th>
-            <th>Affiliation</th>
-            <th>Last Login</th>
+            <th>Department</th>
+            <th>Student</th>
+            <th>Status</th>
+            <th>Assignment</th>
+            <th>Due Date</th>
+            <th>Student Email</th>
+            <th>Manager</th>
+            <th>Manager Email</th>
+            <th>Learning Item</th>
+            <th>Effective Date</th>
+            <th>Go Live Date</th>
+            <th>Completion Date</th>
           </tr>
           </thead>
-          <tbody>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="selectAssg">
-                <label class="form-check-label" for="selectAssg">
-                </label>
-              </div>
-            </td>
-            <td class="assg">Quarterly Report</td>
-            <td>Recurring</td>
-            <td>Institution</td>
-            <td>Jan 12, 2020</td>
-            <td>Matt Wilson</td>
-          </tr>
-          </tbody>
+          <tbody></tbody>
         </table>
       </div>
     </div>
   </div>
 </div>
-
+<div class="modal fade" id="saveReport" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <svg class="svg mb-1 icon-saved-views">
+          <use xlink:href="#icon-saved-views"></use>
+        </svg>
+        <h5 class="modal-title ps-2" id="exampleModalLabel">Save report</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Name:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Publish this report</label>
+              <div>Makes saved report visible on Created by others page.</div>
+              <div>Only people who have access to all data included in the report will be able to see it.</div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-success">Schedule</button>
+      </div>
+    </div>
+  </div>
+</div>
 <div id="savedReports" class="modal fade" tabindex="-1" aria-labelledby="savedReportsL" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <i class="text-decoration-none text-primary icon-saved-views1 mx-1"></i>
-        <h5 class="modal-title" id="savedReportsL">Save report</h5>
+        <h5 class="modal-title" id="savedReportsL">
+          <svg class="svg mb-1 icon-assignment">
+            <use xlink:href="#icon-saved-views"></use>
+          </svg>
+          Save report
+        </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form class="well form-horizontal" id="saveReport">
-          <div class="text-right">
-            Required <span class="icon-asterisk text-warning"></span>
-          </div>
           <!-- Text input-->
           <div class="mt-3">
             <div class="col">
-              <label for="name" class="control-label text-left"> Name</label>
-              <sup><span class="icon-asterisk text-warning"></span></sup>
-              <input name="Name" placeholder="Request Name" class="form-control" type="text" />
+              <label for="name" class="control-label text-left"> Name <sup><span
+                      class="icon asterisk text-warning"></span></sup></label>
+              <input name="name" placeholder="Name" class="form-control" type="text" />
+            </div>
+          </div>
+          <div class="mt-3">
+            <div class="col">
+              <label for="name" class="control-label text-left"> Publish</label>
+              <div class="form-check mt-2 form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                <label class="form-check-label" for="flexSwitchCheckChecked">Publish this report</label>
+                <ul class="text-small">
+                  <li>Makes saved report visible on <span class="text-success">Created by others</span> page. <br>
+                    Only people who have access to all data included in the report will be able to see it.
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <!-- Text input-->
-        </form>
-        <div class="modal-footer">
-          <div class="pull-left">
-            <button type="submit" id="saveBtn2" class="btn btn-primary align-items-end">Save Schedule</button>
-            <button class="btn btn-secondary" id="closeBtn" data-bs-dismiss="modal">Cancel</button>
+          <div class="modal-footer">
+            <div class="pull-left">
+              <button class="btn btn-light" id="closeBtn" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" id="saveBtn2" class="btn btn-success align-items-end">Save</button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>

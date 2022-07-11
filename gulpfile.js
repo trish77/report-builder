@@ -44,6 +44,7 @@ gulp.task('fonts', function() {
 // Copy vendor's js to /dist
 gulp.task('vendor:build', function() {
 
+/*
   var cssStream = gulp.src([
     './assets/css/bootstrap.css',
     './assets/css/fixedColumns.bootstrap4.css',
@@ -54,16 +55,19 @@ gulp.task('vendor:build', function() {
   ])
   .pipe(gulp.dest('./dist/assets/css'));
 
+*/
 
   var jsStream = gulp.src([
     './assets/js/vendor/a-jquery.js',
     './assets/js/vendor/b-popper.js',
     './assets/js/vendor/bootstrap.js',
     './assets/js/vendor/datatables.js',
+    './assets/js/vendor/e.dataTables.checkboxes.min.js',
     './assets/js/vendor/filter-multi-select-bundle.js',
     './assets/js/vendor/moment.min.js',
     './assets/js/vendor/p-daterangepicker.js',
-    /*  './assets/js/vendor/tempusdominus-bootstrap-4.js',*/
+    './assets/js/vendor/theCharts.js',
+    './assets/js/vendor/theFilters.js',
     './assets/js/vendor/theApp.js',
   ])
     .pipe(gulp.dest('./dist/assets/js'));
