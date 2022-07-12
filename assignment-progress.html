@@ -107,12 +107,12 @@
   </div>
   <div class="row bg-white align-items-center">
     <div class="col p-0 ms-4 mt-2 mb-1 d-flex align-items-center justify-content-start">
-      <a href="assignment-progress.html" class="text-decoration-none text-secondary link-deco active pb-2 me-1">Select assignments</a>
+      <a href="assignment-progress.html" id="lnkSelectAssg" onclick="getValueChk()" class="text-decoration-none text-secondary link-deco active pb-2 me-1">Select assignments</a>
       <i class="text-decoration-none text-secondary icon-arrow pb-2 mx-1"></i>
       <span class="pb-2 text-dark none">Select</span>
-      <a href="select-groups.html" class="text-decoration-none inactive link-deco mx-2 pb-2"> Groups</a>
+      <a href="select-groups.html" id="lnkSelectGrps" class="text-decoration-none inactive link-deco mx-2 pb-2"> Groups</a>
       <span class="pb-2 link-deco">or</span>
-      <a href="select-students.html" class="text-decoration-none none link-deco ms-2 pb-2"> Students</a>
+      <a href="select-students.html" id="lnkSelectStudent" class="text-decoration-none none link-deco ms-2 pb-2"> Students</a>
     </div>
   </div>
   <div class="row bg-white align-items-start">
@@ -180,13 +180,13 @@
           <div class="form-check ms-3">
             <input class="form-check-input" type="checkbox" checked value="" id="assgType">
             <label class="form-check-label" for="assgType">
-              Visible
+              Recurring
             </label>
           </div>
           <div class="form-check ms-3">
             <input class="form-check-input" type="checkbox" value="" id="assgHidden">
             <label class="form-check-label" for="assgHidden">
-              Hidden
+              One Time
             </label>
           </div>
         </div>
@@ -279,165 +279,13 @@
     </div>
   </div>
 </div>
-<div id="modal-student-import-progress" class="modal fade modal-report" tabindex="-1" aria-hidden="false">
-  <div class="modal-dialog  modal-xl">
-    <div class="modal-content">
-      <div class="modal-body">
-        <button type="button" class="btn-close" data-dismiss="modal" aria-hidden="true"></button>
-        <!-- <h2>Supplemental Manager Report<small>- 698 of 1088 records imported successfully</small></h2> -->
-        <div class="dataTable-container">
-          <div class="d-flex w-100 border-bottom">
-            <div class="h3 d-flex text-info"><span class="fa fa-spinner fa-spin text-info"></span> &nbsp;&nbsp;In
-              Progress Status
-            </div>
-          </div>
-          <table class="table table-striped dataTable studentImportProgressSummary"
-                 id="studentImportProgressSummary">
-            <thead>
-            <tr class="table-row stripe">
-              <th>Course ID</th>
-              <th>Course Name</th>
-              <th>Course Description</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="table-row stripe">
-              <td>112121233</td>
-              <td>CHHCO - CHI Health at Home - Corporate Staff</td>
-              <td>This course is basic annual training</td>
-            </tr>
-            <tr class="table-row stripe">
-              <td>11112456545</td>
-              <td>CHHCO - CHI Health at Home - Corporate Staff</td>
-              <td>This course is basic annual training</td>
-            </tr>
-            <tr class="table-row stripe">
-              <td>4524585858</td>
-              <td>CHHCO - CHI Health at Home - Corporate Staff</td>
-              <td>This course is basic annual training</td>
-            </tr>
-            </tbody>
-          </table>
-          <div class="top-records-msg">Only showing top 50 records. Please export to view all records.</div>
-        </div>
-      </div>
-      <div class="modal-footer"></div>
-    </div>
-  </div>
-</div>
-<div id="modal-student-import-success" class="modal fade modal-report" tabindex="-1" aria-hidden="false">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-body">
-        <button type="button" class="btn-close" data-dismiss="modal" aria-hidden="true"></button>
-        <!-- <h2>Supplemental Manager Report<small>- 698 of 1088 records imported successfully</small></h2> -->
-        <div class="text-center report-header"></div>
-        <div class="dataTable-container pt-0">
-          <div class="d-flex w-100 border-bottom">
-            <div class="h3 d-flex text-success"><span class="fa fa-check-circle-o text-success"></span> &nbsp;&nbsp;Success
-              Status
-            </div>
-          </div>
-          <table class="table  table-striped dataTable studentImportProgressSummary"
-                 id="studentImportProgressSummary">
-            <thead>
-            <tr class="table-row stripe">
-              <th>Course ID</th>
-              <th>Course Name</th>
-              <th>Course Description</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="table-row stripe">
-              <td>112121233</td>
-              <td>CHHCO - CHI Health at Home - Corporate Staff</td>
-              <td>This course is basic annual training</td>
-            </tr>
-            <tr class="table-row stripe">
-              <td>11112456545</td>
-              <td>CHHCO - CHI Health at Home - Corporate Staff</td>
-              <td>This course is basic annual training</td>
-            </tr>
-            <tr class="table-row stripe">
-              <td>4524585858</td>
-              <td>CHHCO - CHI Health at Home - Corporate Staff</td>
-              <td>This course is basic annual training</td>
-            </tr>
-            </tbody>
-          </table>
-          <div class="top-records-msg">Only showing top 50 records. Please export to view all records.</div>
-        </div>
-      </div>
-      <div class="modal-footer"></div>
-    </div>
-  </div>
-</div>
-<div id="modal-student-import-error" class="modal fade modal-report" tabindex="-1" aria-hidden="false">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-body">
-        <button type="button" class="btn-close" data-dismiss="modal" aria-hidden="true"></button>
-        <!-- <h2>Supplemental Manager Report<small>- 698 of 1088 records imported successfully</small></h2> -->
-        <div class="text-center report-header"></div>
-        <div class="dataTable-container p-0">
-          <div class="d-flex w-100 border-bottom">
-            <div class="h3 d-flex text-danger"><span class="fa fa-exclamation-triangle text-danger"></span> &nbsp;&nbsp;Error
-              Status
-            </div>
-          </div>
-          <table class="table  table-striped dataTable studentImportProgressSummary"
-                 id="studentImportProgressSummary">
-            <thead>
-            <tr class="table-row stripe">
-              <th>Course ID</th>
-              <th>Course Name</th>
-              <th>Course Description</th>
-              <th>Error Message</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="table-row stripe">
-              <td>1232845774edbb21212</td>
-              <td>- 0 Course 1008-a</td>
-              <td>To obtain the MOST accurate electrocardiogram (ECG/EKG) of a patient's right ventricle, the nurse
-                should place:
-                A nurse evaluates an ECG strip from a 62-year-old patient who recently underwent cardiac valve
-                replacement surgery...
-              </td>
-              <td>This is error message 12344</td>
-            </tr>
-            <tr class="table-row stripe">
-              <td>1232845774edbb21212</td>
-              <td>Course Available for Assignments And Self Enroll but Inactivate at Course level</td>
-              <td>This course is basic annual training</td>
-              <td>This is error message 404 not found</td>
-            </tr>
-            <tr class="table-row stripe">
-              <td>1232845774edbb21212</td>
-              <td>0 Course Preview</td>
-              <td>To obtain the MOST accurate electrocardiogram (ECG/EKG) of a patient's right ventricle, the nurse
-                should place:
-                A nurse evaluates an ECG strip from a 62-year-old patient who recently underwent cardiac valve
-                replacement surgery...
-              </td>
-              <td>This is error message 12344</td>
-            </tr>
-            </tbody>
-          </table>
-          <div class="top-records-msg">Only showing top 50 records. Please export to view all records.</div>
-        </div>
-      </div>
-      <div class="modal-footer"></div>
-    </div>
-  </div>
-</div>
-<script>
 
+<script>
 /*
   $(document).ready(function() {
-    $('.datePickEff span').html('');
-  });
-*/
+
+
+  });*/
 
 
 </script>
