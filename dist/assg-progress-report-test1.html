@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<head>
+  <title>Assignment Progress Report </title>
+  <link rel="SHORTCUT ICON" href="dist/favicon.ico" />
+  <link href="dist/assets/css/app.min.css" type="text/css" rel="stylesheet">
+  <script src="dist/assets/js/app.min.js"></script>
+  <script>
+    $(document).ready( function () {
+      var data = [
+        {
+          "first_name": "Airi",
+          "last_name": "Satou",
+          "position": "Accountant",
+          "office": "Tokyo",
+          "start_date": "28th Nov 08",
+          "salary": "$162,700"
+        },
+        {
+          "first_name": "Airi",
+          "last_name": "Satou",
+          "position": "Accountant",
+          "office": "Tokyo",
+          "start_date": "28th Nov 08",
+          "salary": "$162,700"
+        },
+        {
+          "first_name": "Airi",
+          "last_name": "Satou",
+          "position": "Accountant",
+          "office": "Tokyo",
+          "start_date": "28th Nov 08",
+          "salary": "$162,700"
+        },
+        {
+          "first_name": "Angelica",
+          "last_name": "Ramos",
+          "position": "Chief Executive Officer (CEO)",
+          "office": "London",
+          "start_date": "9th Oct 09",
+          "salary": "$1,200,000"
+        },
+        {
+          "first_name": "Angelica",
+          "last_name": "Ramos",
+          "position": "Chief Executive Officer (CEO)",
+          "office": "London",
+          "start_date": "9th Oct 09",
+          "salary": "$1,200,000"
+        },
+        {
+          "first_name": "Angelica",
+          "last_name": "Ramos",
+          "position": "Chief Executive Officer (CEO)",
+          "office": "London",
+          "start_date": "9th Oct 09",
+          "salary": "$1,200,000"
+        },
+        {
+          "first_name": "Ashton",
+          "last_name": "Cox",
+          "position": "Junior Technical Author",
+          "office": "San Francisco",
+          "start_date": "12th Jan 09",
+          "salary": "$86,000"
+        },
+        {
+          "first_name": "Bradley",
+          "last_name": "Greer",
+          "position": "Software Engineer",
+          "office": "London",
+          "start_date": "13th Oct 12",
+          "salary": "$132,000"
+        },
+        {
+          "first_name": "Bradley",
+          "last_name": "Greer",
+          "position": "Software Engineer",
+          "office": "London",
+          "start_date": "13th Oct 12",
+          "salary": "$132,000"
+        },
+        {
+          "first_name": "Bradley",
+          "last_name": "Greer",
+          "position": "Software Engineer",
+          "office": "London",
+          "start_date": "13th Oct 12",
+          "salary": "$132,000"
+        },
+        {
+          "first_name": "Bradley",
+          "last_name": "Greer",
+          "position": "Software Engineer",
+          "office": "London",
+          "start_date": "13th Oct 12",
+          "salary": "$132,000"
+        },
+        {
+          "first_name": "Bradley",
+          "last_name": "Greer",
+          "position": "Software Engineer",
+          "office": "London",
+          "start_date": "13th Oct 12",
+          "salary": "$132,000"
+        },
+        {
+          "first_name": "Brenden",
+          "last_name": "Wagner",
+          "position": "Software Engineer",
+          "office": "San Francisco",
+          "start_date": "7th Jun 11",
+          "salary": "$206,850"
+        },
+        {
+          "first_name": "Brenden",
+          "last_name": "Wagner",
+          "position": "Software Engineer",
+          "office": "San Francisco",
+          "start_date": "7th Jun 11",
+          "salary": "$206,850"
+        },
+      ];
+
+      var collapsedGroups = {};
+      var bGroupingDisabled = false;
+
+      var table = $('#example').DataTable({
+
+        data: data,
+        columns: [
+          { "data": null,
+            render: function ( data, type, row ) {
+              if (type === 'display' && !bGroupingDisabled) {
+                return '';
+              }
+              return row.last_name + ', ' + row.first_name;
+            }
+          },
+          { "data": "position" },
+          { "data": "office" },
+          { "data": "start_date" },
+          { "data": "salary" }
+        ],
+        rowGroup: {
+          dataSrc: function(row) {
+            return row.last_name + ', ' + row.first_name;
+          },
+          startRender: function ( rows, group ) {
+            var collapsed = !collapsedGroups[group];
+            rows.nodes().each(function (r) {
+              r.style.display = (bGroupingDisabled) ? '' : (collapsed) ? '' : 'none';
+            });
+
+            return $('<tr/>')
+            .append( '<td colspan="3">'+group+'</td>' )
+            .attr('data-name', group)
+            .toggleClass('collapsed', collapsed)
+            .toggleClass('shown', !collapsed)
+            .css('display', (bGroupingDisabled) ? 'none' : '')
+                    ;
+          },
+        }
+
+      });
+
+      $( "#Grouping" ).on( "click", function() {
+        bGroupingDisabled = ! bGroupingDisabled;
+        table.rows().invalidate();
+        $( this )[0].innerHTML = (bGroupingDisabled) ? 'Grouper' : 'Degrouper';
+        table.draw(false);
+      });
+
+      $('#example tbody tr.group-start').each(function() {
+        var name = $(this).data('name');
+        collapsedGroups[name] = !bGroupingDisabled;
+      });
+      // on Click
+      $('#example tbody').on('click', 'tr.dtrg-start', function () {
+        var name = $(this).data('name');
+        collapsedGroups[name] = !collapsedGroups[name];
+        table.draw(false);
+      });
+    } );
+
+  </script>
+</head>
+<body>
+<table id="example" class="display" style="width:100%">
+  <thead>
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Position</th>
+    <th>Office</th>
+    <th>Salary</th>
+  </tr>
+  </thead>
+
+</table>
+</body>
+</HTML>

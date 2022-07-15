@@ -3944,21 +3944,21 @@ $(function () {
   var collapsedGroups = {};
   var bGroupingDisabled = false;
   var assgReport = $('#assgReport').DataTable({
-    paging: true,
+   // paging: true,
     colReorder: true,
     pageLength: 250,
-    lengthMenu: [ [ 50, 100, 250, 500 - 1 ], [ 50, 100, 250, 500, "All" ] ],
+   // lengthMenu: [ [ 50, 100, 250, 500 - 1 ], [ 50, 100, 250, 500, "All" ] ],
     info: true,
     searching: true,
     processing: true,
-    scrollY: 600,
+  //  scrollY: 600,
     scrollX: true,
-    scrollCollapse: true,
-    fixedHeader: {
+  //  scrollCollapse: true,
+   /* fixedHeader: {
       header: true,
       footer: false
-    },
-    dom: '<"d-flex my-2"Bi>rt<"d-flex my-3"l<"ms-auto"p>>',
+    },*/
+    dom: '<"d-flex my-2"B>rt',
     buttons: [
       {
         extend: 'collection',
@@ -3972,11 +3972,11 @@ $(function () {
       search: "_INPUT_",
       info: "Showing _START_ to _END_ of _MAX_ records",
       searchPlaceholder: "Quick Search",
-      lengthMenu: "Show _MENU_ records",
-      paginate: {
+     // lengthMenu: "Show _MENU_ records",
+      /*paginate: {
         previous: '<i class="angle-left"></i>',
         next: '<i class="angle-right"></i>'
-      },
+      },*/
     },
     // responsive: true,
     order: [ [ 0, 'asc' ] ],
@@ -3989,6 +3989,10 @@ $(function () {
       {
         targets: [ 1, 6 ],
         className: "nowrap",
+      },
+      {
+        targets: [ 3 ],
+        className: "assgWidth",
       },
       {
         targets: [ 7, 8, 9, 10, 11 ],
@@ -4052,7 +4056,7 @@ $(function () {
           return data;
         }
       },
-      { data: 'assignment' },
+      { data: 'assignment', 'width': '450px' },
       { data: 'due_date' },
       { data: 'student_email' },
       { data: 'manager' },
@@ -4192,21 +4196,22 @@ $(function () {
   function getValueChk() {
     var result = "",
       assgSelected = document.getElementsByClassName('dt-checkboxes');
-        for ( var i = 0; i < assgSelected.length; i++) {
-          if ( assgSelected[i].checked ) {
-           console.log("some are checked")
-          }
-        }
+    for ( var i = 0; i < assgSelected.length; i++ ) {
+      if ( assgSelected[ i ].checked ) {
+        console.log("some are checked")
+      }
+    }
 
 
-  let selectAssg = document.getElementById('lnkSelectAssg'),
+    let selectAssg = document.getElementById('lnkSelectAssg'),
       selectGrp = document.getElementById('lnkSelectGrps'),
       selectStudent = document.getElementById('lnkSelectStudent');
 
+    selectAssg.on('click', function (  )  {
+      console.log("some are checked")
 
-
-    }
-
+    });
+  }
 
 
 

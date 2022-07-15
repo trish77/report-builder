@@ -1,4 +1,4 @@
-# Import Dashboard using Bootstrap 5 
+# Report Insights using Bootstrap 5 
 
 ## Pre-requisite
 - [Node.js](https://nodejs.org/en/download/ "Node Js")

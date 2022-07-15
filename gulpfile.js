@@ -61,14 +61,15 @@ gulp.task('vendor:build', function() {
     './assets/js/vendor/a-jquery.js',
     './assets/js/vendor/b-popper.js',
     './assets/js/vendor/bootstrap.js',
-    './assets/js/vendor/datatables.js',
+    './assets/js/vendor/c-moment.min.js',
+    './assets/js/vendor/chart.js',
+    './assets/js/vendor/datatables.min.js',
     './assets/js/vendor/e.dataTables.checkboxes.min.js',
     './assets/js/vendor/filter-multi-select-bundle.js',
-    './assets/js/vendor/moment.min.js',
     './assets/js/vendor/p-daterangepicker.js',
-    './assets/js/vendor/theCharts.js',
-    './assets/js/vendor/theFilters.js',
     './assets/js/vendor/theApp.js',
+    './assets/js/vendor/theCharts.js',
+    './assets/js/vendor/theFilters.js'
   ])
     .pipe(gulp.dest('./dist/assets/js'));
 
@@ -77,7 +78,7 @@ gulp.task('vendor:build', function() {
   return merge (jsStream, fontStream);
 });
 
-// Copy Bootstrap SCSS(SASS) from node_modules to /assets/scss/bootstrap
+// Copy Bootstrap SCSS(SASS)  /assets/scss/bootstrap
 gulp.task('bootstrap:scss', function() {
   return gulp.src(['./assets/scss/bootstrap/**/*'])
     .pipe(gulp.dest('./assets/scss/bootstrap'));

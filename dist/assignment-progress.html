@@ -107,12 +107,12 @@
   </div>
   <div class="row bg-white align-items-center">
     <div class="col p-0 ms-4 mt-2 mb-1 d-flex align-items-center justify-content-start">
-      <a href="assignment-progress.html" class="text-decoration-none text-secondary link-deco active pb-2 me-1">Select assignments</a>
+      <a href="assignment-progress.html" id="lnkSelectAssg" onclick="getValueChk()" class="text-decoration-none text-secondary link-deco active pb-2 me-1">Select assignments</a>
       <i class="text-decoration-none text-secondary icon-arrow pb-2 mx-1"></i>
       <span class="pb-2 text-dark none">Select</span>
-      <a href="select-groups.html" class="text-decoration-none inactive link-deco mx-2 pb-2"> Groups</a>
+      <a href="select-groups.html" id="lnkSelectGrps" class="text-decoration-none inactive link-deco mx-2 pb-2"> Groups</a>
       <span class="pb-2 link-deco">or</span>
-      <a href="select-students.html" class="text-decoration-none none link-deco ms-2 pb-2"> Students</a>
+      <a href="select-students.html" id="lnkSelectStudent" class="text-decoration-none none link-deco ms-2 pb-2"> Students</a>
     </div>
   </div>
   <div class="row bg-white align-items-start">
@@ -180,13 +180,13 @@
           <div class="form-check ms-3">
             <input class="form-check-input" type="checkbox" checked value="" id="assgType">
             <label class="form-check-label" for="assgType">
-              Visible
+              Recurring
             </label>
           </div>
           <div class="form-check ms-3">
             <input class="form-check-input" type="checkbox" value="" id="assgHidden">
             <label class="form-check-label" for="assgHidden">
-              Hidden
+              One Time
             </label>
           </div>
         </div>
@@ -281,13 +281,11 @@
 </div>
 
 <script>
-
+/*
   $(document).ready(function() {
-    $('.assg-filter-search').on('keyup change', function () {
-      assgTable.search(this.value).draw();
-    });
 
-  });
+
+  });*/
 
 
 </script>
