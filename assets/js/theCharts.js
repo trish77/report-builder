@@ -11,7 +11,7 @@ $(function () {
       datasets: [ {
         data: assgNum,
         cutout: '80%',
-        borderRadius: [ 10, 10, 10, 0 ],
+        borderRadius: [ 0, 10, 10, 0 ],
         backgroundColor: [
           'rgba(87,200,150,1)',
           'rgba(133,214,177,0.8)',
