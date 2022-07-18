@@ -58,18 +58,19 @@ gulp.task('vendor:build', function() {
 */
 
   var jsStream = gulp.src([
-    './assets/js/vendor/a-jquery.js',
-    './assets/js/vendor/b-popper.js',
-    './assets/js/vendor/bootstrap.js',
-    './assets/js/vendor/c-moment.min.js',
-    './assets/js/vendor/chart.js',
-    './assets/js/vendor/datatables.min.js',
-    './assets/js/vendor/e.dataTables.checkboxes.min.js',
-    './assets/js/vendor/filter-multi-select-bundle.js',
-    './assets/js/vendor/p-daterangepicker.js',
-    './assets/js/vendor/theApp.js',
-    './assets/js/vendor/theCharts.js',
-    './assets/js/vendor/theFilters.js'
+    './assets/js/a-jquery.js',
+    './assets/js/b-popper.js',
+    './assets/js/bootstrap.js',
+    './assets/js/c-moment.min.js',
+    './assets/js/chart.js',
+    './assets/js/datatables.min.js',
+    './assets/js/e.dataTables.checkboxes.min.js',
+    './assets/js/filter-multi-select-bundle.js',
+    './assets/js/handy-scroll.es6.js',
+    './assets/js/p-daterangepicker.js',
+    './assets/js/theApp.js',
+    './assets/js/theCharts.js',
+    './assets/js/theFilters.js'
   ])
     .pipe(gulp.dest('./dist/assets/js'));
 

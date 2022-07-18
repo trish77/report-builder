@@ -3938,7 +3938,8 @@ $(function () {
         "eff_date": "3/17/2021",
         "goLive_date": "7/27/2021",
         "complete_date": "10/18/2021"
-      } ]
+      }
+      ]
 
 
   var collapsedGroups = {};
@@ -3952,7 +3953,7 @@ $(function () {
     searching: true,
     processing: true,
   //  scrollY: 600,
-    scrollX: true,
+   // scrollX: true,
   //  scrollCollapse: true,
    /* fixedHeader: {
       header: true,
@@ -4159,9 +4160,6 @@ $(function () {
 
   assgReport.buttons().container().appendTo(".button-row");
 
-
-  /*   var theDropdown= '<div class="dropdown"><div class="dropdown-menu" aria-labelledby="theDrop"><table class="table condensed"><tr><th>STATUS</th><th style="text-align: right">QUANTITY</th><th style="text-align: right">PERCENTAGE</th><tr><td>Completed</td><td>755</td><td>52%</td></tr><tr><td>On Time</td> <td>155</td><td>22%</td></tr></table></div></div>';*/
-
   $('#theDrop').on("mouseenter", () => {
     $(".dropdownStatus > a").addClass('show').attr("aria-expanded", "true");
     $(".dropdownStatus > div").attr("data-bs-popper", "none").addClass('show')
@@ -4215,5 +4213,17 @@ $(function () {
 
 
 
+  /*document.getElementById("handscrolls-nav").addEventListener("click", ({target}) => {
+    if (target.matches("span:not(.active)")) {
+      Array.from(target.parentNode.children).forEach((span, index) => {
+        let isActive = span === target;
+        span.classList.toggle("active", isActive);
+        handscrolls[index].classList.toggle("active", isActive);
+      });
+      handscrollsContainer.scrollLeft = handscrollsContainer.scrollWidth;
+      // Force widget update programmatically
+      handyScroll.update(handscrollsContainer);
+    }
+  });*/
 
 });

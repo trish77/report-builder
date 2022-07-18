@@ -122,7 +122,7 @@
           <button type="button" class="btn btn-primary ms-3">
             <i class="text-decoration-none text-white icon-share mx-1"></i> Export
           </button>
-          <button id="exportBtn" class="btn btn-primary me-2 border-end border-white dropdown-toggle dropdown-toggle-split fw-semi"
+          <button id="exportBtn" class="btn btn-primary me-2 border-start border-white dropdown-toggle dropdown-toggle-split fw-semi"
                   data-bs-toggle="dropdown" aria-expanded="false">
             <span class="visually-hidden">Toggle Dropdown</span>
           </button>
@@ -405,7 +405,7 @@
   </div>
   <div class="row bg-white mt-4 align-items-start">
     <div class="col">
-      <div class="row bg-white align-items-start">
+      <div id="handyWrapper" class="row bg-white align-items-start" data-fl-scrolls>
         <table id="assgReport" class="table display nowrap" cellspacing="0" width="100%">
           <thead>
           <tr>
@@ -429,7 +429,7 @@
     </div>
   </div>
 </div>
-<div class="modal fade" id="saveReport" tabindex="-1" data-bs-toggle="modal" aria-labelledby="saveReport"
+<!--<div class="modal fade" id="saveReport" tabindex="-1" data-bs-toggle="modal" aria-labelledby="saveReport"
      aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -462,7 +462,7 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->
 <div id="saveReport" class="modal fade" tabindex="-1" aria-labelledby="saveReport" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -672,5 +672,12 @@
     </div>
   </div>
 </div>
+<script>
+/*  let handscrollsContainer = document.getElementById("handyWrapper");
+  handscrollsContainer.scrollLeft = handscrollsContainer.scrollWidth;
+
+  // Widget initialization
+  handyScroll.mount(handscrollsContainer);*/
+</script>
 </body>
 </HTML>
