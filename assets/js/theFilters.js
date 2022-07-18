@@ -6,12 +6,15 @@ $(document).ready(function () {
   var end = moment();
 
   function cb( start, end ) {
-    $('.datePick span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+    $('.datePick span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
   }
 
   $('.datePick, .datePickEff').daterangepicker({
     startDate: start,
     endDate: end,
+    locale: {
+      format: 'M/DD/YYYY'
+    },
     ranges: {
       'Today': [ moment() ],
       'Yesterday': [ moment().subtract(1, 'days') ],
@@ -33,18 +36,25 @@ $(document).ready(function () {
   });
 
 
-  $('#startDate').daterangepicker({
+  $('#startDate, #endDate').daterangepicker({
+    startDate: start,
+    endDate: end,
     "singleDatePicker": true,
     "autoApply": true,
-    "alwaysShowCalendars": true,
-    "startDate": "07/08/2022",
-    "endDate": "07/14/2022"
+    locale: {
+      format: 'M/DD/YYYY'
+    },
+    "alwaysShowCalendars": true
   }, function(start, end, label) {
     console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
   });
 
   $('#startDate').on('.apply.daterangepicker', function ( ev, picker ) {
-    $('#startDate span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+    $('#startDate span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
+  });
+
+  $('#endDate').on('.apply.daterangepicker', function ( ev, picker ) {
+    $('#startDate span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
   });
 });
 

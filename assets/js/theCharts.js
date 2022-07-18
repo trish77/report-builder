@@ -11,7 +11,7 @@ $(function () {
       datasets: [ {
         data: assgNum,
         cutout: '80%',
-        borderRadius: [ 0, 10, 10, 0 ],
+        borderRadius: [ 0, 0, 0, 0 ],
         backgroundColor: [
           'rgba(87,200,150,1)',
           'rgba(133,214,177,0.8)',
@@ -36,7 +36,7 @@ $(function () {
           legend: {
             position: 'bottom',
             labels: {
-              boxWidth: 15,
+              boxWidth: 10,
             },
           },
           title: {
@@ -61,7 +61,7 @@ $(function () {
       datasets: [ {
         data: assgNumPastDue,
         cutout: '80%',
-        borderRadius: [ 10, 0 ],
+        borderRadius: [ 0, 0 ],
         backgroundColor: [
           'rgba(254,152,129,0.8)',
           'rgba(240,241,241,1)',
@@ -82,7 +82,7 @@ $(function () {
           legend: {
             position: 'bottom',
             labels: {
-              boxWidth: 12,
+              boxWidth: 10,
             },
           },
           title: {
@@ -107,7 +107,7 @@ $(function () {
       datasets: [ {
         data: assgOtherNum,
         cutout: '80%',
-        borderRadius: [ 10, 5, 0 ],
+        borderRadius: [ 0, 0, 0 ],
         backgroundColor: [
           'rgba(69,113,160, 0.8)',
           'rgba(117,149,184, 0.8)',
@@ -132,7 +132,7 @@ $(function () {
           legend: {
             position: 'bottom',
             labels: {
-              boxWidth: 12,
+              boxWidth: 10,
             },
           },
           title: {

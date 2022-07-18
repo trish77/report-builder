@@ -118,7 +118,7 @@ $alert-color-level: 6;
 $btn-font-weight: normal;
 $btn-primary-color: #fff;
 $btn-default-bg: #fff;
-$btn-default-border: #ccc;
+//$btn-default-border: #ccc;
 $btn-active-box-shadow: inset 0 3px 5px rgba($green, .125);
 $btn-font-size-sm: 14px;
 
@@ -163,6 +163,7 @@ $modal-fade-transform: translateX(-50%);
 $modal-show-transform: translateY(9%);
 $modal-transition: transform .3s ease;
 $modal-scale-transform: scale(1);
+$modal-md: 650px;
 
 $container-max-widths: (
         sm: 540px,
@@ -184,11 +185,11 @@ $grid-breakpoints: (
 $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value") !default;
 
 
-$box-shadow:  0 .5rem 1rem rgba( $gray-800, .075) !default;
+$box-shadow:  0 .15rem 1.5rem rgba( $gray-800, .075) !default;
 $box-shadow-green: 0 .125rem .25rem rgba($green, .075) !default;
 $box-shadow-lg:   0 1rem 3rem rgba($green, .175) !default;
 $box-shadow-inset: inset 0 1px 2px rgba($green, .075) !default;
-//$box-shadow-sm: 0 .13rem .13rem rgba($green, .075);
+$box-shadow-sm: 0 .13rem .13rem rgba($green, .075);
 
 $table-th-font-weight:  500;
 $table-border-color : #f4f4f4;
@@ -239,6 +240,7 @@ $spacers: (
 body {
   background-color: $white !important;
   color: $gray-900 !important;
+  font-weight: 400;
 }
 
 h1, .h1, h2, .h2, h3, .h3 {
@@ -273,6 +275,19 @@ h5 {
   font-size: 14px !important;
   font-weight: 600 !important;
   text-align: left;
+}
+
+#startDate, #endDate {
+  border-left: 0;
+}
+
+#schedule-report  .modal-lg {
+  width: 650px !important;
+}
+
+.modal .nav-pills .nav-link {
+  border-radius: 4px !important;
+  padding:  6px 8px !important;
 }
 
 .col-3 {
@@ -371,32 +386,52 @@ table.dataTable tbody td.dt-checkboxes-cell input[type="radio"]:checked + label:
 
 .btn.btn-white {
   color: $gray-700 !important;
-  background: $white;
-  border: $white;
-  box-shadow:  $box-shadow;
-}
+  background-color: $white;
+  border: none !important;
+  box-shadow:0 0 2px rgba(0, 0, 0, 0.07), 0 1px 1px rgba(0, 0, 0, 0.12) !important;
 
+  &:hover {
+    color: $gray-700 !important;
+    background-color: $white !important;
+    border: none !important;
+    box-shadow:  0 0 2px rgba(0, 0, 0, 0.07), 0 0 1px rgba(0, 0, 0, 0.12) !important;
+  }
+}
 .btn-success-lt {
   color: $gray-700 !important;
   background-color: $success-lt;
-  box-shadow: $box-shadow;
-;
+  box-shadow: none;
 }
 
+.btn-success {
+  background: linear-gradient(288.73deg, #00BA7C 32.67%, #10CA8C 71.76%);;
+
+  &:hover {
+    background: linear-gradient(277.73deg, #00BA7C 32.67%, #10CA8C 71.76%) !important;
+  }
+}
 .btn.btn-light {
   color: $green !important;
   background-color: $white;
-  border-color: $green;
-  box-shadow: $box-shadow;
-}
+  border: 1px solid $green !important;
+  box-shadow: none !important;
 
-.btn-light:hover {
-  background-color: #f9fafb;
-  border-color: #f9fafb;
+  &:hover {
+    color: $green80 !important;
+    background: $white !important;
+    border: 1px solid #AFE3CC !important;
+    box-shadow: none !important;
+  }
 }
 
 .btn.btn-sm {
   padding: 2px;
+}
+
+.btn-close-green:before {
+  content: "×";
+  line-height: 16px;
+  font-size: 20px;
 }
 
 .rounded, .dropdown-menu {
@@ -421,12 +456,12 @@ table.dataTable tbody td.dt-checkboxes-cell input[type="radio"]:checked + label:
 .btn-primary {
   color: $btn-primary-color !important;
   background: $green !important;
-  border: 1px solid $btn-default-border !important;
+  border: none !important;
 
   &:hover {
     color: $btn-primary-color !important;
     background: $green !important;
-    border: 1px solid $btn-default-border !important;
+    border: none !important;
   }
 }
 /*// Default appears as grey
