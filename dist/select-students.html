@@ -101,7 +101,7 @@
         </div>
       </div>
       <div class="d-flex text-end">
-        <a href="assg-progress-report.html"  class="ms-3 btn btn-success fw-semi">
+        <a href="assg-progress-report.html" class="ms-3 btn btn-success fw-semi">
           Load Report
           <i class="text-white icon-arrow ms-1"></i>
         </a>
@@ -110,7 +110,8 @@
   </div>
   <div class="row bg-white align-items-center">
     <div class="col p-0 ms-4 mt-2 mb-1 d-flex align-items-center justify-content-start">
-      <a href="assignment-progress.html" class="text-decoration-none text-secondary link-deco inactive pb-2 me-1">Select assignments</a>
+      <a href="assignment-progress.html"
+         class="text-decoration-none text-secondary link-deco inactive pb-2 me-1">Select assignments</a>
       <i class="text-decoration-none text-secondary icon-arrow pb-2 mx-1"></i>
       <span class="pb-2 text-dark none">Select</span>
       <a href="select-groups.html" class="text-decoration-none inactive link-deco mx-2 pb-2"> Groups</a>
@@ -133,125 +134,165 @@
       <div class="row pe-4">
         <div class="p-0 col">
           <label for="deptName" class="form-label mt-4 ms-3">Department</label>
-            <select multiple="multiple" name="dept" class="dept-select" aria-label="Departments">
-              <option value="1">Accounting</option>
-              <option value="2">Human Resources</option>
-              <option value="3">Legal</option>
-              <option value="4">Business Development</option>
-              <option value="5">Engineering</option>
-              <option value="6">Services</option>
-              <option value="7">Training</option>
-              <option value="8">Product Management</option>
-              <option value="9">Marketing</option>
-              <option value="10">Support</option>
-              <option value="11">MIS</option>
-              <option value="12">InfoSec</option>
-              <option value="13">Research</option>
-              <option value="14">Customer Support</option>
-              <option value="15">Nursing</option>
-              <option value="16">Surgical</option>
-              <option value="17">Maintenance</option>
-              <option value="18">Software Development</option>
-            </select>
+          <select multiple="multiple" id="deptName" name="dept"
+                  class="dept-select" aria-label="Departments">
+            <option value="Dropdown item 1">Montana Bluffs Action Care Ambulance</option>
+            <option value="Dropdown item 2">Mountain View Fire Rescue</option>
+            <option value="Dropdown item 3">West Boulder Main Radiology</option>
+            <option value="Dropdown item 4">LS 117275 Software Analysis & QA</option>
+            <option value="Dropdown item 5">Colorado Southwest Kiowa County Sheriff</option>
+            <option value="Dropdown item 6">Southwest Adams County Fire/Rescue Services </option>
+            <option value="Dropdown item 7">2021 Transition Team Healthy Living Consulting</option>
+            <option value="Dropdown item 8">Penrose-St Francis Health Services</option>
+            <option value="Dropdown item 9">Centura Health Center Services</option>
+            <option value="Dropdown item 10">Denver South Cardiology and Research Associates</option>
+            <option value="Dropdown item 11">Penrose-St Francis Health Services</option>
+            <option value="Dropdown item 12">West Denver Home Health - Telehealth Support</option>
+            <option value="Dropdown item 13">Southwest Cunningham Fire/Rescue Department</option>
+            <option value="Dropdown item 14">Porter Hospital Surgical Staff</option>
+            <option value="Dropdown item 15">	Porter Hospital Staff Nursing</option>
+            <option value="Dropdown item 16">Boulder South Analysis Prosthetics</option>
+            <option value="Dropdown item 17">Flight For Life</option>
+            <option value="Dropdown item 18">Lone Tree Police Rescue</option>
+          </select>
         </div>
       </div>
       <div class="row pe-4">
         <div class="p-0 col">
           <label for="jobTitle" class="form-label mt-4 ms-3">Job title</label>
-            <select multiple="multiple" name="job_title" class="title-select" aria-label="Job Title">
-              <option value="1>">Social Worker</option>
-              <option value="2">Nurse</option>
-              <option value="3">Surgical Nurse</option>
-              <option value="4">Nurse Assistant</option>
-              <option value="5">Office Assistant I</option>
-              <option value="6">Staff Accountant IV</option>
-              <option value="7">Sales Representative</option>
-              <option value="8">Dental Hygienist</option>
-              <option value="9">Recruiter</option>
-              <option value="10">Human Resources Assistant IV</option>
-              <option value="11">Human Resources Manager</option>
-              <option value="12">Food Chemist</option>
-              <option value="13">Senior Sales Associate</option>
-              <option value="14">Assistant Manager</option>
-              <option value="15">Community Outreach Specialist</option>
-              <option value="16">Clinical Specialist</option>
-              <option value="30">Legal Assistant</option>
-              <option value="17">Speech Pathologist</option>
-              <option value="18">Safety Technician III</option>
-              <option value="19">Research Associate</option>
-              <option value="20">Professor</option>
-              <option value="21">Nurse Practicioner</option>
-              <option value="22">Research Nurse</option>
-              <option value="23">Pharmacist</option>
-              <option value="24">Statistician II</option>
-              <option value="25">Environmental Specialist</option>
-              <option value="26">Senior Social Worker</option>
-              <option value="27">Senior Research Nurse</option>
-              <option value="28">Pharmacy Manager</option>
-              <option value="29">Technical Writer</option>
-            </select>
+          <select multiple="multiple" name="job_title" class="title-select" aria-label="Job Title">
+            <option value="1>">Social Worker</option>
+            <option value="2">Nurse</option>
+            <option value="3">Surgical Nurse</option>
+            <option value="4">Nurse Assistant</option>
+            <option value="5">Office Assistant I</option>
+            <option value="6">Staff Accountant IV</option>
+            <option value="7">Sales Representative</option>
+            <option value="8">Dental Hygienist</option>
+            <option value="9">Recruiter</option>
+            <option value="10">Human Resources Assistant IV</option>
+            <option value="11">Human Resources Manager</option>
+            <option value="12">Food Chemist</option>
+            <option value="13">Senior Sales Associate</option>
+            <option value="14">Assistant Manager</option>
+            <option value="15">Community Outreach Specialist</option>
+            <option value="16">Clinical Specialist</option>
+            <option value="30">Legal Assistant</option>
+            <option value="17">Speech Pathologist</option>
+            <option value="18">Safety Technician III</option>
+            <option value="19">Research Associate</option>
+            <option value="20">Professor</option>
+            <option value="21">Nurse Practicioner</option>
+            <option value="22">Research Nurse</option>
+            <option value="23">Pharmacist</option>
+            <option value="24">Statistician II</option>
+            <option value="25">Environmental Specialist</option>
+            <option value="26">Senior Social Worker</option>
+            <option value="27">Senior Research Nurse</option>
+            <option value="28">Pharmacy Manager</option>
+            <option value="29">Technical Writer</option>
+          </select>
         </div>
       </div>
       <div class="row pe-4">
         <div class="p-0 col-12">
           <label for="jobCategory" class="form-label mt-4 ms-3">Job category</label>
-            <select multiple name="job_category" class="category-select" aria-label="Job category">
-              <option value="1">Accounting</option>
-              <option value="2">Human Resources</option>
-              <option value="3">Legal</option>
-              <option value="4">Business Development</option>
-              <option value="17">Engineering</option>
-              <option value="18">Services</option>
-              <option value="5">Training</option>
-              <option value="6">Product Management</option>
-              <option value="7">Marketing</option>
-              <option value="8">Support</option>
-              <option value="9">MIS</option>
-              <option value="10">InfoSec</option>
-              <option value="11">Research</option>
-              <option value="12">Customer Support</option>
-              <option value="13">Nursing</option>
-              <option value="14">Surgical</option>
-              <option value="15">Maintenance</option>
-              <option value="16">Software Development</option>
-            </select>
+          <select multiple name="job_category" class="category-select" aria-label="Job category">
+            <option value="1">Admissions</option>
+            <option value="2">Human Resources</option>
+            <option value="3">Assessment and Referral Staff</option>
+            <option value="4">Athletic Trainer</option>
+            <option value="5">Billing/Coding Personnel</option>
+            <option value="6">Board of Directors or Board Member</option>
+            <option value="7">Cardiovascular Technologist and Technician</option>
+            <option value="8">Chaplain</option>
+            <option value="9">Chemical Dependency Counselor</option>
+            <option value="10">Clinical Engineer</option>
+            <option value="11">Clinical Manager</option>
+            <option value="12">Clinical Technician</option>
+            <option value="13">CNA</option>
+            <option value="14">Surgical</option>
+            <option value="15">Maintenance</option>
+            <option value="16">Dietary</option>
+            <option value="17">Nursing</option>
+            <option value="18">EMT-Basic</option>
+            <option value="19">Facilities Management</option>
+            <option value="20">EMT-Paramedi</option>
+            <option value="21">EMT-Intermediate</option>
+            <option value="22">First Responder</option>
+            <option value="23">Food Preparation Workers</option>
+            <option value="24">Health Information Management</option>
+            <option value="25">Home Health Aide</option>
+            <option value="26">Housekeeping</option>
+            <option value="27">Legal/Risk Management</option>
+            <option value="28">Medical Assistant</option>
+            <option value="29">Medical Interpreter or Translator</option>
+            <option value="30">Medical Transcriptionist</option>
+            <option value="31">Non-clinical Manager</option>
+            <option value="32">Nurse Anesthetist</option>
+            <option value="33">Nurse Manager</option>
+            <option value="34">Nurse Midwife</option>
+            <option value="35">Nurse Practitioner</option>
+            <option value="36">Occupational Therapist</option>
+            <option value="37">Office/Clerical/Administration</option>
+            <option value="38">Orderly/Transporter</option>
+            <option value="39">Other Clinical</option>
+            <option value="40">Other Non-Clinical</option>
+            <option value="41">Personal Care Aide</option>
+            <option value="42">Pharmacy</option>
+            <option value="43">Physician Assistant</option>
+            <option value="44">Psychiatric Aides</option>
+            <option value="45">Quality Improvement</option>
+            <option value="46">Radiology</option>
+            <option value="47">Respiratory Therapist</option>
+            <option value="48">RN - Direct Patient Care</option>
+            <option value="49">RN</option>
+            <option value="50">RN - Non-Direct Patient Care</option>
+            <option value="51">Security</option>
+            <option value="52">Social Worker</option>
+            <option value="53"> Speech-Language Pathologist</option>
+            <option value="54">Therapist</option>
+            <option value="55">Therapy Assistant</option>
+            <option value="56">Utilization Review/Case Manager</option>
+            <option value="57">Vascular Technologist</option>
+            <option value="58">Volunteer</option>
+          </select>
         </div>
       </div>
       <div class="row pe-4">
         <div class="p-0 col">
           <label for="jobFunction" class="form-label mt-4 ms-3">Job function</label>
-            <select multiple="multiple" name="job_function" class="function-select" aria-label="Job function">
-              <option value="1">Accounting</option>
-              <option value="2">Human Resources</option>
-              <option value="3">Legal</option>
-              <option value="4">Business Development</option>
-              <option value="5">Engineering</option>
-              <option value="6">Services</option>
-              <option value="7">Training</option>
-              <option value="8">Product Management</option>
-              <option value="9">Marketing</option>
-              <option value="10">Support</option>
-              <option value="11">MIS</option>
-              <option value="12">InfoSec</option>
-              <option value="13">Research</option>
-              <option value="14">Customer Support</option>
-              <option value="15">Nursing</option>
-              <option value="16">Surgical</option>
-              <option value="17">Maintenance</option>
-              <option value="18">Software Development</option>
-            </select>
+          <select multiple="multiple" name="job_function" class="function-select" aria-label="Job function">
+            <option value="1">ACLS</option>
+            <option value="2">BILLER - MEDICAID</option>
+            <option value="3">BLS</option>
+            <option value="4">CASE MANAGEMENT - ASSISTANT</option>
+            <option value="5">CODING MANAGEMENT</option>
+            <option value="6">E/M CLINIC ASSIGNER</option>
+            <option value="7">FREESTANDING IMAGING BILLING PERSONNEL</option>
+            <option value="8">CODER - IP</option>
+            <option value="9">CODING MANAGER</option>
+            <option value="10">HIM DIRECTOR</option>
+            <option value="11">HIM SPECIALIST</option>
+            <option value="12">INFECTIOUS DISEASE RESPONSE MEMBER</option>
+            <option value="13">LAB EMPLOYEE</option>
+            <option value="14">MANAGER</option>
+            <option value="15">DATA QUALITY</option>
+            <option value="16">NURSE RESIDENT</option>
+            <option value="17">PALS</option>
+          </select>
         </div>
       </div>
       <div class="row pe-4">
         <div class="p-0 col">
           <label for="customFld" class="form-label mt-4 ms-3">Custom field</label>
           <div class="input-group flex-nowrap pe-3 ms-3">
-            <select class="form-select" aria-label="Departments">
+            <select class="form-select" aria-label="Custom Field">
               <option selected></option>
-              <option value="1>">Custom Field option</option>
-              <option value="2">Custom Field option</option>
-              <option value="3">Custom Field option</option>
-              <option value="1>">Custom Field option</option>
+              <option value="1>">Custom Field option 1</option>
+              <option value="2">Custom Field option 2</option>
+              <option value="3">Custom Field option 3</option>
+              <option value="4>">Custom Field option 4</option>
             </select>
           </div>
         </div>
@@ -288,36 +329,32 @@
       </div>
     </div>
     <div class="col-9 p-0">
-      <div class="row bg-white align-items-start">
-        <table id="studentTable" class="table" cellspacing="0" style="width:100%;">
+      <div id="handyWrapper" class="row bg-white align-items-start" data-fl-scrolls>
+        <table id="studentTable" class="table nowrap" cellspacing="0" style="width:100%;">
           <thead>
           <tr>
             <th></th>
             <th>Name</th>
             <th>ID</th>
+            <th>Department</th>
             <th>Job category</th>
             <th>Job title</th>
+            <th>Job function</th>
             <th>Affiliation</th>
+            <th>Created date</th>
+            <th>Hire date</th>
             <th>Last Login</th>
+            <th>Updated on</th>
+            <th>Updated by</th>
           </tr>
           </thead>
-         <tbody></tbody>
+          <tbody></tbody>
         </table>
       </div>
     </div>
   </div>
-  <div class="row iSchedule d-none">
-    <div class="col-12 text-center">
-      <h3 class="change-date-range"></h3>
-      <a href="#schedule-import" data-bs-toggle="modal" data-bs-target="#schedule-import"
-         id="newStudentImportReport"
-         title="Schedule Report"><span class="icon-calendar-plus-o text-primary" style="font-size: 60px"></span>
-        <h3 class="mt-2" style="text-decoration: underline">Choose Migration Date</h3>
-      </a>
-    </div>
-  </div>
-
 </div>
+
 <div id="schedule-import" class="modal fade modal-report" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -375,6 +412,8 @@
     </div>
   </div>
 </div>
+</body>
+</HTML>
 <script>
   var titleSelects = $('.title-select').filterMultiSelect({
     selectAllText: 'select all...',

@@ -1,192 +1,5 @@
+/*
 $(function () {
-
-  var saveChecks = [];
-  var chkCount = 0;
-  var assgTable = $('#assgTable').DataTable({
-    ajax: function ( d, cb ) {
-      fetch('./assgTable.json').then(response => response.json()).then(data => cb(data));
-    },
-    //data: data,
-    paging: true,
-    pageLength: 500,
-    lengthMenu: [ [ 50, 100, 500 - 1 ], [ 50, 100, 500, "All" ] ],
-    info: true,
-    // searching: true,
-    processing: true,
-    responsive: true,
-    scrollY: 600,
-    scrollX: false,
-    scrollCollapse: true,
-    fixedHeader: {
-      header: true,
-      footer: true
-    },
-    dom: '<"d-flex my-2"i>rt<"d-flex my-3"l<"ms-auto"p>>',
-    language: {
-      search: "_INPUT_",
-      info: "Showing _START_ to _END_ of _MAX_ records",
-      searchPlaceholder: "Quick Search",
-      //  lengthMenu: "Show _MENU_ records",
-      paginate: {
-        previous: '<i class="angle-left"></i>',
-        next: '<i class="angle-right"></i>'
-      },
-    },
-    columns: [
-      { data: null },
-      { data: 'assignment' },
-      { data: 'type' },
-      { data: 'affiliation' },
-      { data: 'updated_on' },
-      { data: 'updated_by' }
-    ],
-
-    columnDefs: [ {
-      targets: 0,
-      orderable: false,
-      'render': function ( data, type, row, meta ) {
-        if ( type === 'display' ) {
-          data = '<div class="checkbox form-check"><input type="checkbox" class="dt-checkboxes form-check-input"><label class="form-check-label"></label></div>';
-        }
-
-        return data;
-      },
-      'checkboxes': {
-        'selectRow': true,
-        'selectAllRender': '<div class="checkbox form-check"><input type="checkbox" class="dt-checkboxes form-check-input"><label class="form-check-label"></label></div>'
-      }
-    } ],
-    select: {
-      style: 'multi',
-      selector: 'td:first-child',
-    },
-    order: [ [ 1, 'asc' ] ]
-  });
-
-
-  var groupTable = $('#groupTable').DataTable({
-    ajax: function ( d, cb ) {
-      fetch('./selectGroups.json').then(response => response.json()).then(data => cb(data));
-    },
-    //data: data,
-    paging: true,
-    pageLength: 500,
-    lengthMenu: [ [ 50, 100, 500 - 1 ], [ 50, 100, 500, "All" ] ],
-    info: true,
-    // searching: true,
-    processing: true,
-    responsive: true,
-    scrollY: 600,
-    scrollX: false,
-    scrollCollapse: true,
-    fixedHeader: {
-      header: true,
-      footer: true
-    },
-    dom: '<"d-flex my-2"i>rt<"d-flex my-3"l<"ms-auto"p>>',
-    language: {
-      search: "_INPUT_",
-      info: "Showing _START_ to _END_ of _MAX_ records",
-      searchPlaceholder: "Quick Search",
-      //  lengthMenu: "Show _MENU_ records",
-      paginate: {
-        previous: '<i class="angle-left"></i>',
-        next: '<i class="angle-right"></i>'
-      },
-    },
-    columns: [
-      { data: null },
-      { data: 'group' },
-      { data: 'count' },
-      { data: 'affiliation' },
-      { data: 'updated_on' },
-      { data: 'updated_by' }
-    ],
-
-    columnDefs: [ {
-      targets: 0,
-      orderable: false,
-      'render': function ( data, type, row, meta ) {
-        if ( type === 'display' ) {
-          data = '<div class="checkbox form-check"><input type="checkbox" class="dt-checkboxes form-check-input"><label class="form-check-label"></label></div>';
-        }
-
-        return data;
-      },
-      'checkboxes': {
-        'selectRow': true,
-        'selectAllRender': '<div class="checkbox form-check"><input type="checkbox" class="dt-checkboxes form-check-input"><label class="form-check-label"></label></div>'
-      }
-    } ],
-    select: {
-      style: 'multi',
-      selector: 'td:first-child',
-    },
-    order: [ [ 1, 'asc' ] ]
-  });
-
-
-  var studentTable = $('#studentTable').DataTable({
-    ajax: function ( d, cb ) {
-      fetch('./studentSelect.json').then(response => response.json()).then(data => cb(data));
-    },
-    //data: data,
-    paging: true,
-    pageLength: 500,
-    lengthMenu: [ [ 50, 100, 500 - 1 ], [ 50, 100, 500, "All" ] ],
-    info: true,
-    // searching: true,
-    processing: true,
-    scrollY: 600,
-    scrollX: false,
-    scrollCollapse: true,
-    fixedHeader: {
-      header: true,
-      footer: true
-    },
-    dom: '<"d-flex my-2"i>rt<"d-flex my-3"l<"ms-auto"p>>',
-    language: {
-      search: "_INPUT_",
-      info: "Showing _START_ to _END_ of _MAX_ records",
-      searchPlaceholder: "Quick Search",
-      lengthMenu: "Show _MENU_ records",
-      paginate: {
-        previous: '<i class="angle-left"></i>',
-        next: '<i class="angle-right"></i>'
-      },
-    },
-    responsive: true,
-    columns: [
-      { data: null },
-      { data: 'name' },
-      { data: 'ID' },
-      { data: 'job_category' },
-      { data: 'job_title' },
-      { data: 'affiliation' },
-      { data: 'last_login' }
-    ],
-    columnDefs: [ {
-      targets: 0,
-      orderable: false,
-      'render': function ( data, type, row, meta ) {
-        if ( type === 'display' ) {
-          data = '<div class="checkbox form-check"><input type="checkbox" class="dt-checkboxes form-check-input"><label class="form-check-label"></label></div>';
-        }
-
-        return data;
-      },
-      'checkboxes': {
-        'selectRow': true,
-        'selectAllRender': '<div class="checkbox form-check"><input type="checkbox" class="dt-checkboxes form-check-input"><label class="form-check-label"></label></div>'
-      }
-    } ],
-    select: {
-      style: 'multi',
-      selector: 'td:first-child',
-    },
-    order: [ [ 1, 'asc' ] ]
-  });
-
 
   var data =
     [ {
@@ -3955,10 +3768,10 @@ $(function () {
   //  scrollY: 600,
    // scrollX: true,
   //  scrollCollapse: true,
-   /* fixedHeader: {
+   /!* fixedHeader: {
       header: true,
       footer: false
-    },*/
+    },*!/
     dom: '<"d-flex my-2"B>rt',
     buttons: [
       {
@@ -3974,10 +3787,10 @@ $(function () {
       info: "Showing _START_ to _END_ of _MAX_ records",
       searchPlaceholder: "Quick Search",
      // lengthMenu: "Show _MENU_ records",
-      /*paginate: {
+      /!*paginate: {
         previous: '<i class="angle-left"></i>',
         next: '<i class="angle-right"></i>'
-      },*/
+      },*!/
     },
     // responsive: true,
     order: [ [ 0, 'asc' ] ],
@@ -3996,7 +3809,7 @@ $(function () {
         className: "assgWidth",
       },
       {
-        targets: [ 7, 8, 9, 10, 11 ],
+        targets: [ 7, 8, 9, 10, 11, 12 ],
         visible: false,
       }
     ],
@@ -4177,53 +3990,9 @@ $(function () {
     studentTable.search(this.value).draw();
   });
 
-  $('.group-filter-search').on('keyup change', function () {
-    groupTable.search(this.value).draw();
-  });
 
-  $('.admin-name-search').on('keyup change', function () {
-    groupTable.search(this.value).draw();
-  });
-
-  $('.assg-filter-search').on('keyup change', function () {
-    assgTable.search(this.value).draw();
-  });
-
-  // config navigation
-
-  function getValueChk() {
-    var result = "",
-      assgSelected = document.getElementsByClassName('dt-checkboxes');
-    for ( var i = 0; i < assgSelected.length; i++ ) {
-      if ( assgSelected[ i ].checked ) {
-        console.log("some are checked")
-      }
-    }
-
-
-    let selectAssg = document.getElementById('lnkSelectAssg'),
-      selectGrp = document.getElementById('lnkSelectGrps'),
-      selectStudent = document.getElementById('lnkSelectStudent');
-
-    selectAssg.on('click', function (  )  {
-      console.log("some are checked")
-
-    });
-  }
-
-
-
-  /*document.getElementById("handscrolls-nav").addEventListener("click", ({target}) => {
-    if (target.matches("span:not(.active)")) {
-      Array.from(target.parentNode.children).forEach((span, index) => {
-        let isActive = span === target;
-        span.classList.toggle("active", isActive);
-        handscrolls[index].classList.toggle("active", isActive);
-      });
-      handscrollsContainer.scrollLeft = handscrollsContainer.scrollWidth;
-      // Force widget update programmatically
-      handyScroll.update(handscrollsContainer);
-    }
-  });*/
 
 });
+
+
+*/

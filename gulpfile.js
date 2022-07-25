@@ -66,9 +66,12 @@ gulp.task('vendor:build', function() {
     './assets/js/datatables.min.js',
     './assets/js/e.dataTables.checkboxes.min.js',
     './assets/js/filter-multi-select-bundle.js',
-    './assets/js/handy-scroll.es6.js',
+    './assets/js/jquery.floatingscroll.min.js',
     './assets/js/p-daterangepicker.js',
-    './assets/js/theApp.js',
+    //'./assets/js/tempus-dominus.js',
+    './assets/js/theAssgConfig.js',
+    './assets/js/theAssgReport.js',
+    './assets/js/theStudentGrpConfig.js',
     './assets/js/theCharts.js',
     './assets/js/theFilters.js'
   ])

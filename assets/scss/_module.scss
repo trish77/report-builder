@@ -425,34 +425,15 @@
   }
 }
 
-// multi-selects filter
 
-/*!
- *  Multiple select dropdown with filter jQuery plugin.
- *  Copyright (C) 2022  Andrew Wagner  github.com/andreww1011
- *
- *  This library is free software; you can redistribute it and/or
- *  modify it under the terms of the GNU Lesser General Public
- *  License as published by the Free Software Foundation; either
- *  version 2.1 of the License, or (at your option) any later version.
- *
- *  This library is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- *  Lesser General Public License for more details.
- *
- *  You should have received a copy of the GNU Lesser General Public
- *  License along with this library; if not, write to the Free Software
- *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301
- *  USA
- */
 :root {
-  --fms-badge-text-color: #fff;
-  --fms-badge-color: #00BA7C
+  --fms-badge-text-color: #3E5359;
+  --fms-badge-color: #F0F1F1;
 }
 
 .placeholder {
   background-color: transparent !important;
+  font-size: .85rem;
 }
 
 .custom-control {
@@ -497,7 +478,7 @@
 
 .filter-multi-select > .viewbar {
   white-space: normal;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 400;
   height: auto;
   cursor: pointer;
@@ -505,11 +486,19 @@
   width: 94%;
 }
 
+/*
+.filter-multi-select > .viewbar > .selected-items {
+  width: 210px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+*/
+
 .filter-multi-select > .viewbar > .selected-items > .item {
   margin: .125rem .25rem .125rem 0;
   padding: 0px 0px 0px .5em;
   display: inline-flex;
-  height: 1.875em;
+  height: inherit;
   color: var(--fms-badge-text-color);
   background-color: var(--fms-badge-color);
   border-radius: .25rem;
@@ -650,8 +639,8 @@
 
 .filter-multi-select .dropdown-item .custom-checkbox:checked ~ .custom-control-label::before,
 .filter-multi-select .dropdown-item .custom-checkbox:indeterminate ~ .custom-control-label::before {
-  border-color: var(--fms-badge-color);
-  background-color: var(--fms-badge-color);
+  border-color: var(--bs-green);
+  background-color: var(--bs-green);
 }
 
 .filter-multi-select .dropdown-item .custom-checkbox:checked:disabled ~ .custom-control-label::before,
@@ -688,23 +677,23 @@ div.dataTables_processing {
   top: 24% !important
 }
 
-.dataTables_scrollBody::-webkit-scrollbar {
-  width: 12px;
+.fl-scrolls::-webkit-scrollbar {
+  width: 10px;
 }
 
 .dataTables_scrollBody::-webkit-scrollbar-track {
   background: #ffffff;
 }
 
-.dataTables_scrollBody::-webkit-scrollbar-thumb {
+.fl-scrolls::-webkit-scrollbar-thumb {
   background-color: rgba(var(--bs-fade-blue-rgb), var(--bs-bg-opacity)) !important;
   border-radius: 10px;
-  border: 3px solid #ffffff;
+  border: 2px solid #ffffff;
 }
 
 .scrollbar-width-thin {
   scrollbar-width: thin;
-  width: 12px;
+  width: 10px;
 }
 
 div.dataTables_processing > div:last-child > div {
@@ -740,7 +729,7 @@ div.dataTables_processing > div:last-child > div {
 .btn-close-green {
   border: none !important;
   color: #00BA7C;
-  background-color: transparent !important;
+  background-color: inherit !important;
   width: 15px !important;
   height: 15px !important;
 }
@@ -950,6 +939,10 @@ div.dt-button-collection div.dropdown-menu {
 }
 
 // handy scrollbar
+
+#handyWrapper {
+  overflow: hidden;
+}
 
 .fl-scrolls {
   overflow: auto;

@@ -6,14 +6,30 @@ $(document).ready(function () {
   var end = moment();
 
   function cb( start, end ) {
-    $('.datePick span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
+    $('.datePick span').html(start.format('M/D/YYYY') + ' - ' + end.format('M/D/YYYY'));
   }
 
-  $('.datePick, .datePickEff').daterangepicker({
+  $('.datePick').daterangepicker({
     startDate: start,
     endDate: end,
+    autoUpdateInput: false,
+    //autoApply: false,
     locale: {
       format: 'M/DD/YYYY'
+    },
+    "alwaysShowCalendars": true
+  }, function(start, end, label) {
+    console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+  });
+
+  $('.datePickEff').daterangepicker({
+    startDate: start,
+    endDate: end,
+    autoUpdateInput: false,
+    //autoApply: false,
+    locale: {
+      format: 'M/DD/YYYY',
+      cancelLabel: 'Clear'
     },
     ranges: {
       'Today': [ moment() ],
@@ -27,18 +43,24 @@ $(document).ready(function () {
     }
   });
 
-  $('.datePick').on('.apply.daterangepicker', function ( ev, picker ) {
-    $('.datePick span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+  $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+    $(this).val(picker.startDate.format('M/DD/YYYY') + ' - ' + picker.endDate.format('M/DD/YYYY'));
+  });
+
+  $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+    $(this).val('');
   });
 
   $('.datePickEff').on('.apply.daterangepicker', function ( ev, picker ) {
-    $('.datePickEff span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+    $('.datePickEff span').html(start.format('M D, YYYY') + ' - ' + end.format('M D, YYYY'));
   });
 
 
-  $('#startDate, #endDate').daterangepicker({
+  $('#startDate, #endDate, .datePickEnd').daterangepicker({
     startDate: start,
     endDate: end,
+    showDropdowns: true,
+    autoUpdateInput: false,
     "singleDatePicker": true,
     "autoApply": true,
     locale: {
@@ -49,13 +71,29 @@ $(document).ready(function () {
     console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
   });
 
+  $('.datePickEnd').on('.apply.daterangepicker', function ( ev, picker ) {
+    $('.datePickEnd span').html(start.format('M/D/YYYY') + ' - ' + end.format('M/D/YYYY'));
+  });
+
+  $('.datePick').on('.apply.daterangepicker', function ( ev, picker ) {
+    $('.datePick span').html(start.format('M/D/YYYY') + ' - ' + end.format('M/D/YYYY'));
+  });
+
+  //modal datepickers
   $('#startDate').on('.apply.daterangepicker', function ( ev, picker ) {
-    $('#startDate span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
+    $('#startDate span').html(start.format('M/D/YYYY') + ' - ' + end.format('M/D/YYYY'));
   });
 
   $('#endDate').on('.apply.daterangepicker', function ( ev, picker ) {
-    $('#startDate span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
+    $('#endDate span').html(start.format('M/D/YYYY') + ' - ' + end.format('M/D/YYYY'));
   });
+
+ 
+
+
+
+
+
 });
 
 

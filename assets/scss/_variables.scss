@@ -115,7 +115,7 @@ $alert-bg-level: -10;
 $alert-border-level: -8;
 $alert-color-level: 6;
 
-$btn-font-weight: normal;
+$btn-font-weight: 600;
 $btn-primary-color: #fff;
 $btn-default-bg: #fff;
 //$btn-default-border: #ccc;
@@ -254,6 +254,114 @@ h5 {
   font-size: 1rem !important;
 }
 
+
+.dropdown-item {
+  color: $gray-700 !important;
+  font-size: 13px !important;
+}
+
+.btn-outline-secondary {
+  color: #6c757d;
+  border-color: #dee2e6;
+}
+
+.nav-link {
+  font-size: .89rem;
+  color: $gray-700;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.btn {
+  border-radius: 4px;
+  color: $white !important;
+}
+
+.btn.btn-white {
+  color: $gray-700 !important;
+  background-color: $white;
+  border: none !important;
+  box-shadow: $green !important;
+
+  &:hover {
+    color: $gray-700 !important;
+    background-color: $white !important;
+    border: none !important;
+    box-shadow:  0 0 2px rgba(0, 0, 0, 0.07), 0 0 1px rgba(0, 0, 0, 0.12) !important;
+  }
+}
+.btn-success-lt {
+  color: $gray-700 !important;
+  background-color: $success-lt;
+  box-shadow: none;
+}
+
+.btn-success {
+  background: linear-gradient(288.73deg, #00BA7C 32.67%, #10CA8C 71.76%);;
+
+  &:hover {
+    background: linear-gradient(277.73deg, #00BA7C 32.67%, #10CA8C 71.76%) !important;
+  }
+}
+.btn.btn-light {
+  color: $green !important;
+  background-color: $white;
+  border: 1px solid $green !important;
+  box-shadow: none !important;
+
+  &:hover {
+    color: $green80 !important;
+    background: $white !important;
+    border: 1px solid #AFE3CC !important;
+    box-shadow: none !important;
+  }
+}
+
+.btn.btn-sm {
+  padding: 2px;
+}
+
+.btn-close-green:before {
+  content: "×";
+  line-height: 16px;
+  font-size: 20px;
+}
+
+.rounded, .dropdown-menu {
+  border-radius: .5rem !important;
+  border-color: $white !important;
+}
+
+.collapse:not(.show) {
+  display: none !important;
+}
+
+.dropdown-menu {
+  font-size: 14px;
+  --bs-dropdown-min-width: inherit !important;
+  padding: .5rem !important;
+  color: #0C272F !important;
+  min-width: inherit!important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 5px 20px rgba(0, 0, 0, 0.04), 0px 1px 4px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04) !important;
+}
+
+.dropdown-menu-end[data-bs-popper] {
+  right: 0 !important;
+  left: auto;
+}
+
+.btn-primary {
+  color: $btn-primary-color !important;
+  background: $green !important;
+  border: none !important;
+
+  &:hover {
+    color: $btn-primary-color !important;
+    background: $green !important;
+    border: none !important;
+  }
+}
+
 .table th {
   color: $gray-700 !important;
   font-size: 12px !important;
@@ -312,13 +420,11 @@ hr {
   border-color: $white !important;
 }
 
-/*
 .form-check-input:focus {
   border-color: $green !important;
   outline: 0;
-  box-shadow: 0 0 0.2 0.2rem rgba($form-select-focus-box-shadow,$input-btn-focus-color-opacity) !important;
+  box-shadow: ($form-select-focus-box-shadow,$input-btn-focus-color-opacity) !important;
 }
-*/
 
 .form-check-input:checked[type=checkbox] {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e") !important;
@@ -328,7 +434,7 @@ hr {
 
 table.dataTable thead th.dt-checkboxes-select-all:first-of-type .form-check.checkbox{
   margin-left: 4px !important;
-  margin-top: 6px !important;
+  margin-top: -4px !important;
 }
 
 table.dataTable.dt-checkboxes-select tbody tr,
@@ -362,108 +468,8 @@ table.dataTable tbody td.dt-checkboxes-cell input[type="radio"]:checked + label:
   }
 }
 
-.dropdown-item {
-  color: $gray-700 !important;
-  font-size: 13px !important;
-}
 
-.btn-outline-secondary {
-  color: #6c757d;
-  border-color: #dee2e6;
-}
 
-.nav-link {
-  font-size: .89rem;
-  color: $gray-700;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-.btn {
-  border-radius: 4px;
-  color: $white !important;
-}
-
-.btn.btn-white {
-  color: $gray-700 !important;
-  background-color: $white;
-  border: none !important;
-  box-shadow:0 0 2px rgba(0, 0, 0, 0.07), 0 1px 1px rgba(0, 0, 0, 0.12) !important;
-
-  &:hover {
-    color: $gray-700 !important;
-    background-color: $white !important;
-    border: none !important;
-    box-shadow:  0 0 2px rgba(0, 0, 0, 0.07), 0 0 1px rgba(0, 0, 0, 0.12) !important;
-  }
-}
-.btn-success-lt {
-  color: $gray-700 !important;
-  background-color: $success-lt;
-  box-shadow: none;
-}
-
-.btn-success {
-  background: linear-gradient(288.73deg, #00BA7C 32.67%, #10CA8C 71.76%);;
-
-  &:hover {
-    background: linear-gradient(277.73deg, #00BA7C 32.67%, #10CA8C 71.76%) !important;
-  }
-}
-.btn.btn-light {
-  color: $green !important;
-  background-color: $white;
-  border: 1px solid $green !important;
-  box-shadow: none !important;
-
-  &:hover {
-    color: $green80 !important;
-    background: $white !important;
-    border: 1px solid #AFE3CC !important;
-    box-shadow: none !important;
-  }
-}
-
-.btn.btn-sm {
-  padding: 2px;
-}
-
-.btn-close-green:before {
-  content: "×";
-  line-height: 16px;
-  font-size: 20px;
-}
-
-.rounded, .dropdown-menu {
-  border-radius: .5rem !important;
-  border-color: $white !important;
-}
-
-.dropdown-menu {
-  font-size: 14px;
-    --bs-dropdown-min-width: inherit !important;
-  padding: .5rem !important;
-  color: #0C272F !important;
-  min-width: inherit!important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 5px 20px rgba(0, 0, 0, 0.04), 0px 1px 4px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04) !important;
-}
-
-.dropdown-menu-end[data-bs-popper] {
-  right: 0 !important;
-  left: auto;
-}
-
-.btn-primary {
-  color: $btn-primary-color !important;
-  background: $green !important;
-  border: none !important;
-
-  &:hover {
-    color: $btn-primary-color !important;
-    background: $green !important;
-    border: none !important;
-  }
-}
 /*// Default appears as grey
 .btn-default {
   color: $btn-default-color !important;
