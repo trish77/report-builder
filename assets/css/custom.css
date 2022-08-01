@@ -2961,6 +2961,12 @@ a#assgLink.dropdown-toggle.text-decoration-none::after {
   width: 400px;
 }
 
+#assgDrop.dropdown-menu.show[aria-labelledby=assgLink] .filter-multi-select.dropdown .dropdown-menu.show .filter.dropdown-item button {
+  float: left;
+  left: -18px;
+  font-size: 16px;
+  right: 0;
+}
 #assgDrop.dropdown-menu.show[aria-labelledby=assgLink] .filter-multi-select.dropdown .dropdown-menu.show .items.dropdown-item {
   margin-left: 25px;
 }
@@ -2975,20 +2981,6 @@ a#assgLink.dropdown-toggle.text-decoration-none::after {
 .dt-button-collection {
   -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04) !important;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04) !important;
-}
-
-.filter-multi-select .dropdown-menu .filter {
-  padding-left: 0.5rem;
-}
-.filter-multi-select .dropdown-menu .filter input {
-  width: 280px;
-}
-.filter-multi-select .dropdown-menu .filter button {
-  font-size: 16px;
-  right: 8 rem !important;
-}
-.filter-multi-select .dropdown-menu .items .dropdown-item {
-  padding-left: 8rem !important;
 }
 
 .dropdown-toggle::after {
@@ -3764,7 +3756,7 @@ div.dt-button-collection div.dropdown-menu {
 }
 
 .dt-button-collection a.buttons-columnVisibility:not(.active):before {
-  content: "\e901";
+  content: "\e903";
   font-family: "report-icons";
   margin-top: -3px;
   margin-left: 12px;
@@ -3792,7 +3784,7 @@ div.dt-button-collection div.dropdown-menu {
 
 .buttons-collection.dropdown-toggle:before {
   font-family: "report-icons";
-  content: "\e90e";
+  content: "\e910";
   margin-right: 5px;
 }
 

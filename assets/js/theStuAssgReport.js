@@ -744,25 +744,7 @@ $(function () {
   } );
 
 
-  var assgSelects = $('.assg-select').filterMultiSelect({
-    selectAllText: 'select all...',
-    placeholderText: 'Select Assignments(s)',
-    filterText: 'Search',
-    //labelText: 'Shapes',
-    caseSensitive: false,
-  });
 
-  var myCollapsible = document.getElementById('assCompletionReport')
-  myCollapsible.addEventListener('shown.bs.collapse', function () {
-  var toggleIcon = document.getElementById('toggleIcon');
-    toggleIcon.classList.remove('angle-right' );
-    toggleIcon.classList.add('angle-down');
-  });
-  myCollapsible.addEventListener('hidden.bs.collapse', function () {
-    var toggleIcon = document.getElementById('toggleIcon');
-    toggleIcon.classList.remove('angle-down' );
-    toggleIcon.classList.add('angle-right');
-  })
 
 
 });
