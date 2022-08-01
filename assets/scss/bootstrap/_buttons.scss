@@ -67,8 +67,8 @@
   &:active,
   &.active,
   &.show {
-    color: var(--#{$variable-prefix}btn-active-color);
-    background-color: var(--#{$variable-prefix}btn-active-bg);
+   // color: var(--#{$variable-prefix}btn-active-color);
+  //  background-color: var(--#{$variable-prefix}btn-active-bg);
     // Remove CSS gradients if they're enabled
     background-image: if($enable-gradients, none, null);
     border-color: var(--#{$variable-prefix}btn-active-border-color);

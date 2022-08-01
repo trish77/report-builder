@@ -88,9 +88,6 @@ $(document).ready(function () {
     $('#endDate span').html(start.format('M/D/YYYY') + ' - ' + end.format('M/D/YYYY'));
   });
 
- 
-
-
 
 
 

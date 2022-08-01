@@ -103,9 +103,9 @@
       </div>
     </div>
     <div class="col p-0 d-flex justify-content-end">
-      <div class="d-flex text-end3">
+      <div id="moreWrapper" class="d-flex text-end">
         <div class="dropdown">
-          <button id="moreBtn" class="btn btn-light dropdown-toggle fw-semi"
+          <button id="moreBtn" class="btn btn-lt dropdown-toggle fw-semi"
                   data-bs-toggle="dropdown" aria-expanded="false">
             More
           </button>
@@ -119,12 +119,10 @@
       </div>
       <div class="d-flex text-end">
         <div class="btn-group">
-          <button type="button" class="btn btn-primary ms-3">
-            <i class="text-decoration-none text-white icon-share mx-1"></i> Export
-          </button>
           <button id="exportBtn"
-                  class="btn btn-primary me-2 border-start border-white dropdown-toggle dropdown-toggle-split fw-semi"
+                  class="btn btn-success me-2 ms-3 dropdown-toggle dropdown-toggle-split fw-semi"
                   data-bs-toggle="dropdown" aria-expanded="false">
+            Export
             <span class="visually-hidden">Toggle Dropdown</span>
           </button>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="exportBtn" style="width: 150px!important;">
@@ -138,7 +136,7 @@
   </div>
   <div class="row">
     <div class="col my-3 mx-3 p-0 mb-0 d-flex align-items-center justify-content-start">
-      <i class="text-decoration-none text-success angle-right mx-1"></i>
+      <i id="toggleIcon" class="text-decoration-none text-success angle-right mx-1"></i>
       <a class="text-secondary text-decoration-none text-xsmall" data-bs-toggle="collapse"
          data-bs-target="#assCompletionReport" role="button" aria-expanded="false"
          aria-controls="assCompletionReport">REPORT SUMMARY</a>
@@ -245,8 +243,8 @@
           <li><a class="dropdown-item" href="#">Report</a></li>
           <li><a class="dropdown-item" href="#">All Acme assignments</a></li>
           <hr>
-          <li><a class="dropdown-item text-success" data-bs-toggle="modal" data-bs-target="#savedReports"
-                 href="#savedReports">Save current report</a></li>
+          <li><a class="dropdown-item text-success" data-bs-toggle="modal" data-bs-target="#saveReport"
+                 href="#saveReport">Save current report</a></li>
         </ul>
       </div>
       <div class="dropdown">
@@ -263,7 +261,7 @@
           <ul class="dropdown-menu" aria-labelledby="filterBy" style="right:0">
             <li class="dropdown-item">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="chkDept" checked>
+                <input class="form-check-input" type="checkbox" value="" id="chkDept">
                 <label class="form-check-label" for="chkDept">
                   Department
                 </label>
@@ -271,17 +269,89 @@
             </li>
             <li class="dropdown-item">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="chkJobTitle">
-                <label class="form-check-label" for="chkJobTitle">
-                  Job Title
+                <input class="form-check-input" type="checkbox" value="" id="chkStudent">
+                <label class="label" for="chkStudent">
+                  Student
                 </label>
               </div>
             </li>
             <li class="dropdown-item">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="chkJobCategory">
-                <label class="form-check-label" for="chkJobCategory">
-                  Job Category
+                <input class="form-check-input" type="checkbox" value="" id="chkStatus">
+                <label class="label" for="chkStatus">
+                  Assignment Status
+                </label>
+              </div>
+            </li>
+            <li class="dropdown-item">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="chkAssignment">
+                <label class="form-check-label" for="chkAssignment">
+                  <div class="dropdown">
+                    <a class="dropdown-toggle text-decoration-none" href="#" role="button" id="assgLink"
+                       data-bs-auto-close="false"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                      Assignment
+                    </a>
+                    <div id="assgDrop" class="dropdown-menu" aria-labelledby="assgLink">
+                      <select multiple="multiple" name="assignment" class="assg-select" aria-label="Assignment">
+                        <option value="1">Pathological dislocation of ankle and foot, not elsewhere classified</option>
+                        <option value="2">Brown-Sequard syndrome at T2-T6 level of thoracic spinal cord</option>
+                        <option value="3">Spontaneous rupture of flexor tendons, right hand</option>
+                        <option value="4">Drowning and submersion due to being washed overboard from other unpowered watercraft, initial encounter</option>
+                        <option value="5">Brown-Sequard syndrome at T2-T6 level of thoracic spinal cord</option>
+                        <option value="6">Spontaneous rupture of flexor tendons, right hand</option>
+                        <option value="7">Pathological dislocation of ankle and foot, not elsewhere classified</option>
+                        <option value="8">Brown-Sequard syndrome at T2-T6 level of thoracic spinal cord</option>
+                        <option value="9">Spontaneous rupture of flexor tendons, right hand</option>
+                        <option value="10">Pathological dislocation of ankle and foot, not elsewhere classified</option>
+                        <option value="11">Brown-Sequard syndrome at T2-T6 level of thoracic spinal cord</option>
+                        <option value="12">Spontaneous rupture of flexor tendons, right hand</option>
+                        <option value="13">Pathological dislocation of ankle and foot, not elsewhere classified</option>
+                        <option value="14">Brown-Sequard syndrome at T2-T6 level of thoracic spinal cord</option>
+                        <option value="15">Spontaneous rupture of flexor tendons, right hand</option>
+                        <option value="16">Pathological dislocation of ankle and foot, not elsewhere classified</option>
+                        <option value="17">Brown-Sequard syndrome at T2-T6 level of thoracic spinal cord</option>
+                        <option value="18">Spontaneous rupture of flexor tendons, right hand</option>
+                        <option value="19">Pathological dislocation of ankle and foot, not elsewhere classified</option>
+                        <option value="20">Brown-Sequard syndrome at T2-T6 level of thoracic spinal cord</option>
+                        <option value="21">Spontaneous rupture of flexor tendons, right hand</option>
+                        <option value="22">Pathological dislocation of ankle and foot, not elsewhere classified</option>
+                        <option value="23">Brown-Sequard syndrome at T2-T6 level of thoracic spinal cord</option>
+                        <option value="24">Spontaneous rupture of flexor tendons, right hand</option>
+                        <option value="25">Pathological dislocation of ankle and foot, not elsewhere classified</option>
+                        <option value="26">Brown-Sequard syndrome at T2-T6 level of thoracic spinal cord</option>
+                        <option value="27">Spontaneous rupture of flexor tendons, right hand</option>
+                        <option value="28">Pathological dislocation of ankle and foot, not elsewhere classified</option>
+                        <option value="29">Brown-Sequard syndrome at T2-T6 level of thoracic spinal cord</option>
+                        <option value="30">Spontaneous rupture of flexor tendons, right hand</option>
+                      </select>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </li>
+            <li class="dropdown-item">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="chkDueDate">
+                <label class="form-check-label" for="chkDueDate">
+                  Due date
+                </label>
+              </div>
+            </li>
+            <li class="dropdown-item">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="chkCompletionDate">
+                <label class="form-check-label" for="chkCompletionDate">
+                  Completion date
+                </label>
+              </div>
+            </li>
+            <li class="dropdown-item">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="chkStuEmail">
+                <label class="form-check-label" for="chkStuEmail">
+                  Student Email
                 </label>
               </div>
             </li>
@@ -295,49 +365,33 @@
             </li>
             <li class="dropdown-item">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="chkAssignment">
-                <label class="form-check-label" for="chkAssignment">
-                  Assignment
+                <input class="form-check-input" type="checkbox" value="" id="chkMgrEmail">
+                <label class="form-check-label" for="chkMgrEmail">
+                  Manager Email
                 </label>
               </div>
             </li>
             <li class="dropdown-item">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="chkStudentGroup">
-                <label class="form-check-label" for="chkStudentGroup">
-                  Student Group
+                <input class="form-check-input" type="checkbox" value="" id="chkLearningItem">
+                <label class="form-check-label" for="chkLearningItem">
+                  Learning Item
                 </label>
               </div>
             </li>
             <li class="dropdown-item">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="chkAssignmentVis">
-                <label class="form-check-label" for="chkAssignmentVis">
-                  Assignment visibility
+                <input class="form-check-input" type="checkbox" value="" id="chkEffDate">
+                <label class="form-check-label" for="chkEffDate">
+                  Effective Date
                 </label>
               </div>
             </li>
             <li class="dropdown-item">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="chkAssignmentEndDate">
-                <label class="form-check-label" for="chkAssignmentEndDate">
-                  Assignment end date
-                </label>
-              </div>
-            </li>
-            <li class="dropdown-item">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="chkAssignmentGolive">
-                <label class="form-check-label" for="chkAssignmentGolive">
-                  Assignment go-live date
-                </label>
-              </div>
-            </li>
-            <li class="dropdown-item">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="chkCompletiondate">
-                <label class="form-check-label" for="chkCompletiondate">
-                  Completion date
+                <input class="form-check-input" type="checkbox" value="" id="chkGoLiveDate">
+                <label class="form-check-label" for="chkGoLiveDate">
+                  Go Live Date date
                 </label>
               </div>
             </li>
@@ -349,22 +403,6 @@
                 </label>
               </div>
             </li>
-            <li class="dropdown-item">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="chkLearningItem">
-                <label class="form-check-label" for="chkLearningItem">
-                  Learning item
-                </label>
-              </div>
-            </li>
-            <li class="dropdown-item">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="chkStudent">
-                <label class="label" for="chkStudent">
-                  Student
-                </label>
-              </div>
-            </li>
           </ul>
         </div>
       </div>
@@ -372,44 +410,115 @@
         <div class="btn-group btn-success-lt me-2">
           <a href="groupDept" id="groupDept" class="btn btn-success-lt dropdown-toggle pe-1" data-bs-toggle="dropdown"
              data-bs-auto-close="outside" aria-expanded="false">
-            <i class="text-decoration-none text-success icon-filter mx-1"></i>
+            <i class="text-decoration-none text-success icon-group mx-1"></i>
             <span style="color: #3E5359; font-weight: bolder;">
             Grouped by
           </span>
             Department
           </a>
           <button type="button" class="btn-close-green pt-2 me-3" aria-label="Close"></button>
-          <div class="dropdown-menu" aria-labelledby="savedReportBtn" style="right:0">
-            <div class="input-group d-flex align-items-center mb-3">
-              <i class="text-decoration-none text-success icon-menu mx-1"></i>
-              <select name="dept" class="form-select" aria-label="Departments">
-                <option value="1">Department</option>
-                <option value="2">Human Resources</option>
-                <option value="3">Legal</option>
-                <option value="4">Business Development</option>
-                <option value="5">Engineering</option>
-                <option value="6">Services</option>
-                <option value="7">Training</option>
-                <option value="8">Product Management</option>
-                <option value="9">Marketing</option>
-                <option value="10">Support</option>
-                <option value="11">MIS</option>
-                <option value="12">InfoSec</option>
-                <option value="13">Research</option>
-                <option value="14">Customer Support</option>
-                <option value="15">Nursing</option>
-                <option value="16">Surgical</option>
-                <option value="17">Maintenance</option>
-                <option value="18">Software Development</option>
-              </select>
-              <i class="text-decoration-none text-success icon-clear mx-1"></i>
+          <div class="dropdown-menu" aria-labelledby="groupDept" style="right:0">
+              <ul>
+                <li class="dropdown-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="chkDept">
+                    <label class="form-check-label" for="chkDept">
+                      Department
+                    </label>
+                  </div>
+                </li>
+                <li class="dropdown-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="chkStudent">
+                    <label class="label" for="chkStudent">
+                      Student
+                    </label>
+                  </div>
+                </li>
+                <li class="dropdown-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="chkStatus">
+                    <label class="label" for="chkStatus">
+                      Assignment Status
+                    </label>
+                  </div>
+                </li>
+                <li class="dropdown-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="chkDueDate">
+                    <label class="form-check-label" for="chkDueDate">
+                      Due date
+                    </label>
+                  </div>
+                </li>
+                <li class="dropdown-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="chkCompletionDate">
+                    <label class="form-check-label" for="chkCompletionDate">
+                      Completion date
+                    </label>
+                  </div>
+                </li>
+                <li class="dropdown-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="chkStuEmail">
+                    <label class="form-check-label" for="chkStuEmail">
+                      Student Email
+                    </label>
+                  </div>
+                </li>
+                <li class="dropdown-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="chkManager">
+                    <label class="form-check-label" for="chkManager">
+                      Manager
+                    </label>
+                  </div>
+                </li>
+                <li class="dropdown-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="chkMgrEmail">
+                    <label class="form-check-label" for="chkMgrEmail">
+                      Manager Email
+                    </label>
+                  </div>
+                </li>
+                <li class="dropdown-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="chkLearningItem">
+                    <label class="form-check-label" for="chkLearningItem">
+                      Learning Item
+                    </label>
+                  </div>
+                </li>
+                <li class="dropdown-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="chkEffDate">
+                    <label class="form-check-label" for="chkEffDate">
+                      Effective Date
+                    </label>
+                  </div>
+                </li>
+                <li class="dropdown-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="chkGoLiveDate">
+                    <label class="form-check-label" for="chkGoLiveDate">
+                      Go Live Date date
+                    </label>
+                  </div>
+                </li>
+                <li class="dropdown-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="chkAssignmenttype">
+                    <label class="form-check-label" for="chkAssignmenttype">
+                      Assignment type
+                    </label>
+                  </div>
+                </li>
+              </ul>
             </div>
-            <hr>
-            <div>
-              <a href="" class="text-success text-decoration-none">Add another group</a>
             </div>
           </div>
-        </div>
       </div>
     </div>
     <div class="row bg-white mt-4 align-items-start">
@@ -438,7 +547,6 @@
       </div>
     </div>
   </div>
-
   <div id="saveReport" class="modal fade" tabindex="-1" aria-labelledby="saveReport" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -478,7 +586,7 @@
             <!-- Text input-->
             <div class="modal-footer">
               <div class="pull-left">
-                <button class="btn btn-light" id="closeBtn" data-bs-dismiss="modal">Cancel</button>
+                <button class="btn btn-lt" id="closeBtn" data-bs-dismiss="modal">Cancel</button>
                 <button type="submit" id="saveBtn2" class="btn btn-success align-items-end">Save</button>
               </div>
             </div>
@@ -642,7 +750,7 @@
           </form>
           <div class="modal-footer">
             <div class="pull-left">
-              <button class="btn btn-light" id="closeBtn" data-bs-dismiss="modal">Cancel</button>
+              <button class="btn btn-lt" id="closeBtn" data-bs-dismiss="modal">Cancel</button>
               <button type="submit" id="saveBtn2" class="btn btn-success align-items-end"> Schedule Report</button>
             </div>
           </div>
@@ -651,11 +759,6 @@
     </div>
   </div>
   <script>
-    /*  let handscrollsContainer = document.getElementById("handyWrapper");
-     handscrollsContainer.scrollLeft = handscrollsContainer.scrollWidth;
-
-     // Widget initialization
-     handyScroll.mount(handscrollsContainer);*/
   </script>
 </body>
 </HTML>

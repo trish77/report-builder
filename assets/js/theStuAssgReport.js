@@ -723,6 +723,46 @@ $(function () {
 // end assg progress report
 
 
+  $('#assgLink').on('click', function ( e ) {
+    e.stopPropagation();
+    var selectedChk = $('#chkAssignment, #chkAssignment').prop('checked', true);
+  });
+
+  $('#assgDrop').on('click', function ( e ) {
+    e.stopPropagation();
+    e.preventDefault();
+    var multiDrop = $(this).find('.viewbar.dropdown-toggle');
+    multiDrop.attr('data-bs-auto-close', false);
+    var assgDropDrop = $(this).children().children().find('.dropdown-menu');
+    assgDropDrop.toggleClass('show');
+  });
+
+  var filtersSearch = $('#assgDrop').find('.dropdown-menu.show:first-child');
+  filtersSearch.on('input', function ( e ) {
+    e.preventDefault();
+    e.stopPropagation();
+  } );
+
+
+  var assgSelects = $('.assg-select').filterMultiSelect({
+    selectAllText: 'select all...',
+    placeholderText: 'Select Assignments(s)',
+    filterText: 'Search',
+    //labelText: 'Shapes',
+    caseSensitive: false,
+  });
+
+  var myCollapsible = document.getElementById('assCompletionReport')
+  myCollapsible.addEventListener('shown.bs.collapse', function () {
+  var toggleIcon = document.getElementById('toggleIcon');
+    toggleIcon.classList.remove('angle-right' );
+    toggleIcon.classList.add('angle-down');
+  });
+  myCollapsible.addEventListener('hidden.bs.collapse', function () {
+    var toggleIcon = document.getElementById('toggleIcon');
+    toggleIcon.classList.remove('angle-down' );
+    toggleIcon.classList.add('angle-right');
+  })
 
 
 });

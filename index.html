@@ -188,9 +188,12 @@
             <li class="nav-item"><a href="#" class="nav-link active bg-success">Standard Reports</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Custom Reports</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Analytics</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Control Centers</a></li>
           </ul>
         </div>
+        <ul class="me-3 nav align-items-center">
+          <li class="nav-item"><a href="#" class="nav-link"><i class="settings m-0" ></i> Settings</a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><i class="help-circle m-0"></i> Help</a></li>
+      </ul>
         <div class="dropdown me-3 nav-item align-items-center">
           <a href="#" class="dropdown-toggle nav-link d-flex align-items-center justify-content-center m-0 p-0"
              id="dropdown04" data-toggle="dropdown" aria-expanded="false">
@@ -226,17 +229,17 @@
           <use xlink:href="#icon-calendar-mark"></use>
         </svg>
         Scheduled Reports
-        <i class="text-success  icon-arrow ms-1"></i>
+        <i class="text-success icon-arrow ms-1"></i>
       </a>
     </div>
   </div>
   <div class="row mt-3">
     <div class="col ms-3 d-flex align-items-center text-start">
-      <h6>ASSIGNMENT PROGRESS</h6>
+      <h6> PROGRESS REPORTS</h6>
     </div>
   </div>
   <div class="row shadow-sm rounded bg-white d-flex align-items-start mx-3 mb-3">
-    <div class="col-3 ms-3 pt-2 my-2 border-end">
+    <div class="col-3 pt-2 my-2 border-end">
       <a class="text-decoration-none" href="assignment-progress.html">
         <h5 class="h5">
           <svg class="svg icon-assignment me-2">
@@ -254,41 +257,63 @@
           <svg class="svg icon-list-bullets me-2">
             <use xlink:href="#icon-list-bullets"></use>
           </svg>
-          Assignment Structure
+          Learning Item Progress
           <i class="ms-1 text-success icon-arrow"></i>
         </h5>
       </a>
-      <p class="">The list of all available assignments and corresponding metadata.</p>
+      <p class="">Completion status of selected learning items. Includes both assigned and elective completion..</p>
     </div>
     <div class="col-3 pt-2 border-end my-2">
       <a href="" class="text-decoration-none">
         <h5 class="h5">
-        <svg class="svg icon-script me-2">
-          <use xlink:href="#icon-script"></use>
-        </svg>Learning Assignment Summary
+        <svg class="svg icon-nine-to-five me-2">
+          <use xlink:href="#icon-nine-to-five"></use>
+        </svg>Learning Activity Progress
         <i class="ms-1 text-success icon-arrow"></i>
       </h5>
       </a>
-      <p class="">The list of all learning items that have not been assigned.</p>
+      <p class="">Progress on selected learning activities.</p>
     </div>
-  </div>
-  <div class="row mt-3">
-    <div class="col ms-3 d-flex align-items-center text-start">
-      <h6>COURSE REPORTS</h6>
-    </div>
-  </div>
-  <div class="row shadow-sm rounded bg-white d-flex align-items-start mx-3 mb-3">
-    <div class="col-3 pt-2 ms-3 my-2 border-end">
-      <a href="#" class="text-decoration-none">
+    <div class="col-3 pt-2 my-2">
+      <a href="" class="text-decoration-none">
         <h5 class="h5">
-          <svg class="svg icon-clipboard-check me-2">
-            <use xlink:href="#icon-clipboard-check"></use>
-          </svg>
-          Course Completion
+          <svg class="svg icon-nine-to-five me-2">
+            <use xlink:href="#icon-nine-to-five"></use>
+          </svg>Class Progress
           <i class="ms-1 text-success icon-arrow"></i>
         </h5>
       </a>
-      <p class="">Check if selected students completed specified courses.</p>
+      <p class="">Enrollment and registration status, attendance of selected course's classes.</p>
+    </div>
+    <div class="col-3 pt-2 my-2">
+      <a href="" class="text-decoration-none">
+        <h5 class="h5">
+          <svg class="svg icon-nine-to-five me-2">
+            <use xlink:href="#icon-nine-to-five"></use>
+          </svg>Curriculum Progress
+          <i class="ms-1 text-success icon-arrow"></i>
+        </h5>
+      </a>
+      <p class="">The list of students that satisfy selected criteria.</p>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col ms-3 d-flex align-items-center text-start">
+      <h6>PEOPLE REPORTS</h6>
+    </div>
+  </div>
+  <div class="row shadow-sm rounded bg-white d-flex align-items-start mx-3 mb-3">
+    <div class="col-3 pt-2 my-2 border-end">
+      <a href="#" class="text-decoration-none">
+        <h5 class="h5">
+          <svg class="svg icon-user-check me-2">
+            <use xlink:href="#icon-user-check"></use>
+          </svg>
+          Student and Group Transcript
+          <i class="ms-1 text-success icon-arrow"></i>
+        </h5>
+      </a>
+      <p class="">Completed courses and CE credits of selected students.</p>
     </div>
     <div class="col-3 pt-2 border-end my-2">
       <a href="#" class="text-decoration-none">
@@ -296,11 +321,11 @@
           <svg class="svg icon-nine-to-five me-2">
             <use xlink:href="#icon-nine-to-five"></use>
           </svg>
-          Learning Progress
+          Class Summary
           <i class="ms-1 text-success icon-arrow"></i>
         </h5>
       </a>
-      <p class="">See the list and corresponding metadata for all available assignments.</p>
+      <p class="">General information about selected classes, includes contacts and sign-in sheet.</p>
     </div>
     <div class="col-3 pt-2 my-2 border-end">
       <a href="" class="text-decoration-none">
@@ -308,42 +333,30 @@
           <svg class="svg icon-graph-bar me-2">
             <use xlink:href="#icon-graph-bar"></use>
           </svg>
-          Course Activity
+          Instructor Resume
           <i class="ms-1 text-success icon-arrow"></i>
         </h5>
       </a>
-      <p class="">The list of all learning items that have not been assigned.</p>
-    </div>
-    <div class="col-3 pt-2 my-2">
-      <a href="" class="text-decoration-none">
-        <h5 class="h5">
-          <svg class="svg icon-clipboard-check me-2">
-            <use xlink:href="#icon-clipboard-check"></use>
-          </svg>
-          Course Evaluation Scores
-          <i class="ms-1 text-success icon-arrow"></i>
-        </h5>
-      </a>
-      <p class="">See if selected students completed specified courses.</p>
+      <p class="">Resume of selected instructors, includes qualified courses and classes taught.</p>
     </div>
   </div>
-  <div class="row mt-3">
+  <div class="row mt-5">
     <div class="col ms-3 d-flex align-items-center text-start">
-      <h6>CLASS REPORTS</h6>
+      <h6>LISTING REPORTS</h6>
     </div>
   </div>
   <div class="row shadow-sm rounded bg-white d-flex align-items-start mb-3 mx-3">
-    <div class="col-3 pt-2 ms-3 border-end my-3">
+    <div class="col-3 pt-2 border-end my-3">
       <a href="#" class="text-decoration-none">
         <h5 class="h5">
           <svg class="svg icon-user-edit me-2">
             <use xlink:href="#icon-user-edit"></use>
           </svg>
-          Class Roster and Sign-up Sheet
+          Assignment Listing
           <i class="ms-1 text-success icon-arrow"></i>
         </h5>
       </a>
-      <p class="">See a list of students and their contacts in a selected class.</p>
+      <p class="">All available assignments. See what learning items have been assigned.</p>
     </div>
     <div class="col-3 pt-2 border-end my-3">
       <a href="#" class="text-decoration-none">
@@ -351,7 +364,7 @@
           <svg class="svg icon-user-check me-2">
             <use xlink:href="#icon-user-check"></use>
           </svg>
-          Class Registration Status
+          Learning Item Listing
           <i class="ms-1 text-success icon-arrow"></i>
         </h5>
       </a>
@@ -363,16 +376,64 @@
           <svg class="svg icon-calendar-mark me-2">
             <use xlink:href="#icon-calendar-mark"></use>
           </svg>
-          Upcoming Classes
+          Discipline Listing
           <i class="ms-1 text-success icon-arrow"></i>
         </h5>
       </a>
-      <p class="">The list of all learning items that have been assigned.</p>
+      <p class="">All available listings.</p>
+    </div>
+    <div class="col-3 pt-2 border-end my-3">
+      <a href="" class="text-decoration-none">
+        <h5 class="h5">
+          <svg class="svg icon-calendar-mark me-2">
+            <use xlink:href="#icon-calendar-mark"></use>
+          </svg>
+          Class Listing
+          <i class="ms-1 text-success icon-arrow"></i>
+        </h5>
+      </a>
+      <p class="">All available classes. Includes grading status, time and location, instructors.</p>
+    </div>
+    <div class="col-3 pt-2 border-end my-3">
+      <a href="" class="text-decoration-none">
+        <h5 class="h5">
+          <svg class="svg icon-calendar-mark me-2">
+            <use xlink:href="#icon-calendar-mark"></use>
+          </svg>
+          Student Listing
+          <i class="ms-1 text-success icon-arrow"></i>
+        </h5>
+      </a>
+      <p class="">The list of students that satisfy selected criteria.</p>
+    </div>
+    <div class="col-3 pt-2 border-end my-3">
+      <a href="" class="text-decoration-none">
+        <h5 class="h5">
+          <svg class="svg icon-calendar-mark me-2">
+            <use xlink:href="#icon-calendar-mark"></use>
+          </svg>
+          Group Listing
+          <i class="ms-1 text-success icon-arrow"></i>
+        </h5>
+      </a>
+      <p class="">The list of all student groups and included students.</p>
+    </div>
+    <div class="col-3 pt-2 border-end my-3">
+      <a href="" class="text-decoration-none">
+        <h5 class="h5">
+          <svg class="svg icon-calendar-mark me-2">
+            <use xlink:href="#icon-calendar-mark"></use>
+          </svg>
+          Curriculum Listing
+          <i class="ms-1 text-success icon-arrow"></i>
+        </h5>
+      </a>
+      <p class="">All available curricula.</p>
     </div>
   </div>
-  <div class="row mt-3 ">
+  <div class="row mt-5">
     <div class="col ms-3 d-flex align-items-center text-start">
-      <h6>PEOPLE REPORTS</h6>
+      <h6>TEST REPORTS</h6>
     </div>
   </div>
   <div class="row shadow-sm rounded bg-white d-flex align-items-start mb-3 mx-3">
@@ -382,11 +443,11 @@
           <svg class="svg icon-book-edit me-2">
             <use xlink:href="#icon-calendar-mark"></use>
           </svg>
-          Student and Group Transcripts
+          Test Structure
           <i class="ms-1 text-success icon-arrow"></i>
         </h5>
       </a>
-      <p class="">See the courses each student have completed.</p>
+      <p class="">Questions and metadata of selected test.</p>
     </div>
     <div class="col-3 pt-2 border-end my-3">
       <a href="#" class="text-decoration-none">
@@ -394,11 +455,11 @@
           <svg class="svg icon-user-profile me-2">
             <use xlink:href="#icon-user-profile"></use>
           </svg>
-          Student Listing
+          Test Analysis
           <i class="ms-1 text-success icon-arrow"></i>
         </h5>
       </a>
-      <p class="">See if selected students have registered for a specified class.</p>
+      <p class="">Answer distribution and the most problematic questions of selected tests.</p>
     </div>
     <div class="col-3 pt-2 border-end my-3">
       <a href="" class="text-decoration-none">
@@ -406,24 +467,30 @@
           <svg class="svg icon-security-shield me-2">
             <use xlink:href="#icon-security-shield"></use>
           </svg>
-          Role Utilization
+          Test results
           <i class="ms-1 text-success icon-arrow"></i>
         </h5>
       </a>
-      <p>The list of all learning items that have not been assigned.</p>
+      <p>Test scores and answers of selected students</p>
     </div>
-    <div class="row d-flex align-items-start">
+  </div>
+  <div class="row mt-5">
+    <div class="col ms-3 d-flex align-items-center text-start">
+      <h6>EVALUATION REPORTS</h6>
+    </div>
+  </div>
+  <div class="row shadow-sm rounded bg-white d-flex align-items-start mb-3 mx-3">
       <div class="col-3 pt-2 ms-3 border-end my-3">
         <a href="" class="text-decoration-none">
           <h5 class="h5">
             <svg class="svg icon-warning me-2">
               <use xlink:href="#icon-warning"></use>
             </svg>
-            Expiring Licenses
+            Evaluation Structure
             <i class="ms-1 text-success icon-arrow"></i>
           </h5>
         </a>
-        <p class="">The list of all learning items that have not been assigned.</p>
+        <p class="">Questions and metadata of selected test.</p>
       </div>
       <div class="col-3 pt-2 border-end my-3">
         <a href="" class="text-decoration-none">
@@ -431,13 +498,89 @@
             <svg class="svg icon-favorite-award me-2">
               <use xlink:href="#icon-favorite-award"></use>
             </svg>
-            Expiring Certifications
+            Test Analysis
             <i class="ms-1 text-success icon-arrow"></i>
           </h5>
         </a>
-        <p class="">The list of all learning items that have not been assigned.</p>
+        <p class="">Answer distribution of selected evaluations</p>
       </div>
     </div>
+
+  <div class="row mt-5">
+    <div class="col ms-3 d-flex align-items-center text-start">
+      <h6>ROLE AND FEATURE REPORTS</h6>
+    </div>
   </div>
+  <div class="row shadow-sm rounded bg-white d-flex align-items-start mb-3 mx-3">
+    <div class="col-3 pt-2 ms-3 border-end my-3">
+      <a href="" class="text-decoration-none">
+        <h5 class="h5">
+          <svg class="svg icon-warning me-2">
+            <use xlink:href="#icon-warning"></use>
+          </svg>
+          Roles and Features
+          <i class="ms-1 text-success icon-arrow"></i>
+        </h5>
+      </a>
+      <p class="">Features of selected roles.</p>
+    </div>
+    <div class="col-3 pt-2 border-end my-3">
+      <a href="" class="text-decoration-none">
+        <h5 class="h5">
+          <svg class="svg icon-favorite-award me-2">
+            <use xlink:href="#icon-favorite-award"></use>
+          </svg>
+          Role & Feature Assignment
+          <i class="ms-1 text-success icon-arrow"></i>
+        </h5>
+      </a>
+      <p class="">Roles of selected users.</p>
+    </div>
+  </div>
+
+<div class="row mt-5">
+  <div class="col ms-3 d-flex align-items-center text-start">
+    <h6>LICENSE AND CERTIFICATION REPORTS</h6>
+  </div>
+</div>
+<div class="row shadow-sm rounded bg-white d-flex align-items-start mb-3 mx-3">
+  <div class="col-3 pt-2 ms-3 border-end my-3">
+    <a href="" class="text-decoration-none">
+      <h5 class="h5">
+        <svg class="svg icon-warning me-2">
+          <use xlink:href="#icon-warning"></use>
+        </svg>
+        Student License
+        <i class="ms-1 text-success icon-arrow"></i>
+      </h5>
+    </a>
+    <p class="">Licenses of selected students.</p>
+  </div>
+  <div class="col-3 pt-2 border-end my-3">
+    <a href="" class="text-decoration-none">
+      <h5 class="h5">
+        <svg class="svg icon-favorite-award me-2">
+          <use xlink:href="#icon-favorite-award"></use>
+        </svg>
+        Student Certification
+        <i class="ms-1 text-success icon-arrow"></i>
+      </h5>
+    </a>
+    <p class="">Certifications of selected students.</p>
+  </div>
+  <div class="col-3 pt-2 border-end my-3">
+    <a href="" class="text-decoration-none">
+      <h5 class="h5">
+        <svg class="svg icon-favorite-award me-2">
+          <use xlink:href="#icon-favorite-award"></use>
+        </svg>
+        Course Certification
+        <i class="ms-1 text-success icon-arrow"></i>
+      </h5>
+    </a>
+    <p class="">Certifications of selected courses.</p>
+  </div>
+</div>
+</div>
 
 </HTML>

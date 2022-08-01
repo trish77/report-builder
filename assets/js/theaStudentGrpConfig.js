@@ -124,7 +124,8 @@ $(function () {
         'selectRow': true,
         'selectAllRender': '<div class="checkbox form-check"><input type="checkbox" class="dt-checkboxes form-check-input"><label class="form-check-label"></label></div>'
       }
-    } ],
+    }
+    ],
     select: {
       style: 'multi',
       selector: 'td:first-child',
@@ -146,8 +147,6 @@ $(function () {
   $('.admin-name-search').on('keyup change', function () {
     groupTable.search(this.value).draw();
   });
-
-  var deptSelect = new Choices('#deptName', { allowSearch: false })
 
 
 });
