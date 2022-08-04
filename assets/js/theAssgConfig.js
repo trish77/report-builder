@@ -7,31 +7,22 @@ $(function () {
       fetch('./assignments.json').then(response => response.json()).then(data => cb(data));
     },
     //data: data,
-    paging: true,
+    // paging: true,
     pageLength: 500,
-    lengthMenu: [ [ 50, 100, 500 - 1 ], [ 50, 100, 500, "All" ] ],
-    info: true,
+    // lengthMenu: [ [ 50, 100, 500 - 1 ], [ 50, 100, 500, "All" ] ],
+    // info: true,
+    colReorder: true,
     searching: true,
     processing: true,
     responsive: true,
     scrollY: 600,
-    scrollX: false,
-    scrollCollapse: true,
+    //scrollX: false,
+    //scrollCollapse: true,
     fixedHeader: {
       header: true,
-      footer: true
+      //footer: true
     },
-    dom: '<"d-flex my-2"i>rt<"d-flex my-3"l<"ms-auto"p>>',
-    language: {
-      search: "_INPUT_",
-      info: "Showing _START_ to _END_ of _MAX_ records",
-      searchPlaceholder: "Quick Search",
-      //lengthMenu: "Show _MENU_ records",
-      paginate: {
-        previous: '<i class="angle-left"></i>',
-        next: '<i class="angle-right"></i>'
-      },
-    },
+    dom: '<"d-flex my-2">rt',
     columns: [
       { data: null },
       { data: 'assignments' },
@@ -68,17 +59,14 @@ $(function () {
 
   // config navigation
 
-    var filterCol = $('#filterCol').find('.form-control'),
-        tableCol = $('#dataCol'),
-        chksSelect = $('.form-check-input[name=filterColChk]'),
-        secondLevel = $(".secondLevel");
-   $(tableCol).click(function(){
-     if(!$(event.target).is(filterCol, chksSelect))
-    {
-     secondLevel.removeClass('d-none');
-    }
-    else
-    {
+  var filterCol = $('#filterCol').find('.form-control'),
+    tableCol = $('#dataCol'),
+    chksSelect = $('.form-check-input[name=filterColChk]'),
+    secondLevel = $(".secondLevel");
+  $(tableCol).click(function () {
+    if ( !$(event.target).is(filterCol, chksSelect) ) {
+      secondLevel.removeClass('d-none');
+    } else {
       return false;
     }
   });
@@ -87,5 +75,11 @@ $(function () {
     assgTable.search(this.value).draw();
   });
 
-
+  $('#sidebarCollapse').on('click', function () {
+    $('#filterCol').toggleClass('active');
+    $('#dataCol').toggleClass('col-12');
+    assgTable.columns.adjust().draw();
+  });
 });
+
+

@@ -97,6 +97,117 @@ $theme-colors: map-merge(
   $theme-colors
 );
 
+$blue-100: tint-color($blue, 10%) !default;
+$blue-200: tint-color($blue, 20%) !default;
+$blue-300: tint-color($blue, 30%) !default;
+$blue-400: tint-color($blue, 40%) !default;
+$blue-500: $blue !default;
+$blue-600: shade-color($blue, 60%) !default;
+$blue-700: shade-color($blue, 70%) !default;
+$blue-800: shade-color($blue, 80%) !default;
+$blue-900: shade-color($blue, 90%) !default;
+
+$pink-100: tint-color($pink, 10%) !default;
+$pink-200: tint-color($pink, 20%) !default;
+$pink-300: tint-color($pink, 30%) !default;
+$pink-400: tint-color($pink, 40%) !default;
+$pink-500: $pink !default;
+$pink-600: shade-color($pink, 60%) !default;
+$pink-700: shade-color($pink, 70%) !default;
+$pink-800: shade-color($pink, 80%) !default;
+$pink-900: shade-color($pink, 90%) !default;
+
+$green-100: tint-color($green, 10%) !default;
+$green-200: tint-color($green, 20%) !default;
+$green-300: tint-color($green, 30%) !default;
+$green-400: tint-color($green, 40%) !default;
+$green-500: $green !default;
+$green-600: shade-color($green, 60%) !default;
+$green-700: shade-color($green, 70%) !default;
+$green-800: shade-color($green, 80%) !default;
+$green-900: shade-color($green, 90%) !default;
+
+$red-100: tint-color($red, 10%) !default;
+$red-200: tint-color($red, 20%) !default;
+$red-300: tint-color($red, 30%) !default;
+$red-400: tint-color($red, 40%) !default;
+$red-500: $red !default;
+$red-600: shade-color($red, 60%) !default;
+$red-700: shade-color($red, 70%) !default;
+$red-800: shade-color($red, 80%) !default;
+$red-900: shade-color($red, 90%) !default;
+
+$orange-100: tint-color($orange, 10%) !default;
+$orange-200: tint-color($orange, 20%) !default;
+$orange-300: tint-color($orange, 30%) !default;
+$orange-400: tint-color($orange, 40%) !default;
+$orange-500: $orange !default;
+$orange-600: shade-color($orange, 60%) !default;
+$orange-700: shade-color($orange, 70%) !default;
+$orange-800: shade-color($orange, 80%) !default;
+$orange-900: shade-color($orange, 90%) !default;
+
+$blues: (
+        "blue-100": $blue-100,
+        "blue-200": $blue-200,
+        "blue-300": $blue-300,
+        "blue-400": $blue-400,
+        "blue-500": $blue-500,
+        "blue-600": $blue-600,
+        "blue-700": $blue-700,
+        "blue-800": $blue-800,
+        "blue-900": $blue-900
+) !default;
+
+
+$pinks: (
+        "pink-100": $pink-100,
+        "pink-200": $pink-200,
+        "pink-300": $pink-300,
+        "pink-400": $pink-400,
+        "pink-500": $pink-500,
+        "pink-600": $pink-600,
+        "pink-700": $pink-700,
+        "pink-800": $pink-800,
+        "pink-900": $pink-900
+) !default;
+
+$greens: (
+        "green-100": $green-100,
+        "green-200": $green-200,
+        "green-300": $green-300,
+        "green-400": $green-400,
+        "green-500": $green-500,
+        "green-600": $green-600,
+        "green-700": $green-700,
+        "green-800": $green-800,
+        "green-900": $green-900
+) !default;
+
+$reds: (
+        "red-100": $red-100,
+        "red-200": $red-200,
+        "red-300": $red-300,
+        "red-400": $red-400,
+        "red-500": $red-500,
+        "red-600": $red-600,
+        "red-700": $red-700,
+        "red-800": $red-800,
+        "red-900": $red-900
+) !default;
+
+$oranges: (
+        "orange-100": $orange-100,
+        "orange-200": $orange-200,
+        "orange-300": $orange-300,
+        "orange-400": $orange-400,
+        "orange-500": $orange-500,
+        "orange-600": $orange-600,
+        "orange-700": $orange-700,
+        "orange-800": $orange-800,
+        "orange-900": $orange-900
+) !default;
+
 $border-width: 1px;
 $border-widths: (
         1: 1px,
@@ -142,7 +253,14 @@ $form-check-input-width: 1.4em;
 $form-label-color: $gray-800;
 $form-label-font-weight: 600;
 
+$form-feedback-invalid-color: $pink-200;
+$form-feedback-valid-color:  $green;
+
 $component-active-bg: $green;
+
+//$tooltip-color: $white;
+$tooltip-bg: $gray-800;
+$tooltip-border-radius: 8px;
 
 $dropdown-border-radius: .5rem;
 $dropdown-border-width: $border-width;
@@ -281,11 +399,21 @@ h5 {
   border-color: #dee2e6;
 }
 
+.nav.nav-tabs {
+  border-bottom: none;
+}
+
 .nav-link {
   font-size: .89rem;
-  color: $gray-700;
+  color: $gray-700 !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+}
+
+.nav-link.active {
+  border: none;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.07), 0px 1px 1px rgba(0, 0, 0, 0.12);
+  border-radius: 4px 4px 0 0;
 }
 
 
@@ -294,6 +422,13 @@ h5 {
   color: $white !important;
 }
 
+.btn:disabled:hover, #saveChangesBtn:disabled:hover {
+  cursor: not-allowed !important;
+}
+
+.btn:disabled, .btn.disabled, fieldset:disabled .btn {
+  pointer-events: inherit;
+}
 .btn.btn-white {
   color: $gray-700 !important;
   background-color: $white;
@@ -309,7 +444,7 @@ h5 {
 }
 
 #exportBtn:before {
-  content: "\e92c";
+  content: "\e936";
   font-family: "report-icons";
   margin-right: 10px;
 }
@@ -457,6 +592,14 @@ h5 {
   text-align: left;
 }
 
+.was-validated .form-control:invalid, .form-control.is-invalid {
+  background-color: #FFEAE6;
+}
+
+input:-internal-autofill-selected {
+  background-color: $green40 !important;
+}
+
 #startDate, #endDate {
   border-left: 0;
 }
@@ -530,6 +673,10 @@ table.dataTable tbody td.dt-checkboxes-cell input[type="radio"]:checked + label:
   background-color: $green;
   border: $green;
   opacity: .8;
+}
+
+#assgReport_wrapper table.dataTable thead>tr>th:hover {
+  cursor: move;
 }
 
 @media screen and (max-width: 640px) {

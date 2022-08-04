@@ -552,6 +552,46 @@ a#assgLink.dropdown-toggle.text-decoration-none::after {
   padding-left: 1.5rem;
 }
 
+.half-circle {
+  width: 22px !important;
+  background-color: #e2e2e2;
+  color: $gray-600;
+  position: absolute;
+  top: 10px;
+  left: -14px;
+  height: 40px;
+  text-decoration: none;
+  border: none;
+  border-radius: 0 8rem 10rem 0;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+#filterCol {
+  min-width: 300px;
+  max-width: 300px;
+  min-height: 100vh;
+}
+
+#filterCol.active {
+  margin-left: -320px;
+}
+
+
+.selectStudents #hireDate.input-group-text,
+.selectStudents #activeDate.input-group-text,
+.selectStudents #reviewDate.input-group-text {
+  padding-right: inherit !important;
+}
+
+.selectStudents .input-group-text {
+  padding-right: 4px !important;
+}
+
 .filter-multi-select.dropup, .filter-multi-select.dropdown {
   position: relative;
 }
@@ -671,6 +711,7 @@ a#assgLink.dropdown-toggle.text-decoration-none::after {
   border: 0;
   background-color: transparent;
   font-weight: 900;
+  font-size: 16px;
   color: #ccc;
   right: 2rem;
   top: 1rem;
@@ -683,7 +724,7 @@ a#assgLink.dropdown-toggle.text-decoration-none::after {
 .filter-multi-select .dropdown-item {
   display: block;
   width: 100%;
-  padding: 0.25rem 1.5rem;
+  padding: 0.25rem .85rem;
   clear: both;
   font-weight: 400;
   color: #212529;
@@ -879,7 +920,7 @@ div.dt-button-collection div.dropdown-menu {
 }
 
 .dt-button-collection a.buttons-columnVisibility:not(.active):before {
-  content: '\e903';
+  content: '\e917';
   font-family: 'report-icons';
   margin-top: -3px;
   margin-left: 12px;
@@ -888,7 +929,7 @@ div.dt-button-collection div.dropdown-menu {
 
 .dt-button.dropdown-item.buttons-columnVisibility.active span:before,
 .dt-button-collection a.buttons-columnVisibility.active span:before {
-  content: '\e902' !important;
+  content: '\e918' !important;
   font-family: 'report-icons';
   font-size: 18px;
   margin-top: -3px;
@@ -907,10 +948,11 @@ div.dt-button-collection div.dropdown-menu {
 
 .buttons-collection.dropdown-toggle:before {
   font-family: "report-icons";
-  content: "\e910";
+  content: "\e924";
   margin-right: 5px
 }
 
+.no-arrow.dropdown-toggle::after,
 #savedReportBtn:after,
 #filterBy:after, #groupDept:after,
 .buttons-collection.dropdown-toggle:after {
@@ -923,12 +965,6 @@ div.dt-button-collection div.dropdown-menu {
 }
 
 // charts
-
-#assgCompleted, #assgPast, #assgOther {
-
-
-}
-
 #assgOtherWrapper, #assgPastWrapper, #assgCompletedWrapper {
   width: 272px !important;
   height: 260px !important;

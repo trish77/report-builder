@@ -505,7 +505,6 @@ $(function () {
   var assgReport = $('#assgReport').DataTable({
     colReorder: true,
     pageLength: 500,
-    info: true,
     searching: true,
     processing: true,
     dom: '<"d-flex my-2"B>rt',

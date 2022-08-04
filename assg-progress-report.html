@@ -66,13 +66,16 @@
             <li class="nav-item"><a href="#" class="nav-link active bg-success">Standard Reports</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Custom Reports</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Analytics</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Control Centers</a></li>
           </ul>
         </div>
+        <ul class="me-3 nav align-items-center">
+          <li class="nav-item"><a href="#" class="nav-link"><i class="Settings m-0"></i> Settings</a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><i class="Help m-0"></i> Help</a></li>
+        </ul>
         <div class="dropdown me-3 nav-item align-items-center">
           <a href="#" class="dropdown-toggle nav-link d-flex align-items-center justify-content-center m-0 p-0"
              id="dropdown04" data-toggle="dropdown" aria-expanded="false">
-            <i class="icon-user m-0" style="font-size: 30px!important;"></i>
+            <i class="user-md m-0" style="font-size: 30px!important;"></i>
             <b class="caret"></b>
           </a>
           <div class="dropdown-menu dropdown-menu-right" style="top: 42px;right: 0;" aria-labelledby="dropdown04">
@@ -116,6 +119,11 @@
                    href="#saveReport">Save current report</a></li>
           </ul>
         </div>
+      </div>
+      <div id="saveChanges" class="d-flex ms-3 d-none text-end">
+        <button id="saveChangesBtn" disabled class="btn btn-lt fw-semi">
+          Save Changes
+        </button>
       </div>
       <div class="d-flex text-end">
         <div class="btn-group">
@@ -408,7 +416,7 @@
       </div>
       <div class="dropdown">
         <div class="btn-group btn-success-lt me-2">
-          <a href="groupDept" id="groupDept" class="btn btn-success-lt dropdown-toggle pe-1" data-bs-toggle="dropdown"
+          <a href="#groupDept" class="btn btn-success-lt no-arrow dropdown-toggle pe-1" data-bs-toggle="dropdown"
              data-bs-auto-close="outside" aria-expanded="false">
             <i class="text-decoration-none text-success icon-group mx-1"></i>
             <span style="color: #3E5359; font-weight: bolder;">
@@ -417,369 +425,400 @@
             Department
           </a>
           <button type="button" class="btn-close-green pt-2 me-3" aria-label="Close"></button>
-          <div class="dropdown-menu" aria-labelledby="groupDept" style="right:0">
-              <ul>
-                <li class="dropdown-item">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="chkDept">
-                    <label class="form-check-label" for="chkDept">
-                      Department
-                    </label>
-                  </div>
-                </li>
-                <li class="dropdown-item">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="chkStudent">
-                    <label class="label" for="chkStudent">
-                      Student
-                    </label>
-                  </div>
-                </li>
-                <li class="dropdown-item">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="chkStatus">
-                    <label class="label" for="chkStatus">
-                      Assignment Status
-                    </label>
-                  </div>
-                </li>
-                <li class="dropdown-item">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="chkDueDate">
-                    <label class="form-check-label" for="chkDueDate">
-                      Due date
-                    </label>
-                  </div>
-                </li>
-                <li class="dropdown-item">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="chkCompletionDate">
-                    <label class="form-check-label" for="chkCompletionDate">
-                      Completion date
-                    </label>
-                  </div>
-                </li>
-                <li class="dropdown-item">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="chkStuEmail">
-                    <label class="form-check-label" for="chkStuEmail">
-                      Student Email
-                    </label>
-                  </div>
-                </li>
-                <li class="dropdown-item">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="chkManager">
-                    <label class="form-check-label" for="chkManager">
-                      Manager
-                    </label>
-                  </div>
-                </li>
-                <li class="dropdown-item">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="chkMgrEmail">
-                    <label class="form-check-label" for="chkMgrEmail">
-                      Manager Email
-                    </label>
-                  </div>
-                </li>
-                <li class="dropdown-item">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="chkLearningItem">
-                    <label class="form-check-label" for="chkLearningItem">
-                      Learning Item
-                    </label>
-                  </div>
-                </li>
-                <li class="dropdown-item">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="chkEffDate">
-                    <label class="form-check-label" for="chkEffDate">
-                      Effective Date
-                    </label>
-                  </div>
-                </li>
-                <li class="dropdown-item">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="chkGoLiveDate">
-                    <label class="form-check-label" for="chkGoLiveDate">
-                      Go Live Date date
-                    </label>
-                  </div>
-                </li>
-                <li class="dropdown-item">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="chkAssignmenttype">
-                    <label class="form-check-label" for="chkAssignmenttype">
-                      Assignment type
-                    </label>
-                  </div>
-                </li>
-              </ul>
-            </div>
+          <div class="dropdown-menu" id="groupDept" aria-labelledby="groupDept" style="right:0">
+            <ul>
+              <li class="dropdown-item">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="chkDept">
+                  <label class="form-check-label" for="chkDept">
+                    Department
+                  </label>
+                </div>
+              </li>
+              <li class="dropdown-item">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="chkStudent">
+                  <label class="label" for="chkStudent">
+                    Student
+                  </label>
+                </div>
+              </li>
+              <li class="dropdown-item">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="chkStatus">
+                  <label class="label" for="chkStatus">
+                    Assignment Status
+                  </label>
+                </div>
+              </li>
+              <li class="dropdown-item">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="chkDueDate">
+                  <label class="form-check-label" for="chkDueDate">
+                    Due date
+                  </label>
+                </div>
+              </li>
+              <li class="dropdown-item">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="chkCompletionDate">
+                  <label class="form-check-label" for="chkCompletionDate">
+                    Completion date
+                  </label>
+                </div>
+              </li>
+              <li class="dropdown-item">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="chkStuEmail">
+                  <label class="form-check-label" for="chkStuEmail">
+                    Student Email
+                  </label>
+                </div>
+              </li>
+              <li class="dropdown-item">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="chkManager">
+                  <label class="form-check-label" for="chkManager">
+                    Manager
+                  </label>
+                </div>
+              </li>
+              <li class="dropdown-item">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="chkMgrEmail">
+                  <label class="form-check-label" for="chkMgrEmail">
+                    Manager Email
+                  </label>
+                </div>
+              </li>
+              <li class="dropdown-item">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="chkLearningItem">
+                  <label class="form-check-label" for="chkLearningItem">
+                    Learning Item
+                  </label>
+                </div>
+              </li>
+              <li class="dropdown-item">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="chkEffDate">
+                  <label class="form-check-label" for="chkEffDate">
+                    Effective Date
+                  </label>
+                </div>
+              </li>
+              <li class="dropdown-item">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="chkGoLiveDate">
+                  <label class="form-check-label" for="chkGoLiveDate">
+                    Go Live Date date
+                  </label>
+                </div>
+              </li>
+              <li class="dropdown-item">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="chkAssignmenttype">
+                  <label class="form-check-label" for="chkAssignmenttype">
+                    Assignment type
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row bg-white mt-4 align-items-start">
+    <div class="col">
+      <div id="handyWrapper" class="row bg-white align-items-start" data-fl-scrolls>
+        <table id="assgReport" class="table display nowrap" cellspacing="0" width="100%">
+          <thead>
+          <tr>
+            <th>Department</th>
+            <th>Student</th>
+            <th>Status</th>
+            <th>Assignment</th>
+            <th>Due Date</th>
+            <th>Completion Date</th>
+            <th>Student Email</th>
+            <th>Manager</th>
+            <th>Manager Email</th>
+            <th>Learning Item</th>
+            <th>Effective Date</th>
+            <th>Go Live Date</th>
+          </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="saveReport" class="modal fade" tabindex="-1" aria-labelledby="saveReport" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="saveReportTitle">
+          <svg class="svg mb-1 icon-assignment">
+            <use xlink:href="#icon-saved-views"></use>
+          </svg>
+          Save report
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="well form-horizontal needs-validation" novalidate id="saveReportForm">
+          <!-- Text input-->
+          <div class="mt-3">
+            <div class="col">
+              <label for="name" class="control-label text-left"> Name <sup><span
+                      class="icon asterisk text-warning"></span></sup>
+              </label>
+              <input name="name" autofocus id="name" placeholder="Name" class="form-control" type="text" required />
+              <span class="invalid-feedback">
+                    <i class="icon-alert"></i>
+                 This needs to be filled out.
+                </span>
             </div>
           </div>
-      </div>
-    </div>
-    <div class="row bg-white mt-4 align-items-start">
-      <div class="col">
-        <div id="handyWrapper" class="row bg-white align-items-start" data-fl-scrolls>
-          <table id="assgReport" class="table display nowrap" cellspacing="0" width="100%">
-            <thead>
-            <tr>
-              <th>Department</th>
-              <th>Student</th>
-              <th>Status</th>
-              <th>Assignment</th>
-              <th>Due Date</th>
-              <th>Completion Date</th>
-              <th>Student Email</th>
-              <th>Manager</th>
-              <th>Manager Email</th>
-              <th>Learning Item</th>
-              <th>Effective Date</th>
-              <th>Go Live Date</th>
-            </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
+          <div class="mt-3">
+            <div class="col">
+              <label for="name" class="control-label text-left"> Publish</label>
+              <div class="form-check mt-2 form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                <label class="form-check-label" for="flexSwitchCheckChecked">Publish this report</label>
+                <ul class="text-small">
+                  <li>Makes saved report visible on <span class="text-success">Created by others</span> page. <br>
+                    Only people who have access to all data included in the report will be able to see it.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Text input-->
+          <div class="modal-footer">
+            <div class="pull-left">
+              <button class="btn btn-lt" id="closeBtn" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" id="saveBtn2" class="btn btn-success align-items-end">Save</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-  <div id="saveReport" class="modal fade" tabindex="-1" aria-labelledby="saveReport" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="saveReportTitle">
-            <svg class="svg mb-1 icon-assignment">
-              <use xlink:href="#icon-saved-views"></use>
-            </svg>
-            Save report
-          </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form class="well form-horizontal" id="saveReportForm">
-            <!-- Text input-->
-            <div class="mt-3">
-              <div class="col">
-                <label for="name" class="control-label text-left"> Name <sup><span
-                        class="icon asterisk text-warning"></span></sup></label>
-                <input name="name" placeholder="Name" class="form-control" type="text" />
-              </div>
-            </div>
-            <div class="mt-3">
-              <div class="col">
-                <label for="name" class="control-label text-left"> Publish</label>
-                <div class="form-check mt-2 form-switch">
-                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                  <label class="form-check-label" for="flexSwitchCheckChecked">Publish this report</label>
-                  <ul class="text-small">
-                    <li>Makes saved report visible on <span class="text-success">Created by others</span> page. <br>
-                      Only people who have access to all data included in the report will be able to see it.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <!-- Text input-->
-            <div class="modal-footer">
-              <div class="pull-left">
-                <button class="btn btn-lt" id="closeBtn" data-bs-dismiss="modal">Cancel</button>
-                <button type="submit" id="saveBtn2" class="btn btn-success align-items-end">Save</button>
-              </div>
-            </div>
-          </form>
-        </div>
+</div>
+<div id="scheduleReport" class="modal fade modal-report" tabindex="-1" aria-labelledby="scheduleReport"
+     aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <svg class="svg mb-1 icon-calendar-mark">
+          <use xlink:href="#icon-calendar-mark"></use>
+        </svg>
+        <h5 class="modal-title ps-2" id="exampleModalLabel">Save report</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-    </div>
-  </div>
-  <div id="scheduleReport" class="modal fade modal-report" tabindex="-1" aria-labelledby="scheduleReport"
-       aria-hidden="true">
-    <div class="modal-dialog modal-md">
-      <div class="modal-content">
-        <div class="modal-header">
-          <svg class="svg mb-1 icon-calendar-mark">
-            <use xlink:href="#icon-calendar-mark"></use>
-          </svg>
-          <h5 class="modal-title ps-2" id="exampleModalLabel">Save report</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form class="well form-horizontal" id="Schedule">
-            <!-- Text input-->
-            <div class="mt-3">
-              <div class="col">
-                <label for="name" class="control-label text-left"> Name</label>
-                <sup><span class="icon asterisk text-warning"></span></sup>
-                <input name="Name" placeholder="Name" class="form-control" type="text" />
-                <p>Multiple email addresses can be separated by commas</p>
-              </div>
+      <div class="modal-body">
+        <form class="well form-horizontal" id="Schedule">
+          <!-- Text input-->
+          <div class="mt-3">
+            <div class="col">
+              <label for="name" class="control-label text-left"> Name</label>
+              <sup><span class="icon asterisk text-warning"></span></sup>
+              <input name="Name" placeholder="Name" class="form-control" type="text" />
+              <p>Multiple email addresses can be separated by commas</p>
             </div>
-            <!-- Text input-->
-            <div class="mt-3 text-left">
-              <div class="col">
-                <label for="Email" class="control-label">Email</label>
-                <sup><span class="icon asterisk text-warning"></span></sup>
-                <input name="Email" placeholder="Email" class="form-control" type="text" />
-              </div>
+          </div>
+          <!-- Text input-->
+          <div class="mt-3 text-left">
+            <div class="col">
+              <label for="Email" class="control-label">Email</label>
+              <sup><span class="icon asterisk text-warning"></span></sup>
+              <input name="Email" placeholder="Email" class="form-control" type="text" />
             </div>
-            <!-- Text input-->
-            <div style="overflow:hidden;">
-              <div class="row mt-3 text-left">
-                <div class="col">
-                  <label class="control-label">Report Schedule</label>
-                  <p>Scheduled tasks are processed nightly between Midnight and 8 AM CT</p>
-                  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link active" id="pills-daily-tab" data-bs-toggle="pill"
-                              data-bs-target="#pills-daily" type="button" role="tab" aria-controls="pills-daily"
-                              aria-selected="true">Daily
-                      </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="pills-weekly-tab" data-bs-toggle="pill"
-                              data-bs-target="#pills-weekly"
-                              type="button" role="tab" aria-controls="pills-weekly" aria-selected="false">Weekly
-                      </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="pills-monthly-tab" data-bs-toggle="pill"
-                              data-bs-target="#pills-monthly" type="button" role="tab" aria-controls="pills-monthly"
-                              aria-selected="false">Monthly
-                      </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="pills-quarterly-tab" data-bs-toggle="pill"
-                              data-bs-target="#pills-quarterly" type="button" role="tab" aria-controls="pills-quarterly"
-                              aria-selected="false">Quarterly
-                      </button>
-                    </li>
-                  </ul>
-                  <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-daily" role="tabpanel"
-                         aria-labelledby="pills-daily-tab">
-                      <label for="startDate" class="form-label">Start Date</label>
-                      <div class="input-group mb-3">
-                        <i class="input-group-text"><span class="icon-calendar"></span> </i>
-                        <input type="text" class="form-control" id="startDate" placeholder="">
-                      </div>
-                      <label for="endDate" class="form-label">End Date</label>
-                      <div class="input-group mb-3">
-                        <i class="input-group-text"><span class="icon-calendar"></span> </i>
-                        <input type="text" class="form-control" id="endDate" placeholder="">
-                      </div>
+          </div>
+          <!-- Text input-->
+          <div style="overflow:hidden;">
+            <div class="row mt-3 text-left">
+              <div class="col">
+                <label class="control-label">Report Schedule</label>
+                <p>Scheduled tasks are processed nightly between Midnight and 8 AM CT</p>
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-daily-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-daily" type="button" role="tab" aria-controls="pills-daily"
+                            aria-selected="true">Daily
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-weekly-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-weekly"
+                            type="button" role="tab" aria-controls="pills-weekly" aria-selected="false">Weekly
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-monthly-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-monthly" type="button" role="tab" aria-controls="pills-monthly"
+                            aria-selected="false">Monthly
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-quarterly-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-quarterly" type="button" role="tab" aria-controls="pills-quarterly"
+                            aria-selected="false">Quarterly
+                    </button>
+                  </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                  <div class="tab-pane fade show active" id="pills-daily" role="tabpanel"
+                       aria-labelledby="pills-daily-tab">
+                    <label for="startDate" class="form-label">Start Date</label>
+                    <div class="input-group mb-3">
+                      <i class="input-group-text"><span class="icon-calendar"></span> </i>
+                      <input type="text" class="form-control" id="startDate" placeholder="">
                     </div>
-                    <div class="tab-pane fade" id="pills-weekly" role="tabpanel" aria-labelledby="pills-weekly-tab">
-                      <div class="form-check form-check-inline ms-4">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                        <label class="form-check-label" for="inlineCheckbox1">Sun</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                        <label class="form-check-label" for="inlineCheckbox2">Mon</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                        <label class="form-check-label" for="inlineCheckbox3">Tue</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
-                        <label class="form-check-label" for="inlineCheckbox4">Wed</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
-                        <label class="form-check-label" for="inlineCheckbox5">Thu</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
-                        <label class="form-check-label" for="inlineCheckbox6">Fri</label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
-                        <label class="form-check-label" for="inlineCheckbox7">Sat</label>
-                      </div>
+                    <label for="endDate" class="form-label">End Date</label>
+                    <div class="input-group mb-3">
+                      <i class="input-group-text"><span class="icon-calendar"></span> </i>
+                      <input type="text" class="form-control" id="endDate" placeholder="">
                     </div>
-                    <div class="tab-pane fade" id="pills-monthly" role="tabpanel" aria-labelledby="pills-monthly-tab">
-                      <div class="form-check ms-4">
-                        <input class="form-check-input" type="radio" name="firstDay" id="firstDay" checked>
-                        <label class="form-check-label" for="firstDay">
-                          1st day of month
-                        </label>
-                      </div>
-                      <div class="form-check ms-4">
-                        <input class="form-check-input" type="radio" name="lastDay" id="lastDay">
-                        <label class="form-check-label" for="lastDay">
-                          Last day of month
-                        </label>
-                      </div>
-                      <div class="form-check ms-4">
-                        <input class="form-check-input" type="radio" name="specificDay" id="specificDay">
-                        <label class="form-check-label" for="specificDay">
-                          Specific day of quarter
-                        </label>
-                      </div>
+                  </div>
+                  <div class="tab-pane fade" id="pills-weekly" role="tabpanel" aria-labelledby="pills-weekly-tab">
+                    <div class="form-check form-check-inline ms-4">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      <label class="form-check-label" for="inlineCheckbox1">Sun</label>
                     </div>
-                    <div class="tab-pane fade" id="pills-quarterly" role="tabpanel"
-                         aria-labelledby="pills-quarterly-tab">
-                      <div class="form-check ms-4">
-                        <input class="form-check-input" type="radio" name="firstDay" id="firstDay" checked>
-                        <label class="form-check-label" for="firstDay">
-                          1st day of quarter
-                        </label>
-                      </div>
-                      <div class="form-check ms-4">
-                        <input class="form-check-input" type="radio" name="lastDay" id="lastDay">
-                        <label class="form-check-label" for="lastDay">
-                          Last day of quarter
-                        </label>
-                      </div>
-                      <div class="form-check ms-4">
-                        <input class="form-check-input" type="radio" name="specificDay" id="specificDay">
-                        <label class="form-check-label" for="specificDay">
-                          Specific day of quarter
-                        </label>
-                      </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2">Mon</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                      <label class="form-check-label" for="inlineCheckbox3">Tue</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                      <label class="form-check-label" for="inlineCheckbox4">Wed</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                      <label class="form-check-label" for="inlineCheckbox5">Thu</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+                      <label class="form-check-label" for="inlineCheckbox6">Fri</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
+                      <label class="form-check-label" for="inlineCheckbox7">Sat</label>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="pills-monthly" role="tabpanel" aria-labelledby="pills-monthly-tab">
+                    <div class="form-check ms-4">
+                      <input class="form-check-input" type="radio" name="firstDay" id="firstDay" checked>
+                      <label class="form-check-label" for="firstDay">
+                        1st day of month
+                      </label>
+                    </div>
+                    <div class="form-check ms-4">
+                      <input class="form-check-input" type="radio" name="lastDay" id="lastDay">
+                      <label class="form-check-label" for="lastDay">
+                        Last day of month
+                      </label>
+                    </div>
+                    <div class="form-check ms-4">
+                      <input class="form-check-input" type="radio" name="specificDay" id="specificDay">
+                      <label class="form-check-label" for="specificDay">
+                        Specific day of quarter
+                      </label>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="pills-quarterly" role="tabpanel"
+                       aria-labelledby="pills-quarterly-tab">
+                    <div class="form-check ms-4">
+                      <input class="form-check-input" type="radio" name="firstDay" id="firstDay" checked>
+                      <label class="form-check-label" for="firstDay">
+                        1st day of quarter
+                      </label>
+                    </div>
+                    <div class="form-check ms-4">
+                      <input class="form-check-input" type="radio" name="lastDay" id="lastDay">
+                      <label class="form-check-label" for="lastDay">
+                        Last day of quarter
+                      </label>
+                    </div>
+                    <div class="form-check ms-4">
+                      <input class="form-check-input" type="radio" name="specificDay" id="specificDay">
+                      <label class="form-check-label" for="specificDay">
+                        Specific day of quarter
+                      </label>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- Text input-->
-          </form>
+          </div>
+          <!-- Text input-->
           <div class="modal-footer">
             <div class="pull-left">
               <button class="btn btn-lt" id="closeBtn" data-bs-dismiss="modal">Cancel</button>
               <button type="submit" id="saveBtn2" class="btn btn-success align-items-end"> Schedule Report</button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
-  <script>
-    var assgSelects = $('.assg-select').filterMultiSelect({
-      selectAllText: 'select all...',
-      placeholderText: 'Select Assignments(s)',
-      filterText: 'Search',
-      //labelText: 'Shapes',
-      caseSensitive: false,
-    });
+</div>
+<script>
+  var assgSelects = $('.assg-select').filterMultiSelect({
+    selectAllText: 'select all...',
+    placeholderText: 'Select Assignments(s)',
+    filterText: 'Search',
+    //labelText: 'Shapes',
+    caseSensitive: false,
+  });
 
-    var myCollapsible = document.getElementById('assCompletionReport')
-    myCollapsible.addEventListener('shown.bs.collapse', function () {
-      var toggleIcon = document.getElementById('toggleIcon');
-      toggleIcon.classList.remove('angle-right' );
-      toggleIcon.classList.add('angle-down');
-    });
-    myCollapsible.addEventListener('hidden.bs.collapse', function () {
-      var toggleIcon = document.getElementById('toggleIcon');
-      toggleIcon.classList.remove('angle-down' );
-      toggleIcon.classList.add('angle-right');
-    })
+  var myCollapsible = document.getElementById('assCompletionReport')
+  myCollapsible.addEventListener('shown.bs.collapse', function () {
+    var toggleIcon = document.getElementById('toggleIcon');
+    toggleIcon.classList.remove('angle-right');
+    toggleIcon.classList.add('angle-down');
+  });
 
 
-  </script>
+  var forms = document.querySelectorAll('.needs-validation'),
+          feedback = document.querySelector('.valid-feedback')
+  saveReportForm = document.getElementById('saveReportForm');
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms).forEach(function ( form ) {
+    form.addEventListener('submit', function ( event ) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      let valid_form = false;
+
+      if ( saveReportForm.checkValidity() !== false ) {
+        valid_form = true;
+      }
+
+      saveReportForm.classList.add('was-validated');
+      feedback.classList.add('d-inline-block')
+
+      if ( valid_form ) {
+        //document.getElementById(saveBtn2)
+      } else {
+        console.log('invalid ');
+      }
+
+    }, false);
+  });
+  $('#saveBtn2').on('click', function ( ) {
+    $('#saveChanges').removeClass('d-none');
+    $('#saveReport').modal('hide');
+  })
+</script>
 </body>
 </HTML>

@@ -1,5 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML>
+<!DOCTYPE html >
+<HTML lang="en">
 <head>
   <title>Assignment Progress </title>
   <link rel="SHORTCUT ICON" href="dist/favicon.ico" />
@@ -100,8 +100,8 @@
           </ul>
         </div>
       </div>
-      <div class="d-flex text-end">
-        <a href="assg-progress-report.html" class="ms-3 btn btn-success fw-semi">
+      <div class="d-flex align-items-center text-end">
+        <a href="assg-progress-report.html" class="ms-3 py-2 btn btn-success fw-semi">
           Load Report
           <i class="text-white icon-arrow ms-1"></i>
         </a>
@@ -127,6 +127,7 @@
           <div class="input-group flex-nowrap pe-3 ms-3">
             <span class="input-group-text" id="studentName"><i class="icon-search"></i></span>
             <input type="text" class="form-control filter-search" style="border-left-color: #fff"
+                   placeholder="Search Name or ID"
                    aria-label="Search" aria-describedby="search">
           </div>
         </div>
@@ -287,7 +288,7 @@
         <div class="p-0 col">
           <label for="customFld" class="form-label mt-4 ms-3">Custom field</label>
           <div class="input-group flex-nowrap pe-3 ms-3">
-            <select class="form-select" aria-label="Custom Field">
+            <select class="form-select"  aria-label="Custom Field">
               <option selected></option>
               <option value="1>">Custom Field option 1</option>
               <option value="2">Custom Field option 2</option>
@@ -303,6 +304,7 @@
           <div class="input-group flex-nowrap pe-3 ms-3">
             <span class="input-group-text" id="hireDate"><i class="icon-calendar"></i></span>
             <input type="text" class="form-control" style="border-left-color: #fff"
+                   placeholder="Hire/Rehire Date"
                    aria-label="Search" aria-describedby="search">
           </div>
         </div>
@@ -313,6 +315,7 @@
           <div class="input-group flex-nowrap pe-3 ms-3">
             <span class="input-group-text" id="reviewDate"><i class="icon-calendar"></i></span>
             <input type="text" class="form-control" style="border-left-color: #fff"
+                   placeholder="Review Date"
                    aria-label="Search" aria-describedby="search">
           </div>
         </div>
@@ -323,6 +326,7 @@
           <div class="input-group flex-nowrap pe-3 ms-3">
             <span class="input-group-text" id="activeDate"><i class="icon-calendar"></i></span>
             <input type="text" class="form-control" style="border-left-color: #fff"
+                   placeholder="Active Date"
                    aria-label="Search" aria-describedby="search">
           </div>
         </div>
@@ -330,7 +334,7 @@
     </div>
     <div class="col-9 p-0">
       <div id="handyWrapper" class="row bg-white align-items-start" data-fl-scrolls>
-        <table id="studentTable" class="table nowrap" cellspacing="0" style="width:100%;">
+        <table id="studentTable" class="table nowrap" style="width:100%;">
           <thead>
           <tr>
             <th></th>
@@ -413,7 +417,7 @@
   </div>
 </div>
 </body>
-</HTML>
+
 <script>
   var titleSelects = $('.title-select').filterMultiSelect({
     selectAllText: 'select all...',
@@ -444,5 +448,5 @@
     caseSensitive: false,
   });
 </script>
-</body>
+
 </HTML>

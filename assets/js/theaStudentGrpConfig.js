@@ -10,20 +10,20 @@ $(function () {
     //data: data,
     paging: true,
     pageLength: 500,
-    lengthMenu: [ [ 50, 100, 500 - 1 ], [ 50, 100, 500, "All" ] ],
-    info: true,
+   /* lengthMenu: [ [ 50, 100, 500 - 1 ], [ 50, 100, 500, "All" ] ],
+    info: true,*/
     // searching: true,
     processing: true,
     responsive: true,
     scrollY: 600,
-    scrollX: false,
+   //scrollX: false,
     scrollCollapse: true,
     fixedHeader: {
       header: true,
-      footer: true
+     // footer: true
     },
-    dom: '<"d-flex my-2"i>rt<"d-flex my-3"l<"ms-auto"p>>',
-    language: {
+    dom: '<"d-flex my-2">rt',
+   /* language: {
       search: "_INPUT_",
       info: "Showing _START_ to _END_ of _MAX_ records",
       searchPlaceholder: "Quick Search",
@@ -32,7 +32,7 @@ $(function () {
         previous: '<i class="angle-left"></i>',
         next: '<i class="angle-right"></i>'
       },
-    },
+    },*/
     columns: [
       { data: null },
       { data: 'group' },
@@ -73,19 +73,19 @@ $(function () {
     //data: data,
     paging: true,
     pageLength: 500,
-    lengthMenu: [ [ 50, 100, 500 - 1 ], [ 50, 100, 500, "All" ] ],
-    info: true,
+    /*lengthMenu: [ [ 50, 100, 500 - 1 ], [ 50, 100, 500, "All" ] ],
+    info: true,*/
     // searching: true,
     processing: true,
-    scrollY: 600,
-    scrollX: true,
-    scrollCollapse: true,
-    fixedHeader: {
+  //  scrollY: 600,
+/*    scrollX: true,
+    scrollCollapse: true,*/
+    /*fixedHeader: {
       header: true,
-      footer: true
-    },
-    dom: '<"d-flex my-2"i>rt<"d-flex my-3"l<"ms-auto"p>>',
-    language: {
+    //  footer: true
+    },*/
+    dom: '<"d-flex my-2">rt',
+   /* language: {
       search: "_INPUT_",
       info: "Showing _START_ to _END_ of _MAX_ records",
       searchPlaceholder: "Quick Search",
@@ -94,7 +94,7 @@ $(function () {
         previous: '<i class="angle-left"></i>',
         next: '<i class="angle-right"></i>'
       },
-    },
+    },*/
     columns: [
       { data: null },
       { data: 'name', className: 'nowrap' },

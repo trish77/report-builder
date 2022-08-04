@@ -1,5 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML>
+<!DOCTYPE html >
+<HTML lang="en">
 <head>
   <title>Assignment Progress </title>
   <link rel="SHORTCUT ICON" href="dist/favicon.ico" />
@@ -25,10 +25,10 @@
     </svg>
   </defs>
 </svg>
-<div class="container bg-light pb-5">
-  <div class="row border-bottom bg-white">
-    <nav class="navbar ms-3 navbar-expand-lg navbar-light" id="">
-      <div class="container">
+<div class="container-fluid pl-3">
+  <div class="row ms-3 border-bottom bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light" id="">
+      <div class="container-fluid p-0">
         <a class="navbar-brand" href="index.html">
           <img alt="Healthstream Logo" src="assets/img/logo-healthstream-small.png" />
         </a>
@@ -61,14 +61,14 @@
       </div>
     </nav>
   </div>
-  <div class="row bg-white border-bottom align-items-center">
+  <div class="row ms-3 bg-white border-bottom align-items-center">
     <div class="col-6 my-2 p-0 d-flex align-items-center justify-content-start">
-      <svg class="svg mb-1 ms-4 icon-assignment">
+      <svg class="svg mb-1 icon-assignment">
         <use xlink:href="#icon-assignment"></use>
       </svg>
       <h3 class="h3 sserif-bold ms-2">Assignment Progress</h3>
     </div>
-    <div class="col-6 p-0 d-flex justify-content-end">
+    <div class="col-6 d-flex justify-content-end">
       <div class="d-flex text-end">
         <div class="dropdown">
           <button id="savedReports" class="btn btn-lt border border-success dropdown-toggle fw-semi"
@@ -82,7 +82,7 @@
               <span class="input-group-text" id="search"><i class="icon-search"></i></span>
             </div>
             <h6 class="h6">STANDARD</h6>
-            <li><a class="dropdown-item" href="#">Quarterly Report</a></li>
+            <li><a class="dropdown-item" href="saved-reports.html">Quarterly Report</a></li>
             <li><a class="dropdown-item" href="#">All assignments</a></li>
             <hr>
             <h6 class="h6">CREATED BY ME</h6>
@@ -97,122 +97,138 @@
           </ul>
         </div>
       </div>
-      <div class="d-flex text-end">
-        <a href="assg-progress-report.html"  class="ms-3 btn btn-success fw-semi">
+      <div class="d-flex align-items-center text-end">
+        <a href="assg-progress-report.html" class="ms-3 py-2 btn btn-success fw-semi">
           Continue
           <i class="text-white icon-arrow ms-1"></i>
         </a>
       </div>
     </div>
   </div>
-  <div class="row bg-white align-items-center">
-    <div class="col p-0 ms-4 mt-2 mb-1 d-flex align-items-center justify-content-start">
-      <a href="assignment-progress.html" id="lnkSelectAssg" onclick="getValueChk()" class="text-decoration-none text-secondary link-deco active pb-2 me-1">Select assignments</a>
+  <div class="row ms-3 bg-white align-items-center">
+    <div class="col p-0 mt-2 mb-1 d-flex align-items-center justify-content-start">
+      <a href="assignment-progress.html" id="lnkSelectAssg" onclick="getValueChk()"
+         class="text-decoration-none text-secondary link-deco active pb-2 me-1">Select assignments</a>
       <div class="secondLevel pb-2 d-none">
         <i class="text-decoration-none text-secondary icon-arrow pb-2 mx-1"></i>
         <span class="pb-2 text-dark none">Select</span>
-        <a href="select-groups.html" id="lnkSelectGrps" class="text-decoration-none inactive link-deco mx-2 pb-2"> Groups</a>
+        <a href="select-groups.html" id="lnkSelectGrps"
+           class="text-decoration-none inactive link-deco mx-2 pb-2"> Groups</a>
         <span class="pb-2 link-deco">or</span>
-        <a href="select-students.html" id="lnkSelectStudent" class="text-decoration-none none link-deco ms-2 pb-2"> Students</a>
-      </div>
-
-    </div>
-  </div>
-  <div class="row bg-white align-items-start">
-    <div id="filterCol" class="col-3 bg-light" style="max-width: 300px; min-height: 700px">
-      <div class="row pe-4">
-        <div class="p-0 col">
-          <label for="assignmentName" class="form-label mt-4 ms-3">Assignment Name</label>
-          <div class="input-group flex-nowrap pe-3 ms-3">
-            <span class="input-group-text" id="assignmentName"><i class="icon-search"></i></span>
-            <input type="text" class="form-control assg-filter-search" style="border-left-color: #fff"
-                   aria-label="Search" aria-describedby="search">
-          </div>
-        </div>
-      </div>
-      <div class="row pe-4">
-        <div class="p-0 col">
-          <label for="effectiveDate" class="form-label mt-4 ms-3">Effective Date</label>
-          <div class="input-group flex-nowrap pe-3 ms-3">
-            <span class="input-group-text" id="effectiveDate"><i class="icon-calendar"></i></span>
-            <input type="text" name="datefilter" class="form-control datePickEff" style="border-left-color: #fff">
-          </div>
-        </div>
-      </div>
-      <div class="row pe-4">
-        <div class="col p-0">
-          <label for="goLiveDate" class="form-label mt-4 ms-3">Go-Live Date</label>
-          <div class="input-group flex-nowrap pe-3 ms-3">
-            <span class="input-group-text" id="goLiveDate"><i class="icon-calendar"></i></span>
-            <input type="text" name="datefilter" class="form-control datePick" style="border-left-color: #fff">
-          </div>
-        </div>
-      </div>
-      <div class="row pe-4">
-        <div class="col p-0">
-          <label for="assgEndDate" class="form-label mt-4 ms-3">End Date</label>
-          <div class="input-group flex-nowrap pe-3 ms-3">
-            <span class="input-group-text" id="assgEndDate"><i class="icon-calendar"></i></span>
-            <input type="text" name="datefilter" class="form-control datePickEnd" style="border-left-color: #fff">
-          </div>
-        </div>
-      </div>
-      <div class="row pe-4">
-        <div class="p-0 col">
-          <label for="assgVisible" class="form-label mt-4 ms-3">Assignment Visibility</label>
-          <div class="form-check ms-3">
-            <input class="form-check-input" name="filterColChk" type="checkbox" checked value="" id="assgVisible">
-            <label class="form-check-label" for="assgVisible">
-              Visible
-            </label>
-          </div>
-          <div class="form-check ms-3">
-            <input class="form-check-input" name="filterColChk" type="checkbox" value="" id="assgHidden">
-            <label class="form-check-label" for="assgHidden">
-              Hidden
-            </label>
-          </div>
-        </div>
-      </div>
-      <div class="row pe-4">
-        <div class="p-0 col">
-          <label for="assgType" class="form-label mt-4 ms-3">Assignment Type</label>
-          <div class="form-check ms-3">
-            <input class="form-check-input" name="filterColChk" type="checkbox" checked value="" id="assgType">
-            <label class="form-check-label" for="assgType">
-              Recurring
-            </label>
-          </div>
-          <div class="form-check ms-3">
-            <input class="form-check-input" name="filterColChk" type="checkbox" value="" id="assgHidden">
-            <label class="form-check-label" for="assgHidden">
-              One Time
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="dataCol" class="col-9 p-0">
-      <div class="row bg-white align-items-start">
-        <table id="assgTable" class="table" style="width:100%;">
-          <thead>
-          <tr>
-            <th></th>
-            <th>Assignment</th>
-            <th>Type</th>
-            <th>Affiliation</th>
-            <th>Updated On</th>
-            <th>Updated By</th>
-            <th>Effective Date</th>
-            <th>Go-Live Date</th>
-          </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+        <a href="select-students.html" id="lnkSelectStudent"
+           class="text-decoration-none none link-deco ms-2 pb-2"> Students</a>
       </div>
     </div>
   </div>
-
+  <div class="row ps-3 bg-light align-items-start">
+    <div class="position-absolute p-0"
+         style="margin: 1rem auto; width: auto">
+      <a role="button" id="sidebarCollapse"
+         data-bs-toggle="tooltip" data-bs-placement="right"
+         title="Hide filters"
+         class="half-circle">
+        <i class="icon-arrow-left position-relative" style="top: 10px; left: 4px"></i>
+      </a>
+    </div>
+    <div class="wrapper bg-light">
+      <div id="filterCol" class="col-3" style="min-height: 700px">
+        <div class="row pe-4">
+          <div class="p-0 col">
+            <label for="assignmentName"
+                   class="form-label mt-4 ms-3">Assignment Name</label>
+            <div class="input-group flex-nowrap pe-3 ms-3">
+            <span class="input-group-text"
+                  id="assignmentName"><i class="icon-search"></i></span>
+              <input type="text" class="form-control assg-filter-search" style="border-left-color: #fff"
+                     aria-label="Search" aria-describedby="search">
+            </div>
+          </div>
+        </div>
+        <div class="row pe-4">
+          <div class="p-0 col">
+            <label for="effectiveDate" class="form-label mt-4 ms-3">Effective Date</label>
+            <div class="input-group flex-nowrap pe-3 ms-3">
+              <span class="input-group-text" id="effectiveDate"><i class="icon-calendar"></i></span>
+              <input type="text" name="datefilter" class="form-control datePickEff" style="border-left-color: #fff">
+            </div>
+          </div>
+        </div>
+        <div class="row pe-4">
+          <div class="col p-0">
+            <label for="goLiveDate" class="form-label mt-4 ms-3">Go-Live Date</label>
+            <div class="input-group flex-nowrap pe-3 ms-3">
+              <span class="input-group-text" id="goLiveDate"><i class="icon-calendar"></i></span>
+              <input type="text" name="datefilter" class="form-control datePick" style="border-left-color: #fff">
+            </div>
+          </div>
+        </div>
+        <div class="row pe-4">
+          <div class="col p-0">
+            <label for="assgEndDate" class="form-label mt-4 ms-3">End Date</label>
+            <div class="input-group flex-nowrap pe-3 ms-3">
+              <span class="input-group-text" id="assgEndDate"><i class="icon-calendar"></i></span>
+              <input type="text" name="datefilter" class="form-control datePickEnd" style="border-left-color: #fff">
+            </div>
+          </div>
+        </div>
+        <div class="row pe-4">
+          <div class="p-0 col">
+            <label for="assgVisible" class="form-label mt-4 ms-3">Assignment Visibility</label>
+            <div class="form-check ms-3">
+              <input class="form-check-input" name="filterColChk" type="checkbox" checked value="" id="assgVisible">
+              <label class="form-check-label" for="assgVisible">
+                Visible
+              </label>
+            </div>
+            <div class="form-check ms-3">
+              <input class="form-check-input" name="filterColChk" type="checkbox" value="" id="assgHidden">
+              <label class="form-check-label" for="assgHidden">
+                Hidden
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="row pe-4">
+          <div class="p-0 col">
+            <label for="assgType" class="form-label mt-4 ms-3">Assignment Type</label>
+            <div class="form-check ms-3">
+              <input class="form-check-input" name="filterColChk" type="checkbox" checked value="" id="assgType">
+              <label class="form-check-label" for="assgType">
+                Recurring
+              </label>
+            </div>
+            <div class="form-check ms-3">
+              <input class="form-check-input" name="filterColChk" type="checkbox" value="" id="assgHidden">
+              <label class="form-check-label" for="assgHidden">
+                One Time
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="dataCol" class="col-9 pt-4 ms-4 p-0">
+        <div class="row bg-white align-items-start">
+          <div id="handyWrapper" class="row bg-white align-items-start" data-fl-scrolls>
+            <table id="assgTable" class="table" style="width:100%;">
+              <thead>
+              <tr>
+                <th></th>
+                <th>Assignment</th>
+                <th>Type</th>
+                <th>Affiliation</th>
+                <th>Updated On</th>
+                <th>Updated By</th>
+                <th>Effective Date</th>
+                <th>Go-Live Date</th>
+              </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <div id="schedule-import" class="modal fade modal-report" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog">
@@ -377,7 +393,6 @@
   </div>
 </div>
 <script>
-
 </script>
 </body>
 </HTML>

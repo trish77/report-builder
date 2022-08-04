@@ -30,7 +30,7 @@
     <nav class="navbar ms-3 navbar-expand-lg navbar-light" id="">
       <div class="container">
         <a class="navbar-brand" href="index.html">
-          <img alt="Healthstream Logo" src="assets/img/logo-healthstream-small.png" />
+          <img alt="Healthstream Logo"  src="assets/img/logo-healthstream-small.png" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,13 +42,16 @@
             <li class="nav-item"><a href="#" class="nav-link active bg-success">Standard Reports</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Custom Reports</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Analytics</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Control Centers</a></li>
           </ul>
         </div>
+        <ul class="me-3 nav align-items-center">
+          <li class="nav-item"><a href="#" class="nav-link"><i class="Settings m-0" ></i> Settings</a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><i class="Help m-0"></i> Help</a></li>
+        </ul>
         <div class="dropdown me-3 nav-item align-items-center">
           <a href="#" class="dropdown-toggle nav-link d-flex align-items-center justify-content-center m-0 p-0"
              id="dropdown04" data-toggle="dropdown" aria-expanded="false">
-            <i class="icon-user m-0" style="font-size: 30px!important;"></i>
+            <i class="user-md m-0" style="font-size: 30px!important;"></i>
             <b class="caret"></b>
           </a>
           <div class="dropdown-menu dropdown-menu-right" style="top: 42px;right: 0;" aria-labelledby="dropdown04">
@@ -66,12 +69,13 @@
       <svg class="svg mb-1 ms-4 icon-assignment">
         <use xlink:href="#icon-assignment"></use>
       </svg>
-      <h3 class="h3 sserif-bold ms-2">Assignment Progress</h3>
+      <h3 class="h3 sserif-bold ms-2" data-bs-toggle="tooltip" data-bs-placement="right"
+          title="Hide filters">Assignment Progress</h3>
     </div>
     <div class="col-6 p-0 d-flex justify-content-end">
       <div class="d-flex text-end">
         <div class="dropdown">
-          <button id="savedReports" class="btn btn-light border border-success dropdown-toggle fw-semi"
+          <button id="savedReports" class="btn btn-lt border-success dropdown-toggle fw-semi"
                   data-bs-toggle="dropdown" aria-expanded="false">
             Saved Reports
           </button>
@@ -97,8 +101,8 @@
           </ul>
         </div>
       </div>
-      <div class="d-flex text-end">
-        <a href="assg-progress-report.html"  class="ms-3 btn btn-success fw-semi">
+      <div class="d-flex align-items-center text-end">
+        <a href="assg-progress-report.html" class="ms-3 py-2 btn btn-success fw-semi">
           Continue
           <i class="text-white icon-arrow ms-1"></i>
         </a>
@@ -107,7 +111,8 @@
   </div>
   <div class="row bg-white align-items-center">
     <div class="col p-0 ms-4 mt-2 mb-1 d-flex align-items-center justify-content-start">
-      <a href="assignment-progress.html" class="text-decoration-none text-secondary link-deco inactive pb-2 me-1">Select assignments</a>
+      <a href="assignment-progress.html"
+         class="text-decoration-none text-secondary link-deco inactive pb-2 me-1">Select assignments</a>
       <i class="text-decoration-none text-secondary icon-arrow pb-2 mx-1"></i>
       <span class="pb-2 text-dark none">Select</span>
       <a href="select-groups.html" class="text-decoration-none active link-deco mx-2 pb-2"> Groups</a>
@@ -184,30 +189,26 @@
     </div>
     <div class="col-9 p-0">
       <div class="row bg-white align-items-start">
-
-        <table id="groupTable" class="table" style="width:100%;">
-          <thead>
-          <tr>
-            <th></th>
-            <th>Group</th>
-            <th>Count</th>
-            <th>Affiliation</th>
-            <th>Creation Date</th>
-            <th>Updated On</th>
-            <th>Updated By</th>
-          </tr>
-          </thead>
-
-        </table>
+        <div id="handyWrapper" class="row bg-white align-items-start" data-fl-scrolls>
+          <table id="groupTable" class="table" style="width:100%;">
+            <thead>
+            <tr>
+              <th></th>
+              <th>Group</th>
+              <th>Count</th>
+              <th>Affiliation</th>
+              <th>Creation Date</th>
+              <th>Updated On</th>
+              <th>Updated By</th>
+            </tr>
+            </thead>
+          </table>
+        </div>
       </div>
     </div>
   </div>
-
-
 </div>
-
 <script>
-
 </script>
 </body>
 </HTML>
