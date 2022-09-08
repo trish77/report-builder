@@ -1,5 +1,5 @@
 .toast {
-  width: $toast-max-width;
+ /* width: $toast-max-width;*/
   max-width: 100%;
   @include font-size($toast-font-size);
   color: $toast-color;

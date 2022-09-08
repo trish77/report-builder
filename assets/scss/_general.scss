@@ -84,6 +84,11 @@
   font-weight: 600;
 }
 
+.sserif-normal {
+  font-family: Addington, serif;
+  font-weight: 400;
+}
+
 .form-label {
   margin-bottom: .3rem!important;
 }
@@ -123,16 +128,25 @@ hr {
  color: $gray-300 !important
 }
 
-.link-deco {
-  color: $gray-600;
+.secondLevel.disabled > * {
+  color: $gray-500
+}
+
+.secondLevel a {
+  color: $gray-800;
 }
 
 .link-deco.active, .link-deco:focus {
-  border-bottom: 2px $green solid;
+  border-bottom: 3px $green solid;
   color: $green;
 }
 
 .link-deco.inactive {
+  border-bottom: 3px $gray-400 solid;
+  color: $gray-400;
+}
+
+.link-deco.disabled {
   border-bottom: 2px $gray-300 solid;
   color: $gray-600;
 }
@@ -157,7 +171,7 @@ hr {
 }
 
 .modal-report .modal-body {
-  height: 80vh;
+/*  height: 80vh;*/
   overflow-y: auto;
 }
 
@@ -293,101 +307,65 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.Help:before {
+.check-circle:before {
+  content: "\e914";
+}
+.icon-help:before {
   content: "\e912";
 }
-.Settings:before {
-  content: "\e913";
-}
 .icon-user-box:before {
-  content: "\e900";
-}
-.close:before {
-  content: "\f00d";
-}
-.cog:before {
-  content: "\f013";
-}
-.gear:before {
-  content: "\f013";
-}
-.angle-double-left:before {
-  content: "\f100";
-}
-.angle-double-right:before {
-  content: "\f101";
-}
-.angle-double-up:before {
-  content: "\f102";
-}
-.angle-double-down:before {
-  content: "\f103";
-}
-.angle-left:before {
-  content: "\f104";
-}
-.angle-right:before {
-  content: "\f105";
-}
-.angle-up:before {
-  content: "\f106";
-}
-.angle-down:before {
-  content: "\f107";
-}
-.user-md:before {
-  content: "\f0f0";
-}
-.icon-course-bundle:before {
-  content: "\e901";
-}
-.icon-admin-entered:before {
   content: "\e902";
 }
-.icon-alert:before {
+.icon-course-bundle:before {
   content: "\e903";
 }
-.icon-clear:before {
+.icon-admin-entered:before {
   content: "\e904";
 }
-.icon-course-completion:before {
+.icon-alert:before {
   content: "\e905";
 }
-.icon-details:before {
+.icon-clear:before {
   content: "\e906";
 }
-.icon-draft:before {
+.icon-course-completion:before {
   content: "\e907";
 }
-.icon-evaluation-structure:before {
+.icon-details:before {
   content: "\e908";
 }
-.icon-evaluation:before {
+.icon-draft:before {
   content: "\e909";
 }
-.icon-live-class:before {
+.icon-evaluation-structure:before {
   content: "\e90a";
 }
-.icon-open:before {
+.icon-evaluation:before {
   content: "\e90b";
 }
-.icon-analysis:before {
+.icon-live-class:before {
   content: "\e90c";
 }
-.icon-test-results:before {
+.icon-open:before {
   content: "\e90d";
 }
-.icon-undo:before {
+.icon-analysis:before {
   content: "\e90e";
 }
-.icon-user-1:before {
+.icon-test-results:before {
   content: "\e90f";
 }
-.icon-virtual-class:before {
+.icon-undo:before {
   content: "\e910";
 }
-.icon-virtual-live:before {
+.icon-user:before {
   content: "\e911";
+}
+.icon-virtual-class:before {
+  content: "\e913";
+}
+.icon-virtual-live:before {
+  content: "\e915";
 }
 .minus-check-box:before {
   content: "\e916";
@@ -458,9 +436,6 @@ i {
 .icon-plus:before {
   content: "\e92c";
 }
-.icon-plus-1:before {
-  content: "\e92d";
-}
 .icon-preview:before {
   content: "\e92e";
 }
@@ -497,15 +472,6 @@ i {
 .icon-upcoming-classes:before {
   content: "\e93a";
 }
-.icon-course-bundle1:before {
-  content: "\e93d";
-}
-.icon-course-completion1:before {
-  content: "\e93e";
-}
-.icon-course-evaluation1:before {
-  content: "\e93f";
-}
 .icon-course:before {
   content: "\e940";
 }
@@ -523,4 +489,45 @@ i {
 }
 .icon-course-activity:before {
   content: "\e963";
+}
+.cog:before {
+  content: "\f013";
+}
+.gear:before {
+  content: "\f013";
+}
+.angle-double-left:before {
+  content: "\f100";
+}
+.angle-double-right:before {
+  content: "\f101";
+}
+.angle-double-up:before {
+  content: "\f102";
+}
+.angle-double-down:before {
+  content: "\f103";
+}
+.angle-left:before {
+  content: "\f104";
+}
+.angle-right:before {
+  content: "\f105";
+}
+.angle-up:before {
+  content: "\f106";
+}
+.angle-down:before {
+  content: "\f107";
+}
+.user-md:before {
+  content: "\f0f0";
+}
+.icon-settings:before {
+  content: "\e901";
+  color: #3e5359;
+}
+.icon-account:before {
+  content: "\e900";
+  color: #3e5359;
 }

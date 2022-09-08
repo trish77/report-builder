@@ -14,12 +14,13 @@ $(function () {
     colReorder: true,
     searching: true,
     processing: true,
-    responsive: true,
-    scrollY: 600,
+   // responsive: true,
+   // scrollY: 600,
     //scrollX: false,
     //scrollCollapse: true,
     fixedHeader: {
       header: true,
+    //  headerOffset: $('.topDivs').height()
       //footer: true
     },
     dom: '<"d-flex my-2">rt',
@@ -47,13 +48,18 @@ $(function () {
       'checkboxes': {
         'selectRow': true,
         'selectAllRender': '<div class="checkbox form-check"><input type="checkbox" class="dt-checkboxes form-check-input"><label class="form-check-label"></label></div>'
+      },
+      'createdCell':  function (td, cellData, rowData, row, col){
+        if(rowData[2] === 'Recurring'){
+          this.api().cell(td).checkboxes.select();
+        }
       }
     } ],
+    //stateSave: true,
     select: {
       style: 'multi',
       selector: 'td:first-child',
     },
-    order: [ [ 1, 'asc' ] ]
   });
 
 
@@ -65,7 +71,7 @@ $(function () {
     secondLevel = $(".secondLevel");
   $(tableCol).click(function () {
     if ( !$(event.target).is(filterCol, chksSelect) ) {
-      secondLevel.removeClass('d-none');
+      secondLevel.removeClass('disabled');
     } else {
       return false;
     }

@@ -13,7 +13,7 @@ $gray-600: #9EA9AC;
 $gray-700: #6D7E82;
 $gray-800: #3E5359;
 $gray-900: #0C272F;
-$black: #000;
+$black: #16353F;
 // scss-docs-end gray-color-variables
 
 // fusv-disable
@@ -65,36 +65,39 @@ $past-due: $peach;
 $danger: $red;
 $success-lt: $success-lt;
 $light: $gray-100;
-$dark: $gray-900;
+$med: $gray-600;
+$dark: $gray-800;
 
 
 $theme-colors: ();
 // stylelint-disable-next-line scss/dollar-variable-default
 $theme-colors: map-merge(
-  (
-    "primary": $primary,
-    "secondary": $secondary,
-    "mute-blue": $greyBlue,
-    "fade-blue": $ltGreyBlue,
-    "default": $default,
-    "attention": $orange,
-    "success": $success,
-    "info": $info,
-    "warning": $warning,
-    "peach": $peach,
-    "past-due": $peach,
-    "on-time": $green80,
-    "late": $green60,
-    "failed": $green40,
-    "exempt": $ltGreyBlue,
-    "not-assg": $darkBlue80,
-    "delinquent": $delinquent,
-    "danger": $danger,
-    "success-lt": $success-lt,
-    "light": $light,
-    "dark": $dark
-  ),
-  $theme-colors
+                (
+                        "primary": $primary,
+                        "secondary": $secondary,
+                        "mute-blue": $greyBlue,
+                        "fade-blue": $ltGreyBlue,
+                        "default": $default,
+                        "attention": $orange,
+                        "success": $success,
+                        "info": $info,
+                        "warning": $warning,
+                        "peach": $peach,
+                        "pink": $pink,
+                        "past-due": $peach,
+                        "on-time": $green80,
+                        "late": $green60,
+                        "failed": $green40,
+                        "exempt": $ltGreyBlue,
+                        "not-assg": $darkBlue80,
+                        "delinquent": $delinquent,
+                        "danger": $danger,
+                        "success-lt": $success-lt,
+                        "light": $light,
+                        "med": $med,
+                        "dark": $dark
+                ),
+                $theme-colors
 );
 
 $blue-100: tint-color($blue, 10%) !default;
@@ -217,7 +220,7 @@ $border-widths: (
         5: 5px
 ) !default;
 
-$enable-shadows:  false !default;
+$enable-shadows: false !default;
 $enable-gradients: false !default;
 $body-bg: $white;
 $body-color: $gray-700;
@@ -228,25 +231,25 @@ $alert-border-level: -8;
 $alert-color-level: 6;
 
 $btn-font-weight: 500;
-$btn-primary-color:$white;
+$btn-primary-color: $white;
 $btn-active-bg: $white;
 $btn-default-bg: $white;
 //$btn-default-border: #ccc;
 $btn-active-box-shadow: inset 0 3px 5px rgba($green, .125);
 $btn-font-size-sm: 14px;
 
-$btn-hover-bg-shade-amount:       15% !default;
-$btn-hover-bg-tint-amount:        15% !default;
-$btn-hover-border-shade-amount:   20% !default;
-$btn-hover-border-tint-amount:    10% !default;
-$btn-active-bg-shade-amount:      0% !default;
-$btn-active-bg-tint-amount:       0% !default;
-$btn-active-border-shade-amount:  25% !default;
-$btn-active-border-tint-amount:   10% !default;
+$btn-hover-bg-shade-amount: 15% !default;
+$btn-hover-bg-tint-amount: 15% !default;
+$btn-hover-border-shade-amount: 20% !default;
+$btn-hover-border-tint-amount: 10% !default;
+$btn-active-bg-shade-amount: 0% !default;
+$btn-active-bg-tint-amount: 0% !default;
+$btn-active-border-shade-amount: 25% !default;
+$btn-active-border-tint-amount: 10% !default;
 
 $form-select-focus-width: .2rem;
 $form-select-focus-box-shadow: 0 0 0 .2rem $green;
-$form-check-input-checked-color:  $green;
+$form-check-input-checked-color: $green;
 $form-check-input-checked-bg-color: $green;
 $form-check-input-checked-border-color: $green;
 $form-check-input-width: 1.4em;
@@ -254,7 +257,7 @@ $form-label-color: $gray-800;
 $form-label-font-weight: 600;
 
 $form-feedback-invalid-color: $pink-200;
-$form-feedback-valid-color:  $green;
+$form-feedback-valid-color: $green;
 
 $component-active-bg: $green;
 
@@ -262,9 +265,19 @@ $component-active-bg: $green;
 $tooltip-bg: $gray-800;
 $tooltip-border-radius: 8px;
 
+$toast-max-width:  750px ;
+$toast-padding-x:  .75rem !default;
+$toast-padding-y:  .5rem !default;
+$toast-font-size:  .875rem !default;
+$toast-color:  null !default;
+$toast-border-radius:  8px !default;
+$toast-box-shadow:    0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 5px 20px rgba(0, 0, 0, 0.04), 0px 1px 4px rgba(0, 0, 0, 0.04) !default;
+$toast-background-color:  rgba($gray-900, .15) !default;
+
 $dropdown-border-radius: .5rem;
+$dropdown-min-width: 10rem;
 $dropdown-border-width: $border-width;
-$dropdown-link-color:    $gray-900 ;
+$dropdown-link-color: $gray-900;
 
 
 $input-btn-focus-color-opacity: .25;
@@ -288,6 +301,7 @@ $font-size-sm: $font-size-base * 0.75;
 
 $popover-font-size: $font-size-md;
 
+$modal-content-bg: $gray-100;
 $modal-fade-transform: translateX(-50%);
 $modal-show-transform: translateY(9%);
 $modal-transition: transform .3s ease;
@@ -314,16 +328,16 @@ $grid-breakpoints: (
 $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value") !default;
 
 
-$box-shadow:  0 .15rem 1.5rem rgba( $gray-800, .075) !default;
+$box-shadow: 0 .15rem 1.5rem rgba($gray-800, .075) !default;
 $box-shadow-green: 0 .125rem .25rem rgba($green, .075) !default;
-$box-shadow-lg:   0 1rem 3rem rgba($green, .175) !default;
+$box-shadow-lg: 0 1rem 3rem rgba($green, .175) !default;
 $box-shadow-inset: inset 0 1px 2px rgba($green, .075) !default;
 $box-shadow-sm: 0 .13rem .13rem rgba($green, .075);
 
-$table-th-font-weight:  500;
-$table-border-color : #f4f4f4;
-$table-color:  $body-color;
-$table-striped-color:  $gray-100;
+$table-th-font-weight: 500;
+$table-border-color: #f4f4f4;
+$table-color: $body-color;
+$table-striped-color: $gray-100;
 // scss-docs-start border-radius-variables
 $border-radius: .25rem;
 $border-radius-sm: .2rem;
@@ -374,12 +388,13 @@ body {
 
 h1, .h1, h2, .h2, h3, .h3 {
   color: $gray-900 !important;
-  font-weight: 600 !important
+  font-weight: 600
 }
 
 h5 {
-  color: $gray-800 !important;
+  color: $gray-700 !important;
   font-weight: 600 !important;
+  font-family: "Open Sans", sans-serif;
   font-size: 1rem !important;
 }
 
@@ -399,23 +414,89 @@ h5 {
   border-color: #dee2e6;
 }
 
+.nav.nav-pills {
+
+  & .nav-item {
+
+    & .nav-link {
+
+      padding: 3px 12px !important;
+    }
+  }
+}
+
+.logo {
+  width: 80%;
+  height: 80%;
+}
+
 .nav.nav-tabs {
   border-bottom: none;
+  height: 32px;
+
+  & .nav-item {
+    height: fit-content;
+
+    &.show {
+      color: $gray-700 !important;
+    }
+
+    & .nav-link {
+      font-size: .89rem;
+      text-align: center;
+      height: 32px;
+      padding: 0 24px !important;
+      color: $gray-700 !important;
+      background-color: $gray-200 !important;
+      border: none;
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.07), 0px 1px 1px rgba(0, 0, 0, 0.12);
+
+      &.active {
+        border: none;
+        color: $gray-700 !important;
+        background-color: $white !important;
+        border-radius: 4px 4px 0 0;
+      }
+    }
+  }
 }
 
-.nav-link {
-  font-size: .89rem;
+.nav.nav-tabs {
+  border-bottom: none;
+
+  &.nav-link {
+    font-size: .89rem;
+    color: $gray-700 !important;
+    background-color: $gray-200 !important;
+    border: none;
+    height: 32px;
+    padding: 0 24px !important;
+    // box-shadow:  0px 0px 2px rgba(0, 0, 0, 0.07), 0px 1px 1px rgba(0, 0, 0, 0.12);
+
+    &.active {
+      border: none;
+      color: $gray-700 !important;
+      background-color: $white !important;
+      // box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.07), 0px 1px 1px rgba(0, 0, 0, 0.12);
+      border-radius: 4px 4px 0 0;
+    }
+
+    &:hover {
+      border: none;
+      color: $gray-700 !important;
+    }
+  }
+}
+
+.nav-tabs .nav-link.active > span {
+  background-color: $gray-200 !important;
   color: $gray-700 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
 }
 
-.nav-link.active {
-  border: none;
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.07), 0px 1px 1px rgba(0, 0, 0, 0.12);
-  border-radius: 4px 4px 0 0;
+.nav-tabs .nav-link > span {
+  background-color: $gray-100 !important;
+  color: $gray-700 !important;
 }
-
 
 .btn {
   border-radius: 4px;
@@ -427,8 +508,9 @@ h5 {
 }
 
 .btn:disabled, .btn.disabled, fieldset:disabled .btn {
-  pointer-events: inherit;
+  pointer-events: inherit !important;
 }
+
 .btn.btn-white {
   color: $gray-700 !important;
   background-color: $white;
@@ -439,7 +521,7 @@ h5 {
     color: $gray-700 !important;
     background-color: $white !important;
     border: none !important;
-    box-shadow:  0 0 2px rgba(0, 0, 0, 0.07), 0 0 1px rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.07), 0 0 1px rgba(0, 0, 0, 0.12) !important;
   }
 }
 
@@ -453,6 +535,7 @@ h5 {
   margin-left: 0;
   padding-left: 10px;
 }
+
 .btn-success-lt {
   color: $gray-700 !important;
   background-color: $success-lt;
@@ -466,21 +549,24 @@ h5 {
 
   &:hover {
     background: linear-gradient(277.82deg, $green -163.05%, #10CA8C 66.75%) !important;
-   // border: 2px solid transparent;
+    // border: 2px solid transparent;
   }
+
   &:focus {
     background: linear-gradient(288.73deg, $green 32.67%, #10CA8C 71.76%) !important;
-   // border: 2px solid $green40;
+    // border: 2px solid $green40;
     box-shadow: 0 0 0 0.25rem rgba(87, 200, 150, 0.25);
   }
+
   &:active {
     color: $green80 !important;
     background-color: $white !important;
-   // border: 2px solid $green !important;
+    // border: 2px solid $green !important;
     box-shadow: 0 0 0 0.25rem rgba(87, 200, 150, 0.25);
   }
+
   &:focus-visible {
-  //  border: 2px solid $green40 !important;
+    //  border: 2px solid $green40 !important;
     box-shadow: 0 0 0 0.2rem rgba(87, 200, 150, 0.25);
     outline: none;
   }
@@ -504,12 +590,20 @@ h5 {
     border: 2px solid $green !important;
     box-shadow: 0 0 0 0.25rem rgba(87, 200, 150, 0.25);
   }
+
   &:active {
     color: $green80 !important;
     background-color: $white !important;
     border: 2px solid $green !important;
     box-shadow: 0 0 0 0.25rem rgba(87, 200, 150, 0.25);
   }
+
+  &:disabled {
+    color: $gray-400 !important;
+    background-color: $white !important;
+    border: 2px solid $gray-400 !important;
+  }
+
   &:focus-visible {
     color: $green80 !important;
     background: $white !important;
@@ -547,8 +641,13 @@ h5 {
   --bs-dropdown-min-width: inherit !important;
   padding: .5rem !important;
   color: $gray-900 !important;
-  min-width: inherit!important;
+  min-width: inherit !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 5px 20px rgba(0, 0, 0, 0.04), 0px 1px 4px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04) !important;
+}
+
+.dropdown-toggle > i.icon-hamburger {
+  position: relative;
+  z-index: 111;
 }
 
 .dropdown-menu-end[data-bs-popper] {
@@ -556,6 +655,27 @@ h5 {
   left: auto;
 }
 
+#savedReportFilters ~ .dropdown-menu.show {
+  width: 300px !important;
+}
+
+#createdDrop.dropdown-menu.show {
+  width: 260px;
+  left: -31px !important;
+
+
+}
+
+#dropOut {
+  position: absolute;
+  right: 24px;
+  top: 49px;
+  padding: 10px 30px 8px 18px !important;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.07), 0px 1px 1px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  width: 185px;
+  z-index: 100;
+}
 
 .btn-primary {
   color: $btn-primary-color !important;
@@ -604,13 +724,30 @@ input:-internal-autofill-selected {
   border-left: 0;
 }
 
-#schedule-report  .modal-lg {
+#schedule-report .modal-lg {
   width: 650px !important;
+}
+
+.modal-header {
+  font-size: 20px;
+  padding: 1rem 1rem .5rem 1rem !important;
+}
+
+.modal-body {
+  background-color: $white;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.07), 0px 1px 1px rgba(0, 0, 0, 0.12);
+  margin: 1rem;
+  padding: 0;
+  border-radius: 8px;
+}
+
+.modal-footer {
+  border-top: none !important;
 }
 
 .modal .nav-pills .nav-link {
   border-radius: 4px !important;
-  padding:  6px 8px !important;
+  padding: 6px 8px !important;
 }
 
 .col-3 {
@@ -630,15 +767,15 @@ hr {
   font-size: 12px;
 }
 
-.form-check-input:checked {
+/*.form-check-input:checked {
   background-color: $green !important;
   border-color: $white !important;
-}
+}*/
 
 .form-check-input:focus {
   border-color: $green !important;
   outline: 0;
-  box-shadow: ($form-select-focus-box-shadow,$input-btn-focus-color-opacity) !important;
+  box-shadow: ($form-select-focus-box-shadow, $input-btn-focus-color-opacity) !important;
 }
 
 .form-check-input:checked[type=checkbox] {
@@ -646,44 +783,124 @@ hr {
   background-color: $green !important;
 }
 
-
-table.dataTable thead th.dt-checkboxes-select-all:first-of-type .form-check.checkbox{
-  margin-left: 4px !important;
-  margin-top: -4px !important;
+.condensed tr td:nth-of-type(2) {
+  text-align: right !important;
 }
 
-table.dataTable.dt-checkboxes-select tbody tr,
-table.dataTable thead th.dt-checkboxes-select-all,
-table.dataTable tbody td.dt-checkboxes-cell {
-  cursor: pointer;
+.table {
+  vertical-align: middle !important;
 }
 
-table.dataTable thead th.dt-checkboxes-select-all,
-table.dataTable tbody td.dt-checkboxes-cell {
-  text-align: center;
-}
 
 div.dataTables_wrapper span.select-info,
 div.dataTables_wrapper span.select-item {
   margin-left: 0.5em;
 }
 
-table.dataTable thead th.dt-checkboxes-select-all input[type="checkbox"]:checked + label::before,
-table.dataTable tbody td.dt-checkboxes-cell input[type="radio"]:checked + label::before {
-  background-color: $green;
-  border: $green;
-  opacity: .8;
+
+table.dataTable tbody td.select-checkbox:before, table.dataTable thead th.select-checkbox:before {
+  width: 1.4em !important;
+  height: 1.4em !important;
+  margin-top: 0.05em;
+  vertical-align: top;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 1px solid rgba(22,53,63,0.25) !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color-adjust: exact;
 }
 
-#assgReport_wrapper table.dataTable thead>tr>th:hover {
+
+table.dataTable > tbody > tr > .selected {
+  color: white;
+  background-color: #00ba7c !important;
+}
+
+table.dataTable tbody td.select-checkbox, table.dataTable thead th.select-checkbox {
+  position: relative
+}
+
+table.dataTable tbody td.select-checkbox:before, table.dataTable tbody td.select-checkbox:after {
+  display: block;
+  position: absolute;
+  top: 1.2em;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box
+}
+
+table.dataTable tbody td.select-checkbox:before,  {
+  content: " ";
+  margin-top: -5px;
+  margin-left: -6px;
+  border-radius: 4px
+}
+
+table.dataTable thead th.select-checkbox:before {
+  content: " ";
+  left: 50%;
+  width: 20px !important;
+  height: 20px !important;
+  position: absolute;
+  margin-top: -19px;
+  margin-left: -6px;
+  border-radius: 4px
+}
+
+/*
+table.dataTable tr.selected td.select-checkbox:before, table.dataTable tr.selected th.select-checkbox:before {
+  border: 1px solid white
+}
+*/
+
+
+table.dataTable tr.selected td.select-checkbox:before, table.dataTable tr.selected th.select-checkbox:before,
+.select-checkbox:checked:before{
+  border: 1px solid $green !important;
+  opacity: .8;
+  outline: 0;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e") !important;
+  background-color: $green !important;
+  color: #fff;
+  box-shadow: ($form-select-focus-box-shadow, $input-btn-focus-color-opacity) !important;
+}
+
+table.dataTable tr.selected td.select-checkbox:after, table.dataTable tr.selected th.select-checkbox:after,
+.select-checkbox:checked:after{
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e") !important;
+  background-color: $green !important;
+  color: #fff;
+}
+
+table.dataTable>tbody>tr.selected>* {
+  background-color: $gray-100 !important;
+  box-shadow: inset 0 0 0 9999px #fafafa !important;
+}
+
+#assgReport_wrapper table.dataTable thead > tr > th:hover {
   cursor: move;
 }
 
-@media screen and (max-width: 640px) {
-  div.dataTables_wrapper span.select-info,
-  div.dataTables_wrapper span.select-item {
-    margin-left: 0;
-    display: block;
+table.dataTable td.actions, table.dataTable thead th.actions {
+  text-align: right;
+  &:hover {
+    cursor: pointer;
+  }
+  & .dropdown-toggle:after {
+    content: '' !important;
   }
 }
+
+  @media screen and (max-width: 640px) {
+    div.dataTables_wrapper span.select-info,
+    div.dataTables_wrapper span.select-item {
+      margin-left: 0;
+      display: block;
+    }
+  }
 

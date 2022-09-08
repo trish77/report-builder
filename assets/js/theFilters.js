@@ -56,7 +56,7 @@ $(document).ready(function () {
   });
 
 
-  $('#startDate, #endDate, .datePickEnd').daterangepicker({
+  $('#startDate, #endDate, .datePickEnd, .dateCreated').daterangepicker({
     startDate: start,
     endDate: end,
     showDropdowns: true,
@@ -67,8 +67,6 @@ $(document).ready(function () {
       format: 'M/DD/YYYY'
     },
     "alwaysShowCalendars": true
-  }, function(start, end, label) {
-    console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
   });
 
   $('.datePickEnd').on('.apply.daterangepicker', function ( ev, picker ) {
@@ -78,6 +76,7 @@ $(document).ready(function () {
   $('.datePick').on('.apply.daterangepicker', function ( ev, picker ) {
     $('.datePick span').html(start.format('M/D/YYYY') + ' - ' + end.format('M/D/YYYY'));
   });
+
 
   //modal datepickers
   $('#startDate').on('.apply.daterangepicker', function ( ev, picker ) {
@@ -89,9 +88,7 @@ $(document).ready(function () {
   });
 
 
-
   $('[data-bs-toggle="tooltip"]').tooltip();
-
 
 });
 

@@ -26,97 +26,102 @@
   </defs>
 </svg>
 <div class="container-fluid pl-3">
-  <div class="row ms-3 border-bottom bg-white">
-    <nav class="navbar navbar-expand-lg navbar-light" id="">
-      <div class="container-fluid p-0">
-        <a class="navbar-brand" href="index.html">
-          <img alt="Healthstream Logo" src="assets/img/logo-healthstream-small.png" />
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="fa fa-bars"></span> Menu
-        </button>
-        <div class="collapse navbar-collapse" id="">
-          <ul class="nav ml-auto mr-md-3 nav-pills">
-            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link active bg-success">Standard Reports</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Custom Reports</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Analytics</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Control Centers</a></li>
-          </ul>
-        </div>
-        <div class="dropdown me-3 nav-item align-items-center">
-          <a href="#" class="dropdown-toggle nav-link d-flex align-items-center justify-content-center m-0 p-0"
-             id="dropdown04" data-toggle="dropdown" aria-expanded="false">
-            <i class="icon-user m-0" style="font-size: 30px!important;"></i>
-            <b class="caret"></b>
+  <div class="topDivs">
+    <div class="row border-bottom bg-white">
+      <nav class="navbar ms-3 navbar-expand-lg navbar-light" id="">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img alt="Healthstream Logo" class="logo" src="assets/img/HSTM-Insights.png" />
           </a>
-          <div class="dropdown-menu dropdown-menu-right" style="top: 42px;right: 0;" aria-labelledby="dropdown04">
-            <p class="mb-0">Ihor Bilyi</p>
-            <p class="text-secondary">Administrator</p>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item p-0 text-danger">Sign Out</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                  aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-bars"></span> Menu
+          </button>
+          <div class="collapse navbar-collapse" id="">
+            <ul class="nav ml-auto mr-md-3 nav-pills">
+              <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="#" class="nav-link active bg-success">Standard Reports</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Custom Reports</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Analytics</a></li>
+            </ul>
+          </div>
+          <ul class="me-3 nav align-items-center">
+            <li class="nav-item"><a href="#" class="nav-link"><i class="icon-settings m-0" ></i> Settings</a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><i class="icon-help m-0"></i> Help</a></li>
+          </ul>
+          <div class="dropdown me-3 nav-item align-items-center">
+            <a href="#" class="dropdown-toggle nav-link d-flex align-items-center justify-content-center m-0 p-0"
+               id="dropdown04" data-toggle="dropdown" aria-expanded="false">
+              <i class="user-md m-0" style="font-size: 30px!important;"></i>
+              <b class="caret"></b>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" style="top: 42px;right: 0;" aria-labelledby="dropdown04">
+              <p class="mb-0">Ihor Bilyi</p>
+              <p class="text-secondary">Administrator</p>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item p-0 text-danger">Sign Out</a>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-  </div>
-  <div class="row ms-3 bg-white border-bottom align-items-center">
-    <div class="col-6 my-2 p-0 d-flex align-items-center justify-content-start">
-      <svg class="svg mb-1 icon-assignment">
-        <use xlink:href="#icon-assignment"></use>
-      </svg>
-      <h3 class="h3 sserif-bold ms-2">Assignment Progress</h3>
+      </nav>
     </div>
-    <div class="col-6 d-flex justify-content-end">
-      <div class="d-flex text-end">
-        <div class="dropdown">
-          <button id="savedReports" class="btn btn-lt border border-success dropdown-toggle fw-semi"
-                  data-bs-toggle="dropdown" aria-expanded="false">
-            Saved Reports
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="savedReports" style="right:0">
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Search"
-                     aria-label="Search" aria-describedby="search">
-              <span class="input-group-text" id="search"><i class="icon-search"></i></span>
-            </div>
-            <h6 class="h6">STANDARD</h6>
-            <li><a class="dropdown-item" href="saved-reports.html">Quarterly Report</a></li>
-            <li><a class="dropdown-item" href="#">All assignments</a></li>
-            <hr>
-            <h6 class="h6">CREATED BY ME</h6>
-            <li><a class="dropdown-item" href="#">My Report</a></li>
-            <li><a class="dropdown-item" href="#">My assignments</a></li>
-            <hr>
-            <h6 class="h6">CREATED BY OTHERS</h6>
-            <li><a class="dropdown-item" href="#">Report</a></li>
-            <li><a class="dropdown-item" href="#">All Acme assignments</a></li>
-            <li><a class="dropdown-item" href="#">Report</a></li>
-            <li><a class="dropdown-item" href="#">All Acme assignments</a></li>
-          </ul>
+    <div class="row ms-3 bg-white border-bottom align-items-center">
+      <div class="col-6 my-2 p-0 d-flex align-items-center justify-content-start">
+        <svg class="svg mb-1 icon-assignment">
+          <use xlink:href="#icon-assignment"></use>
+        </svg>
+        <h3 class="h3 sserif-bold ms-2">Assignment Progress</h3>
+      </div>
+      <div class="col-6 d-flex justify-content-end">
+        <div class="d-flex text-end">
+          <div class="dropdown">
+            <button id="savedReports" class="btn btn-lt border border-success dropdown-toggle fw-semi"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+              Saved Reports
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="savedReports" style="right:0">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search"
+                       aria-label="Search" aria-describedby="search">
+                <span class="input-group-text" id="search"><i class="icon-search"></i></span>
+              </div>
+              <h6 class="h6">STANDARD</h6>
+              <li><a class="dropdown-item" href="saved-reports.html##standard">Quarterly Report</a></li>
+              <li><a class="dropdown-item" href="saved-reports.html##standard">All assignments</a></li>
+              <hr>
+              <h6 class="h6">CREATED BY ME</h6>
+              <li><a class="dropdown-item" href="saved-reports.html#createdMine">My Report</a></li>
+              <li><a class="dropdown-item" href="saved-reports.html#createdMine">My assignments</a></li>
+              <hr>
+              <h6 class="h6">CREATED BY OTHERS</h6>
+              <li><a class="dropdown-item" href="saved-reports.html#createdOthers">Report</a></li>
+              <li><a class="dropdown-item" href="">All Acme assignments</a></li>
+              <li><a class="dropdown-item" href="#">Report</a></li>
+              <li><a class="dropdown-item" href="#">All Acme assignments</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="d-flex align-items-center text-end">
+          <a href="assg-progress-report.html" class="ms-3 py-2 btn btn-success fw-semi">
+            Continue
+            <i class="text-white icon-arrow ms-1"></i>
+          </a>
         </div>
       </div>
-      <div class="d-flex align-items-center text-end">
-        <a href="assg-progress-report.html" class="ms-3 py-2 btn btn-success fw-semi">
-          Continue
-          <i class="text-white icon-arrow ms-1"></i>
-        </a>
-      </div>
     </div>
-  </div>
-  <div class="row ms-3 bg-white align-items-center">
-    <div class="col p-0 mt-2 mb-1 d-flex align-items-center justify-content-start">
-      <a href="assignment-progress.html" id="lnkSelectAssg" onclick="getValueChk()"
-         class="text-decoration-none text-secondary link-deco active pb-2 me-1">Select assignments</a>
-      <div class="secondLevel pb-2 d-none">
-        <i class="text-decoration-none text-secondary icon-arrow pb-2 mx-1"></i>
-        <span class="pb-2 text-dark none">Select</span>
-        <a href="select-groups.html" id="lnkSelectGrps"
-           class="text-decoration-none inactive link-deco mx-2 pb-2"> Groups</a>
-        <span class="pb-2 link-deco">or</span>
-        <a href="select-students.html" id="lnkSelectStudent"
-           class="text-decoration-none none link-deco ms-2 pb-2"> Students</a>
+    <div class="row ms-3 bg-white align-items-center">
+      <div class="col p-0 mt-2 mb-1 d-flex align-items-center justify-content-start">
+        <a href="assignment-progress.html" id="lnkSelectAssg" onclick="getValueChk()"
+           class="text-decoration-none link-deco text-dark active pb-2 me-1">Select assignments</a>
+        <div class="secondLevel pb-2 disabled">
+          <i class="text-decoration-none icon-arrow pb-2 mx-1"></i>
+          <span class="pb-2 none">Select</span>
+          <a href="select-groups.html" id="lnkSelectGrps"
+             class="text-decoration-none link-deco mx-2 pb-2"> Groups</a>
+          <span class="pb-2 link-deco">and</span>
+          <a href="select-students.html" id="lnkSelectStudent"
+             class="text-decoration-none none link-deco ms-2 pb-2"> Students</a>
+        </div>
       </div>
     </div>
   </div>
@@ -208,7 +213,7 @@
       </div>
       <div id="dataCol" class="col-9 pt-4 ms-4 p-0">
         <div class="row bg-white align-items-start">
-          <div id="handyWrapper" class="row bg-white align-items-start" data-fl-scrolls>
+          <div id="handyWrapper" class="row bg-white align-items-start" data-fl-scrolls fl-scrolls-hoverable>
             <table id="assgTable" class="table" style="width:100%;">
               <thead>
               <tr>

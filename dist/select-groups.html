@@ -30,7 +30,7 @@
     <nav class="navbar ms-3 navbar-expand-lg navbar-light" id="">
       <div class="container">
         <a class="navbar-brand" href="index.html">
-          <img alt="Healthstream Logo" src="assets/img/logo-healthstream-small.png" />
+          <img alt="Healthstream Logo"  src="assets/img/HSTM-Insights.png" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,13 +42,16 @@
             <li class="nav-item"><a href="#" class="nav-link active bg-success">Standard Reports</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Custom Reports</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Analytics</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Control Centers</a></li>
           </ul>
         </div>
+        <ul class="me-3 nav align-items-center">
+          <li class="nav-item"><a href="#" class="nav-link"><i class="icon-settings m-0" ></i> Settings</a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><i class="icon-help m-0"></i> Help</a></li>
+        </ul>
         <div class="dropdown me-3 nav-item align-items-center">
           <a href="#" class="dropdown-toggle nav-link d-flex align-items-center justify-content-center m-0 p-0"
              id="dropdown04" data-toggle="dropdown" aria-expanded="false">
-            <i class="icon-user m-0" style="font-size: 30px!important;"></i>
+            <i class="user-md m-0" style="font-size: 30px!important;"></i>
             <b class="caret"></b>
           </a>
           <div class="dropdown-menu dropdown-menu-right" style="top: 42px;right: 0;" aria-labelledby="dropdown04">
@@ -83,16 +86,16 @@
               <span class="input-group-text" id="search"><i class="icon-search"></i></span>
             </div>
             <h6 class="h6">STANDARD</h6>
-            <li><a class="dropdown-item" href="#">Quarterly Report</a></li>
-            <li><a class="dropdown-item" href="#">All assignments</a></li>
+            <li><a class="dropdown-item" href="saved-reports.html##standard">Quarterly Report</a></li>
+            <li><a class="dropdown-item" href="saved-reports.html##standard">All assignments</a></li>
             <hr>
             <h6 class="h6">CREATED BY ME</h6>
-            <li><a class="dropdown-item" href="#">My Report</a></li>
-            <li><a class="dropdown-item" href="#">My assignments</a></li>
+            <li><a class="dropdown-item" href="saved-reports.html#createdMine">My Report</a></li>
+            <li><a class="dropdown-item" href="saved-reports.html#createdMine">My assignments</a></li>
             <hr>
             <h6 class="h6">CREATED BY OTHERS</h6>
-            <li><a class="dropdown-item" href="#">Report</a></li>
-            <li><a class="dropdown-item" href="#">All Acme assignments</a></li>
+            <li><a class="dropdown-item" href="saved-reports.html#createdOthers">Report</a></li>
+            <li><a class="dropdown-item" href="saved-reports.html#createdOthers">All Acme assignments</a></li>
             <li><a class="dropdown-item" href="#">Report</a></li>
             <li><a class="dropdown-item" href="#">All Acme assignments</a></li>
           </ul>
@@ -113,12 +116,12 @@
       <i class="text-decoration-none text-secondary icon-arrow pb-2 mx-1"></i>
       <span class="pb-2 text-dark none">Select</span>
       <a href="select-groups.html" class="text-decoration-none active link-deco mx-2 pb-2"> Groups</a>
-      <span class="pb-2 link-deco">or</span>
+      <span class="pb-2 link-deco">and</span>
       <a href="select-students.html" class="text-decoration-none none link-deco ms-2 pb-2"> Students</a>
     </div>
   </div>
   <div class="row bg-white align-items-start">
-    <div class="col-3 bg-light">
+    <div class="col-3 pb-5 bg-light" style="max-width: 300px">
       <div class="row pe-4">
         <div class="p-0 col">
           <label for="groupName" class="form-label mt-4 ms-3">Group Name</label>
@@ -185,8 +188,7 @@
       </div>
     </div>
     <div class="col-9 p-0">
-      <div class="row bg-white align-items-start">
-        <div id="handyWrapper" class="row bg-white align-items-start" data-fl-scrolls>
+        <div id="handyWrapper" class="row bg-white align-items-start" data-fl-scrolls fl-scrolls-hoverable>
           <table id="groupTable" class="table" style="width:100%;">
             <thead>
             <tr>
@@ -204,7 +206,6 @@
       </div>
     </div>
   </div>
-</div>
 <script>
 </script>
 </body>
