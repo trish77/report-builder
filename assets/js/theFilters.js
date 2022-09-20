@@ -60,9 +60,9 @@ $(document).ready(function () {
     startDate: start,
     endDate: end,
     showDropdowns: true,
-    autoUpdateInput: false,
+   // autoUpdateInput: true,
     "singleDatePicker": true,
-    "autoApply": true,
+   // "autoApply": true,
     locale: {
       format: 'M/DD/YYYY'
     },

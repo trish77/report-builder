@@ -261,9 +261,23 @@ h5, .h5 {
   width: 300px !important;
 }
 
+#createdLink:after {
+  display: none;
+}
+
 #createdDrop.dropdown-menu.show {
-  width: 260px;
+  width: 275px;
+  height: 484px;
   left: -31px !important;
+  padding-top: 50px;
+}
+
+.monthSelect, .yearSelect {
+  border: #CED4D5 !important;
+}
+
+.daterangepicker.ltr.single.show-calendar.opensright {
+  right: 47px !important;
 }
 
 #dropOut {
