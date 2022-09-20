@@ -1,0 +1,662 @@
+<!DOCTYPE html >
+<HTML lang="en">
+<head>
+  <title>Assignment Progress Report </title>
+  <link rel="SHORTCUT ICON" href="dist/favicon.ico" />
+  <link href="dist/assets/css/app.min.css" type="text/css" rel="stylesheet">
+  <script src="dist/assets/js/app.min.js"></script>
+  <style>
+    .filter-multi-select > .viewbar { margin-left: 0; width: 100% }
+  </style>
+</head>
+<body>
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
+     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
+         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <symbol id="icon-assignment" viewBox="0 0 32 32">
+          <path fill="#6d7e82" style="fill: var(--color1, #6d7e82)"
+                d="M3.429 2.286c-0.631 0-1.143 0.512-1.143 1.143v25.143c0 0.631 0.512 1.143 1.143 1.143h25.143c0.631 0 1.143-0.512 1.143-1.143v-25.143c0-0.631-0.512-1.143-1.143-1.143h-25.143zM0 3.429c0-1.894 1.535-3.429 3.429-3.429h25.143c1.894 0 3.429 1.535 3.429 3.429v25.143c0 1.894-1.535 3.429-3.429 3.429h-25.143c-1.894 0-3.429-1.535-3.429-3.429v-25.143z"></path>
+          <path fill="#00ba7c" style="fill: var(--color2, #00ba7c)"
+                d="M16.664 10.499c0.514 0.367 0.633 1.081 0.266 1.594l-5.714 8c-0.195 0.273-0.501 0.447-0.836 0.475s-0.665-0.093-0.902-0.331l-3.429-3.429c-0.446-0.446-0.446-1.17 0-1.616s1.17-0.446 1.616 0l2.475 2.475 4.93-6.902c0.367-0.514 1.081-0.633 1.594-0.266z"></path>
+          <path fill="#6d7e82" style="fill: var(--color1, #6d7e82)"
+                d="M17.143 17.143c0-0.631 0.512-1.143 1.143-1.143h6.857c0.631 0 1.143 0.512 1.143 1.143s-0.512 1.143-1.143 1.143h-6.857c-0.631 0-1.143-0.512-1.143-1.143z"></path>
+        </symbol>
+        <symbol id="icon-saved-views" viewBox="0 0 32 32">
+          <path fill="#00ba7c" style="fill: var(--color2, #00ba7c)"
+                d="M6.857 9.143c-0.303 0-0.594 0.12-0.808 0.335s-0.335 0.505-0.335 0.808v18.087l6.113-5.24c0.428-0.367 1.060-0.367 1.488 0l6.113 5.24v-18.087c0-0.303-0.12-0.594-0.335-0.808s-0.505-0.335-0.808-0.335h-11.429zM4.433 7.861c0.643-0.643 1.515-1.004 2.424-1.004h11.429c0.909 0 1.781 0.361 2.424 1.004s1.004 1.515 1.004 2.424v20.571c0 0.446-0.26 0.852-0.665 1.038s-0.883 0.12-1.221-0.171l-7.256-6.22-7.256 6.22c-0.339 0.291-0.816 0.357-1.221 0.171s-0.665-0.592-0.665-1.038v-20.571c0-0.909 0.361-1.781 1.004-2.424z"></path>
+          <path fill="#9ea9ac" style="fill: var(--color3, #9ea9ac)"
+                d="M10.286 1.143c0-0.631 0.512-1.143 1.143-1.143h13.714c0.909 0 1.781 0.361 2.424 1.004s1.004 1.515 1.004 2.424v20.571c0 0.631-0.512 1.143-1.143 1.143s-1.143-0.512-1.143-1.143v-20.571c0-0.303-0.12-0.594-0.335-0.808s-0.505-0.335-0.808-0.335h-13.714c-0.631 0-1.143-0.512-1.143-1.143z"></path>
+        </symbol>
+        <symbol id="icon-calendar-mark" viewBox="0 0 32 32">
+          <path fill="#6d7e82" style="fill: var(--color1, #6d7e82)"
+                d="M8 0c0.631 0 1.143 0.512 1.143 1.143v9.143c0 0.631-0.512 1.143-1.143 1.143s-1.143-0.512-1.143-1.143v-9.143c0-0.631 0.512-1.143 1.143-1.143z"></path>
+          <path fill="#6d7e82" style="fill: var(--color1, #6d7e82)"
+                d="M24 0c0.631 0 1.143 0.512 1.143 1.143v9.143c0 0.631-0.512 1.143-1.143 1.143s-1.143-0.512-1.143-1.143v-9.143c0-0.631 0.512-1.143 1.143-1.143z"></path>
+          <path fill="#00ba7c" style="fill: var(--color2, #00ba7c)"
+                d="M5.714 17.143c0-1.262 1.023-2.286 2.286-2.286s2.286 1.023 2.286 2.286c0 1.262-1.023 2.286-2.286 2.286s-2.286-1.023-2.286-2.286z"></path>
+          <path fill="#00ba7c" style="fill: var(--color2, #00ba7c)"
+                d="M13.714 17.143c0-1.262 1.023-2.286 2.286-2.286s2.286 1.023 2.286 2.286c0 1.262-1.023 2.286-2.286 2.286s-2.286-1.023-2.286-2.286z"></path>
+          <path fill="#00ba7c" style="fill: var(--color2, #00ba7c)"
+                d="M21.714 17.143c0-1.262 1.023-2.286 2.286-2.286s2.286 1.023 2.286 2.286c0 1.262-1.023 2.286-2.286 2.286s-2.286-1.023-2.286-2.286z"></path>
+          <path fill="#00ba7c" style="fill: var(--color2, #00ba7c)"
+                d="M5.714 24c0-1.262 1.023-2.286 2.286-2.286s2.286 1.023 2.286 2.286c0 1.262-1.023 2.286-2.286 2.286s-2.286-1.023-2.286-2.286z"></path>
+          <path fill="#6d7e82" style="fill: var(--color1, #6d7e82)"
+                d="M1.004 5.576c0.643-0.643 1.515-1.004 2.424-1.004 0.631 0 1.143 0.512 1.143 1.143s-0.512 1.143-1.143 1.143c-0.303 0-0.594 0.12-0.808 0.335s-0.335 0.505-0.335 0.808v20.571c0 0.303 0.12 0.594 0.335 0.808s0.505 0.335 0.808 0.335h25.143c0.303 0 0.594-0.12 0.808-0.335s0.335-0.505 0.335-0.808v-20.571c0-0.303-0.12-0.594-0.335-0.808s-0.505-0.335-0.808-0.335h-4.571c-0.631 0-1.143-0.512-1.143-1.143s0.512-1.143 1.143-1.143h4.571c0.909 0 1.781 0.361 2.424 1.004s1.004 1.515 1.004 2.424v20.571c0 0.909-0.361 1.781-1.004 2.424s-1.515 1.004-2.424 1.004h-25.143c-0.909 0-1.781-0.361-2.424-1.004s-1.004-1.515-1.004-2.424v-20.571c0-0.909 0.361-1.781 1.004-2.424z"></path>
+          <path fill="#6d7e82" style="fill: var(--color1, #6d7e82)"
+                d="M6.857 5.714c0-0.631 0.512-1.143 1.143-1.143h11.429c0.631 0 1.143 0.512 1.143 1.143s-0.512 1.143-1.143 1.143h-11.429c-0.631 0-1.143-0.512-1.143-1.143z"></path>
+        </symbol>
+      </defs>
+    </svg>
+  </defs>
+</svg>
+<div class="container bg-light pb-5">
+  <div class="row border-bottom border-3 border-light
+   bg-white">
+    <nav class="navbar ms-3 navbar-expand-lg navbar-light" id="">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img alt="Healthstream Logo" class="logo" src="assets/img/HSTM-Insights.png" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="fa fa-bars"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="">
+          <ul class="nav ml-auto mr-md-3 nav-pills">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link active bg-success">Standard Reports</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Custom Reports</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Analytics</a></li>
+          </ul>
+        </div>
+        <ul class="me-3 nav align-items-center">
+          <li class="nav-item"><a href="#" class="nav-link"><i class="Settings m-0"></i> Settings</a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><i class="Help m-0"></i> Help</a></li>
+        </ul>
+        <div class="dropdown me-3 nav-item align-items-center">
+          <a href="#" class="dropdown-toggle nav-link d-flex align-items-center justify-content-center m-0 p-0"
+             id="dropdown04" data-toggle="dropdown" aria-expanded="false">
+            <i class="user-md m-0" style="font-size: 30px!important;"></i>
+            <b class="caret"></b>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" style="top: 42px;right: 0;" aria-labelledby="dropdown04">
+            <p class="mb-0">Ihor Bilyi</p>
+            <p class="text-secondary">Administrator</p>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item p-0 text-danger">Sign Out</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="row bg-white border-light border-3 border-bottom align-items-center">
+    <div class="my-3 col p-0 ms-3 mb-0 ">
+      <div>
+        <i class="text-decoration-none text-secondary icon-arrow-left mx-1"></i>
+        <a href="saved-reports.html" class="text-secondary text-xsmall">SAVED REPORTS</a>
+      </div>
+      <h3 class="h3 sserif-bold d-inline-block">
+        <svg class="svg mb-1 icon-assignment">
+          <use xlink:href="#icon-assignment"></use>
+        </svg>
+        <h5 id="savedReportHeader" class="h5 ms-1 d-inline-block text-med">
+          Assignment Progress / <a class="text-decoration-none text-med" href="saved-reports.html">Saved Reports</a> /
+          <span class="fw-bold text-dark">Assignment Progress all</span>
+        </h5>
+      </h3>
+    </div>
+    <div class="col p-0 d-flex justify-content-end">
+      <div id="saveChanges" class="d-flex ms-3 text-end">
+        <button id="saveChangesBtn" disabled class="btn btn-lt fw-semi">
+          Save Changes
+        </button>
+      </div>
+      <div class="d-flex text-end">
+        <div class="btn-group">
+          <button id="runReport"
+                  class="btn btn-success me-2 ms-3 fw-semi">
+            Run Report
+            <i class="icon-arrow text-white"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row bg-white rounded-1 align-items-center">
+    <div class="col p-0 ms-4 mt-2 mb-1 d-flex align-items-center justify-content-start">
+      <a href="#"
+         class="text-decoration-none text-secondary text-dark link-deco active pb-2 me-1">Saved report details</a>
+      <i class="text-decoration-none text-secondary icon-arrow pb-2 me-2 mx-1"></i>
+      <a href="assignment-progress.html"
+         class="text-decoration-none text-secondary link-deco inactive pb-2 me-1">
+        Select assignments</a>
+      <i class="text-decoration-none text-secondary icon-arrow pb-2 ms-2 me-2"></i>
+      <a href="select-groups.html" class="text-decoration-none inactive link-deco mx-2 pb-2"> Select Student Groups</a>
+      <i class="text-decoration-none text-secondary icon-arrow pb-2 mx-1"></i>
+      <a href="select-students.html" class="text-decoration-none inactive link-deco ms-2 pb-2"> Select Students</a>
+    </div>
+  </div>
+  <div class="row bg-white border-bottom align-items-center m-3 mt-4">
+    <h3 class="h4 sserif-bold mt-3 ps-4 d-inline-block">Saved report details</h3>
+    <form class="well form-horizontal p-4 needs-validation" id="saveReportForm" novalidate>
+      <!-- Text input-->
+      <div class="col-8">
+        <label for="name" class="control-label text-left"> Name
+          <sup><span
+                  class="icon-asterisk text-warning"></span></sup>
+        </label>
+        <input name="name" autofocus id="name" placeholder="Name" class="form-control" type="text" required />
+        <span class="invalid-feedback">
+                    <i class="icon-alert"></i>
+                 This needs to be filled out.
+                </span>
+      </div>
+      <div class="col-8 mt-3">
+        <label for="description" class="control-label text-left"> Description</label>
+        <input name="description" autofocus id="description" placeholder="What's the purpose of this saved report"
+               class="form-control" type="text" />
+        <span class="invalid-feedback">
+                    <i class="icon-alert"></i>
+                 This needs to be filled out.
+                </span>
+      </div>
+      <div class="p-0 col-8">
+        <label for="peopleSearch" id="peopleSearch" class="control-label mt-4">Share template with</label>
+        <select multiple="multiple" name="peopleSearch" class="peopleSearch"
+                aria-label="Select people with access">
+          <option value="1>">Javik Workers - otarburn0@noaa.gov</option>
+          <option value="2">Anna Nurse - dst1@redcross.org</option>
+          <option value="3">Gaylor Youdes - bgelder2@dion.ne.jp</option>
+          <option value="4">Valerye Dyken - gizard4@buzzfeed.com</option>
+          <option value="5">Traver Carvills - psuter3@t-online.dee</option>
+          <option value="6">Tristan Bogus - ddamiral5@auda.org.au</option>
+          <option value="7">Koressa McCoskers - dscurry6@bluehost.com</option>
+          <option value="8">Niall Youhills - csabbin7@is.gd</option>
+          <option value="9">Torbito Brightey - rfutcher8@kickstarter.com</option>
+          <option value="10">Graeme Livetts - wmeneghelli9@amazon.com</option>
+          <option value="11">Katharyn McAvaddys - tkaleya@wikia.com</option>
+          <option value="12">Lindsey Fear spleadenb@live.com</option>
+          <option value="13">Melany Cromars - balwenc@alexa.com</option>
+          <option value="14">Hewett Odds - gweathersd@paginegialle.com</option>
+          <option value="15">Gav Barriballs - tjarrettee@chronoengine.com</option>
+          <option value="16">Casie Bissons - omallalieuf@printfriendly.com</option>
+          <option value="17">Katie Veldstron - bpaskellj@shinystat.com</option>
+          <option value="18">Silvio Lisamor - sskrinesm@list-manage.com</option>
+        </select>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- Save Report Modal -->
+<div id="deleteReport" class="modal fade" tabindex="-1" aria-labelledby="deleteReport" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteReportTitle">
+          <svg class="svg mb-1 icon-assignment">
+            <use xlink:href="#icon-saved-views"></use>
+          </svg>
+          Delete report
+        </h5>
+        <button type="button" class="btn-close text-small" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form class="well form-horizontal p-2 needs-validation" id="deleteReportForm" novalidate>
+        <div class="modal-body">
+          <div class="container">
+            <div class="col">
+              <div class="row">
+                <h5 class="text-center">
+                  Delete changes to the report configuration?
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Text input-->
+        <div class="modal-footer">
+          <div class="pull-left">
+            <button class="btn btn-lt" id="closeBtn" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" id="deleteBtn" class="btn btn-danger align-items-end">Delete</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Save Report Modal -->
+<div id="saveReport" class="modal fade" tabindex="-1" aria-labelledby="saveReport" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="saveReportTitle">
+          <svg class="svg mb-1 icon-assignment">
+            <use xlink:href="#icon-saved-views"></use>
+          </svg>
+          Save report
+        </h5>
+        <button type="button" class="btn-close text-small" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form class="well form-horizontal p-2 needs-validation" id="saveReportForm" novalidate>
+        <div class="modal-body">
+          <!-- Text input-->
+          <div class="col">
+            <label for="name" class="control-label text-left"> Name <sup><span
+                    class="icon asterisk text-warning"></span></sup>
+            </label>
+            <input name="name" autofocus id="name" placeholder="Name" class="form-control" type="text" required />
+            <span class="invalid-feedback">
+                    <i class="icon-alert"></i>
+                 This needs to be filled out.
+                </span>
+          </div>
+          <div class="col mt-3">
+            <label for="description" class="control-label text-left"> Description</label>
+            <input name="description" autofocus id="description" placeholder="What's the purpose of this saved report"
+                   class="form-control" type="text" />
+            <span class="invalid-feedback">
+                    <i class="icon-alert"></i>
+                 This needs to be filled out.
+                </span>
+          </div>
+          <div class="p-0 col">
+            <label for="shareSearch" id="shareSearch" class="control-label mt-4">Share template with</label>
+            <select multiple="multiple" name="shareSearch" class="shareSearch"
+                    aria-label="Select people with access">
+              <option value="1>">Javik Worker - otarburn0@noaa.gov</option>
+              <option value="2">Ann Nurse - dst1@redcross.org</option>
+              <option value="3">Gaylor Youde - bgelder2@dion.ne.jp</option>
+              <option value="4">Valerye Dyke - gizard4@buzzfeed.com</option>
+              <option value="5">Traver Carvill - psuter3@t-online.dee</option>
+              <option value="6">Tristan Bogu - ddamiral5@auda.org.au</option>
+              <option value="7">Koressa McCosker - dscurry6@bluehost.com</option>
+              <option value="8">Niall Youhill - csabbin7@is.gd</option>
+              <option value="9">Torbit Brightey - rfutcher8@kickstarter.com</option>
+              <option value="10">Graeme Livett - wmeneghelli9@amazon.com</option>
+              <option value="11">Katharyn McAvaddy - tkaleya@wikia.com</option>
+              <option value="12">Lindsey Fears spleadenb@live.com</option>
+              <option value="13">Melany Cromar - balwenc@alexa.com</option>
+              <option value="14">Hewett Od - gweathersd@paginegialle.com</option>
+              <option value="15">Gav Barriball - tjarrettee@chronoengine.com</option>
+              <option value="16">Casie Bisson - omallalieuf@printfriendly.com</option>
+              <option value="17">Katie Veldstra - bpaskellj@shinystat.com</option>
+              <option value="18">Silvio Lisamore - sskrinesm@list-manage.com</option>
+            </select>
+          </div>
+        </div>
+        <!-- Text input-->
+        <div class="modal-footer">
+          <div class="pull-left">
+            <button class="btn btn-lt" id="closeBtn" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" id="saveBtn2" class="btn btn-success align-items-end">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div id="saveMessage">
+</div>
+<!--save report / changes confirmatin modal-->
+<div class="modal fade" id="saveSure" tabindex="-1" aria-labelledby="saveSure" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Save Report Changes</h5>
+        <button type="button" class="btn-close text-small" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="col">
+            <div class="row">
+              <h5 class="text-center">
+                Save changes to the report configuration?
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-lt" id="closeBtn" data-bs-dismiss="modal">No</button>
+        <button type="submit" id="saveChangeDialogBtn" class="btn btn-primary align-items-end">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--schedule report modal-->
+<!--<div id="scheduleReport" class="modal fade modal-report"
+     tabindex="-1" aria-labelledby="scheduleReport"
+     aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <svg class="svg mb-1 icon-calendar-mark">
+          <use xlink:href="#icon-calendar-mark"></use>
+        </svg>
+        <h5 class="modal-title ps-2" id="exampleModalLabel">Schedule report</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="well form-horizontal needs-validation" id="Schedule" novalidate>
+          &lt;!&ndash; Text input&ndash;&gt;
+          <div class="mt-3">
+            <div class="col">
+              <label for="name" class="control-label text-left fw-bold"> Name</label>
+              <sup><span class="icon asterisk text-warning"></span></sup>
+              <input name="Name" placeholder="Name" class="form-control" type="text" />
+              <p>Multiple email addresses can be separated by commas</p>
+            </div>
+          </div>
+          &lt;!&ndash; Text input&ndash;&gt;
+          <div class="mt-3 text-left">
+            <div class="col">
+              <label for="Email" class="control-label fw-bold">Email</label>
+              <sup><span class="icon asterisk text-warning"></span></sup>
+              <input name="Email" placeholder="Email" class="form-control" type="text" />
+            </div>
+          </div>
+          &lt;!&ndash; Text input&ndash;&gt;
+          <div style="overflow:hidden;">
+            <div class="row mt-3 text-left">
+              <div class="col">
+                <label class="control-label fw-bold">Report Schedule</label>
+                <p>Scheduled tasks are processed nightly between Midnight and 8 AM CT</p>
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-daily-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-daily" type="button" role="tab" aria-controls="pills-daily"
+                            aria-selected="true">Daily
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-weekly-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-weekly"
+                            type="button" role="tab" aria-controls="pills-weekly" aria-selected="false">Weekly
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-monthly-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-monthly" type="button" role="tab" aria-controls="pills-monthly"
+                            aria-selected="false">Monthly
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-quarterly-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-quarterly" type="button" role="tab" aria-controls="pills-quarterly"
+                            aria-selected="false">Quarterly
+                    </button>
+                  </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                  <div class="tab-pane fade show active" id="pills-daily" role="tabpanel"
+                       aria-labelledby="pills-daily-tab">
+                    <label for="startDate" class="form-label mt-2">Start Date</label>
+                    <div class="input-group mb-3">
+                      <i class="input-group-text"><span class="icon-calendar"></span> </i>
+                      <input type="text" class="form-control" id="startDate" placeholder="">
+                    </div>
+                    <label for="endDate" class="form-label">End Date</label>
+                    <div class="input-group mb-3">
+                      <i class="input-group-text"><span class="icon-calendar"></span> </i>
+                      <input type="text" class="form-control" id="endDate" placeholder="">
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="pills-weekly" role="tabpanel" aria-labelledby="pills-weekly-tab">
+                    <div class="form-check form-check-inline ms-4">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      <label class="form-check-label" for="inlineCheckbox1">Sun</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2">Mon</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                      <label class="form-check-label" for="inlineCheckbox3">Tue</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                      <label class="form-check-label" for="inlineCheckbox4">Wed</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                      <label class="form-check-label" for="inlineCheckbox5">Thu</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+                      <label class="form-check-label" for="inlineCheckbox6">Fri</label>
+                    </div>
+                    <div class="form-check form-check-inline mb-3">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
+                      <label class="form-check-label" for="inlineCheckbox7">Sat</label>
+                    </div>
+                    <label for="startDate" class="form-label">Start Date</label>
+                    <div class="input-group mb-3">
+                      <i class="input-group-text"><span class="icon-calendar"></span> </i>
+                      <input type="text" class="form-control" id="startDate" placeholder="">
+                    </div>
+                    <label for="endDate" class="form-label">End Date</label>
+                    <div class="input-group mb-3">
+                      <i class="input-group-text"><span class="icon-calendar"></span> </i>
+                      <input type="text" class="form-control" id="endDate" placeholder="">
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="pills-monthly" role="tabpanel" aria-labelledby="pills-monthly-tab">
+                    <div class="form-check ms-4">
+                      <input class="form-check-input" type="radio" name="firstDay" id="firstDay" checked>
+                      <label class="form-check-label" for="firstDay">
+                        1st day of month
+                      </label>
+                    </div>
+                    <div class="form-check ms-4">
+                      <input class="form-check-input" type="radio" name="lastDay" id="lastDay">
+                      <label class="form-check-label" for="lastDay">
+                        Last day of month
+                      </label>
+                    </div>
+                    <div class="form-check ms-4 mb-3">
+                      <input class="form-check-input" type="radio" name="specificDay" id="specificDay">
+                      <label class="form-check-label" for="specificDay">
+                        Specific day of quarter
+                      </label>
+                    </div>
+                    <label for="startDate" class="form-label">Start Date</label>
+                    <div class="input-group mb-3">
+                      <i class="input-group-text"><span class="icon-calendar"></span> </i>
+                      <input type="text" class="form-control" id="startDate" placeholder="">
+                    </div>
+                    <label for="endDate" class="form-label">End Date</label>
+                    <div class="input-group mb-3">
+                      <i class="input-group-text"><span class="icon-calendar"></span> </i>
+                      <input type="text" class="form-control" id="endDate" placeholder="">
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="pills-quarterly" role="tabpanel"
+                       aria-labelledby="pills-quarterly-tab">
+                    <div class="form-check ms-4">
+                      <input class="form-check-input" type="radio" name="firstDay" id="firstDay" checked>
+                      <label class="form-check-label" for="firstDay">
+                        1st day of quarter
+                      </label>
+                    </div>
+                    <div class="form-check ms-4">
+                      <input class="form-check-input" type="radio" name="lastDay" id="lastDay">
+                      <label class="form-check-label" for="lastDay">
+                        Last day of quarter
+                      </label>
+                    </div>
+                    <div class="form-check ms-4 mb-3">
+                      <input class="form-check-input" type="radio" name="specificDay" id="specificDay">
+                      <label class="form-check-label" for="specificDay">
+                        Specific day of quarter
+                      </label>
+                    </div>
+                    <label for="startDate" class="form-label">Start Date</label>
+                    <div class="input-group mb-3">
+                      <i class="input-group-text"><span class="icon-calendar"></span> </i>
+                      <input type="text" class="form-control" id="startDate" placeholder="">
+                    </div>
+                    <label for="endDate" class="form-label">End Date</label>
+                    <div class="input-group mb-3">
+                      <i class="input-group-text"><span class="icon-calendar"></span> </i>
+                      <input type="text" class="form-control" id="endDate" placeholder="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          &lt;!&ndash; Text input&ndash;&gt;
+          <div class="modal-footer">
+            <div class="pull-left">
+              <button class="btn btn-lt" id="closeBtn" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" id="scheduleBtn" class="btn btn-success align-items-end"> Schedule Report</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>-->
+<!-- notification toast -->
+<div class="position-fixed bottom-0 start-50 translate-middle-x p-5" style="z-index: 11">
+  <div class="toast align-items-center text-white bg-dark border-0" id="saveToast" role="alert" aria-live="assertive"
+       aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        <div><i class="icon check-circle text-success"></i>
+          "New" has been saved.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="position-fixed bottom-0 start-50 translate-middle-x p-5" style="z-index: 11">
+  <div class="toast align-items-center text-white bg-dark border-0" id="deleteToast" role="alert" aria-live="assertive"
+       aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        <div><i class="icon-clear text-danger"></i>
+          "Assignment Progress all" has been deleted.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="position-fixed bottom-0 start-50 translate-middle-x p-5" style="z-index: 11">
+  <div class="toast align-items-center text-white bg-dark border-0" id="scheduleToast" role="alert"
+       aria-live="assertive"
+       aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        <div><i class="icon check-circle text-success"></i>
+          "Assignment Progress all" has been scheduled.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  var forms = document.querySelectorAll('.needs-validation'),
+          feedback = document.querySelector('.valid-feedback')
+  saveReportForm = document.getElementById('saveReportForm');
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms).forEach(function ( form ) {
+    form.addEventListener('submit', function ( event ) {
+
+      let valid_form = false;
+
+      if ( !form.checkValidity() ) {
+        event.preventDefault();
+        event.stopPropagation();
+
+      }
+
+      form.classList.add('was-validated');
+
+    }, false);
+  });
+
+  $('#saveReportForm').on('change', function (  ) {
+    $('#saveChangesBtn').prop('disabled', false)
+  })
+
+  $('#saveBtn2').on('click', function () {
+    $('#saveChanges').removeClass('d-none');
+    $('#saveReport').modal('hide');
+    $('#saveToast').show("slow");
+    $('#savedReportHeader').removeClass('d-none');
+    $('#moreSavedWrapper').removeClass('d-none');
+    $('#moreWrapper').addClass('d-none');
+    $('#defaultHeader').addClass('d-none');
+    $('#saveMessage').removeClass('d-none')
+  });
+
+
+$('#saveChangesBtn').on('click', function () {
+  $('#saveToast').show("slow");
+  setTimeout(function () {
+    $('#saveToast').hide("slow")
+  }, 7000);
+
+});
+
+  $('#saveChangeDialogBtn').on('click', function () {
+    $('#saveSure').modal('hide');
+    $('#saveToast').show("slow");
+  });
+
+  $('#deleteBtn').on('click', function ( e ) {
+    alert('clicked');
+    $('#deleteReport').modal('hide');
+    e.preventDefault();
+    e.stopPropagation();
+    $('#deleteToast').show("slow");
+  });
+
+  $('#saveReport, #saveSure').on('hidden.bs.modal', function () {
+    setTimeout(function () {
+      $('#saveToast').hide("slow")
+    }, 7000);
+  })
+
+  $('#scheduleBtn').on('click', function ( e ) {
+    $('#scheduleReport').modal('hide');
+    e.preventDefault();
+    e.stopPropagation();
+    $('#scheduleToast').show("slow");
+  });
+
+  $('#scheduleReport').on('hidden.bs.modal', function () {
+    setTimeout(function () {
+      $('#scheduleToast').hide("slow")
+    }, 7000);
+  })
+
+  $('#deleteReport').on('hidden.bs.modal', function () {
+    setTimeout(function () {
+      $('#deleteToast').hide("slow")
+    }, 7000);
+  })
+
+
+  let peopleSearch = $('.peopleSearch').filterMultiSelect({
+    selectAllText: 'select all...',
+    placeholderText: 'Search people to add',
+    filterText: 'Search',
+    caseSensitive: false
+  });
+
+  let shareSearch = $('.shareSearch').filterMultiSelect({
+    selectAllText: 'select all...',
+    placeholderText: 'Search people to add',
+    filterText: 'Search',
+    caseSensitive: false
+  });
+
+</script>
+</body>
+</HTML>
