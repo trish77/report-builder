@@ -72,8 +72,9 @@
           </ul>
         </div>
         <ul class="me-3 nav align-items-center">
-          <li class="nav-item"><a href="#" class="nav-link"><i class="Settings m-0"></i> Settings</a></li>
-          <li class="nav-item"><a href="#" class="nav-link"><i class="Help m-0"></i> Help</a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><i class="icon-account m-0" ></i> Healthstream Admin</a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><i class="icon-settings m-0"></i> Settings</a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><i class="icon-help m-0"></i> Help</a></li>
         </ul>
         <div class="dropdown me-3 nav-item align-items-center">
           <a href="#" class="dropdown-toggle nav-link d-flex align-items-center justify-content-center m-0 p-0"
@@ -107,8 +108,11 @@
           </span>
           <h5 id="savedReportHeader" class="h5 ms-1 d-inline-block d-none text-med">
             Assignment Progress / <a class="text-decoration-none text-med" href="saved-reports.html">Saved Reports</a> /
-            <span
-                    class="fw-bold text-dark">Assignment Progress all</span>
+            <span  class="fw-bold text-dark">Assignment Progress all</span>
+          </h5>
+          <h5 id="schedReportHeader" class="h5 ms-1 d-inline-block d-none text-med">
+            Assignment Progress / <a class="text-decoration-none text-med" href="saved-reports.html">Scheduled Reports</a> /
+            <span class="fw-bold text-dark">Assignment Progress all</span>
           </h5>
         </h3>
       </div>
@@ -122,9 +126,9 @@
           </button>
           <ul id="moreBtnDrop" class="dropdown-menu" aria-labelledby="moreBtn" style="right:0">
             <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#scheduleReport"
-                   href="#scheduleReport">Schedule</a></li>
+                   href="#scheduleReport">Add new schedule </a></li>
             <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#saveReport"
-                   href="#saveReport">Save as template</a></li>
+                   href="#saveReport">Save as a template</a></li>
           </ul>
         </div>
       </div>
@@ -138,11 +142,29 @@
             <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#scheduleReport"
                    href="#scheduleReport">Share saved report</a></li>
             <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#scheduleReport"
-                   href="#scheduleReport">Schedule</a></li>
+                   href="#scheduleReport">Add new Schedule</a></li>
             <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#scheduleReport"
                    href="#scheduleReport">Duplicate</a></li>
             <li><a class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#deleteReport"
                    href="#deleteReport">Delete current report</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="moreScheduleWrapper" class="d-flex d-none text-end">
+        <div class="dropdown">
+          <button id="moreSchedBtn" class="btn btn-lt dropdown-toggle fw-semi"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+            More
+          </button>
+          <ul id="moreBtnScheduleDropSaved" class="dropdown-menu" aria-labelledby="moreSchedBtn" style="right:0">
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#scheduleReport"
+                   href="#scheduleReport">Edit schedule</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#scheduleReport"
+                   href="#scheduleReport">Add new Schedule</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#scheduleReport"
+                   href="#scheduleReport">Save as a template</a></li>
+            <li><a class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedReport"
+                   href="#deleteSchedReport">Delete scheduled report</a></li>
           </ul>
         </div>
       </div>
@@ -151,6 +173,7 @@
           Save Changes
         </button>
       </div>
+      <!--export btn-->
       <div class="d-flex text-end">
         <div class="btn-group">
           <button id="exportBtn"
@@ -162,12 +185,15 @@
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="exportBtn" style="width: 150px!important;">
             <li><a class="dropdown-item" href="#">CSV</a></li>
             <li><a class="dropdown-item" href="#">Excel</a></li>
-            <li><a class="dropdown-item" href="#">Link </a></li>
+            <li><a class="dropdown-item" href="#">Text</a></li>
+            <li><a class="dropdown-item" href="#">Grant access via <span class="icon icon-link" /></a></li>
+            <li><a class="dropdown-item" href="#">Export summary</a></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
+  <!--chart row-->
   <div class="row">
     <div class="col my-3 mx-3 p-0 mb-0 d-flex align-items-center justify-content-start">
       <i id="toggleIcon" class="text-decoration-none text-success angle-down mx-1"></i>
@@ -249,9 +275,10 @@
       </div>
     </div>
   </div>
+  <!--saved reports button row-->
   <div class="row">
     <div class="button-row ms-2 d-flex">
-      <div class="dropdown">
+      <div class="dropdown" title="Click to open">
         <button id="savedReportBtn" class="btn btn-white me-2 dropdown-toggle fw-semi"
                 data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
           <i class="text-decoration-none text-primary icon-saved-views mx-1"></i>
@@ -281,9 +308,10 @@
                  href="#saveReport">Save current report</a></li>
         </ul>
       </div>
-      <div class="dropdown">
+      <div class="dropdown" title="Click to open">
         <div class="btn-group btn-success-lt me-2">
-          <a href="filterBy" id="filterBy" class="btn btn-success-lt dropdown-toggle pe-1" data-bs-toggle="dropdown"
+          <a href="filterBy" id="filterBy" class="btn btn-success-lt dropdown-toggle pe-1"
+             data-bs-toggle="dropdown"
              data-bs-auto-close="outside" aria-expanded="false">
             <i class="text-decoration-none text-success icon-filter mx-1"></i>
             <span style="color: #3E5359; font-weight: bolder">
@@ -295,7 +323,7 @@
           <ul class="dropdown-menu" aria-labelledby="filterBy" style="right:0">
             <li class="dropdown-item">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="chkDept">
+                <input class="form-check-input" checked type="checkbox" value="" id="chkDept">
                 <label class="form-check-label" for="chkDept">
                   Department
                 </label>
@@ -303,7 +331,7 @@
             </li>
             <li class="dropdown-item">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="chkStudent">
+                <input class="form-check-input" checked type="checkbox" value="" id="chkStudent">
                 <label class="label" for="chkStudent">
                   Student
                 </label>
@@ -311,7 +339,7 @@
             </li>
             <li class="dropdown-item">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="chkStatus">
+                <input class="form-check-input" checked type="checkbox" value="" id="chkStatus">
                 <label class="label" for="chkStatus">
                   Assignment Status
                 </label>
@@ -319,7 +347,7 @@
             </li>
             <li class="dropdown-item">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="chkAssignment">
+                <input class="form-check-input" checked type="checkbox" value="" id="chkAssignment">
                 <label class="form-check-label" for="chkAssignment">
                   <div class="dropdown">
                     <a class="dropdown-toggle text-decoration-none" href="#" role="button" id="assgLink"
@@ -367,7 +395,7 @@
             </li>
             <li class="dropdown-item">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="chkDueDate">
+                <input class="form-check-input" checked type="checkbox"  value="" id="chkDueDate">
                 <label class="form-check-label" for="chkDueDate">
                   Due date
                 </label>
@@ -375,7 +403,7 @@
             </li>
             <li class="dropdown-item">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" checked value="" id="chkCompletionDate">
+                <input class="form-check-input" checked type="checkbox" value="" id="chkCompletionDate">
                 <label class="form-check-label" for="chkCompletionDate">
                   Completion date
                 </label>
@@ -440,9 +468,10 @@
           </ul>
         </div>
       </div>
-      <div class="dropdown">
+      <div class="dropdown" title="Click to open">
         <div class="btn-group btn-success-lt me-2">
-          <a href="#groupDept" class="btn btn-success-lt no-arrow dropdown-toggle pe-1" data-bs-toggle="dropdown"
+          <a href="#groupDept" class="btn btn-success-lt no-arrow dropdown-toggle pe-1"
+             data-bs-toggle="dropdown"
              data-bs-auto-close="outside" aria-expanded="false">
             <i class="text-decoration-none text-success icon-group mx-1"></i>
             <span style="color: #3E5359; font-weight: bolder;">
@@ -555,6 +584,7 @@
       </div>
     </div>
   </div>
+  <!--table starts-->
   <div class="row bg-white mt-4 align-items-start">
     <div class="col">
       <div id="handyWrapper"
@@ -612,6 +642,41 @@
           <div class="pull-left">
             <button class="btn btn-lt" id="closeBtn" data-bs-dismiss="modal">Cancel</button>
             <button type="submit" id="deleteBtn" class="btn btn-danger align-items-end">Delete</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div id="deleteSchedReport" class="modal fade" tabindex="-1" aria-labelledby="deleteSchedReport" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteReportTitle">
+          <svg class="svg mb-1 icon-assignment">
+            <use xlink:href="#icon-saved-views"></use>
+          </svg>
+          Delete scheduled report
+        </h5>
+        <button type="button" class="btn-close text-small" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form class="well form-horizontal p-2 needs-validation" id="deleteReportForm" novalidate>
+        <div class="modal-body">
+          <div class="container">
+            <div class="col">
+              <div class="row">
+                <h5 class="text-center">
+                  Delete changes to the report schedule?
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Text input-->
+        <div class="modal-footer">
+          <div class="pull-left">
+            <button class="btn btn-lt" id="closeBtn" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" id="deleteSchedBtn" class="btn btn-danger align-items-end">Delete</button>
           </div>
         </div>
       </form>
@@ -912,7 +977,7 @@
     </div>
   </div>
 </div>
-<!-- notification toast -->
+<!-- notification saved toast -->
 <div class="position-fixed bottom-0 start-50 translate-middle-x p-5" style="z-index: 11">
   <div class="toast align-items-center text-white bg-dark border-0" id="saveToast" role="alert" aria-live="assertive"
        aria-atomic="true">
@@ -925,6 +990,7 @@
     </div>
   </div>
 </div>
+<!--delete report toast-->
 <div class="position-fixed bottom-0 start-50 translate-middle-x p-5" style="z-index: 11">
   <div class="toast align-items-center text-white bg-dark border-0" id="deleteToast" role="alert" aria-live="assertive"
        aria-atomic="true">
@@ -937,6 +1003,20 @@
     </div>
   </div>
 </div>
+<!--delete schedule report toast-->
+<div class="position-fixed bottom-0 start-50 translate-middle-x p-5" style="z-index: 11">
+  <div class="toast align-items-center text-white bg-dark border-0" id="deleteSchedToast" role="alert" aria-live="assertive"
+       aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        <div><i class="icon-clear text-danger"></i>
+          "Assignment Progress all" schedule has been deleted.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--schedule toast-->
 <div class="position-fixed bottom-0 start-50 translate-middle-x p-5" style="z-index: 11">
   <div class="toast align-items-center text-white bg-dark border-0" id="scheduleToast" role="alert" aria-live="assertive"
        aria-atomic="true">
@@ -990,11 +1070,21 @@
   });
 
   $('#deleteBtn').on('click', function (e) {
-    alert('clicked');
-    $('#deleteReport').modal('hide');
     e.preventDefault();
     e.stopPropagation();
+    $('#deleteReport').modal('hide');
+    $('#defaultHeader,  #moreWrapper, #moreBtn').removeClass('d-none');
+    $('#savedReportHeader, #moreSavedWrapper,  #saveChanges').addClass('d-none');
     $('#deleteToast').show("slow");
+  });
+
+  $('#deleteSchedBtn').on('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $('#deleteSchedReport').modal('hide');
+    $('#defaultHeader, #moreWrapper, #moreBtn').removeClass('d-none');
+    $('#schedReportHeader, #moreSavedWrapper, #saveChanges, #moreScheduleWrapper').addClass('d-none');
+    $('#deleteSchedToast').show("slow");
   });
 
   $('#saveReport, #saveSure').on('hidden.bs.modal', function () {
@@ -1004,9 +1094,11 @@
   })
 
   $('#scheduleBtn').on('click', function (e) {
-    $('#scheduleReport').modal('hide');
     e.preventDefault();
     e.stopPropagation();
+    $('#defaultHeader, #moreBtn').addClass('d-none');
+    $('#moreScheduleWrapper, #saveChanges, #schedReportHeader').removeClass('d-none');
+    $('#scheduleReport').modal('hide');
     $('#scheduleToast').show("slow");
   });
 
@@ -1019,6 +1111,12 @@
   $('#deleteReport').on('hidden.bs.modal', function () {
     setTimeout(function () {
       $('#deleteToast').hide("slow")
+    }, 7000);
+  })
+
+  $('#deleteSchedReport').on('hidden.bs.modal', function () {
+    setTimeout(function () {
+      $('#deleteSchedToast').hide("slow")
     }, 7000);
   })
 

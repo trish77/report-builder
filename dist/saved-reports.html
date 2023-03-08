@@ -45,6 +45,7 @@
           </ul>
         </div>
         <ul class="me-3 nav align-items-center">
+          <li class="nav-item"><a href="#" class="nav-link"><i class="icon-account m-0" ></i> Healthstream Admin</a></li>
           <li class="nav-item"><a href="#" class="nav-link"><i class="icon-settings m-0" ></i> Settings</a></li>
           <li class="nav-item"><a href="#" class="nav-link"><i class="icon-help m-0"></i> Help</a></li>
         </ul>
@@ -77,31 +78,89 @@
     </div>
   </div>
   <div class="row align-items-start">
-    <div class="col-11">
-      <ul class="nav nav-tabs" role="tablist">
+<!--    <div class="col-10"-->
+      <ul class="nav nav-tabs" role="tablist" id="tabs">
         <li class="nav-item">
-          <button class="nav-link active" role="tab" id="standard"
-                  aria-selected="true" type="button"
+          <button class="nav-link active" role="tab" id="standard-tab"
+                  aria-selected="true" type="button" aria-current="page"
                   data-bs-toggle="tab" data-bs-target="#standard">My Reports
             <span class="badge">44</span>
           </button>
         </li>
         <li class="nav-item" style="margin-left: 10px;">
           <button class="nav-link bg-white" role="tab"
-                  type="button" id="createdMine"
+                  type="button" id="createdMine-tab"
+                  aria-selected="false"
                   data-bs-toggle="tab" data-bs-target="#createdMine">Shared with me
             <span class="badge">41</span>
           </button>
         </li>
         <li class="nav-item" style="margin-left: 10px;">
           <button class="nav-link bg-white" role="tab"
-                  type="button" id="createdOthers"
+                  type="button" id="createdOthers-tab"
+                  aria-selected="false"
                   data-bs-toggle="tab" data-bs-target="#createdOthers">All Reports
             <span class="badge">111</span>
           </button>
         </li>
       </ul>
-    </div>
+      <div class="tab-content">
+        <div class="tab-pane fade show active" aria-labelledby="standard-tab" id="standard">
+          <div class="row bg-white align-items-start">
+            <table id="savedReportAdminTable" class="table" style="width:100%;">
+              <thead>
+              <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Created On</th>
+                <th>Created By</th>
+                <th>Report</th>
+                <th>Sharing</th>
+                <th>Actions</th>
+              </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="tab-pane fade" aria-labelledby="createdMine-tab" id="createdMine">
+          <div class="row bg-white align-items-start">
+            <table id="savedReportTable" class="table" style="width:100%;">
+              <thead>
+              <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Created On</th>
+                <th>Created By</th>
+                <th>Report</th>
+                <th>Shared with</th>
+                <th>Actions</th>
+              </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="tab-pane fade"  aria-labelledby="createdOthers-tab" id="createdOthers">
+          <div class="row bg-white align-items-start">
+            <table id="savedReportTable" class="table" style="width:100%;">
+              <thead>
+              <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Created On</th>
+                <th>Created By</th>
+                <th>Report</th>
+                <th>Sharing</th>
+                <th>Actions</th>
+              </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+  </div>
     <div class="col">
       <div class="dropdown d-flex justify-content-end position-relative"
            data-bs-toggle="tooltip" data-bs-placement="left" title="Show Filters"
@@ -131,10 +190,35 @@
                 </a>
                 <div id="createdDrop" class="dropdown-menu"
                      aria-labelledby="createdLink">
+                  <div class="form-check pt-2">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      In the last
+                    </label>
+                  </div>
+                  <div class="form-check pt-2">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Before
+                    </label>
+                  </div>
+
                   <div class="input-group flex-nowrap pe-3 ms-3">
                     <span class="input-group-text" id="dateCreated"><i class="icon-calendar"></i></span>
                     <input type="text" name="datefilter" class="form-control dateCreated"
                            style="border-left-color: #fff">
+                  </div>
+                  <div class="form-check pt-2" style="margin-top: 295px">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      After
+                    </label>
+                  </div>
+                  <div class="form-check pt-2">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      In between
+                    </label>
                   </div>
                 </div>
               </div>
@@ -167,65 +251,10 @@
         </ul>
       </div>
     </div>
-    <div class="tab-content">
-      <div class="tab-pane fade show active" id="standard">
-        <div class="row bg-white align-items-start">
-          <table id="savedReportAdminTable" class="table" style="width:100%;">
-            <thead>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Created On</th>
-              <th>Created By</th>
-              <th>Report</th>
-              <th>Sharing</th>
-              <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="createdMine">
-        <div class="row bg-white align-items-start">
-          <table id="savedReportTable" class="table" style="width:100%;">
-            <thead>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Created On</th>
-              <th>Created By</th>
-              <th>Report</th>
-              <th>Shared with</th>
-              <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="createdOthers">
-        <div class="row bg-white align-items-start">
-          <table id="savedReportTable" class="table" style="width:100%;">
-            <thead>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Created On</th>
-              <th>Created By</th>
-              <th>Report</th>
-              <th>Sharing</th>
-              <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+
   </div>
   <!--toast-->
-  <div class="position-fixed bottom-0 start-50 translate-middle-x p-5" style="z-index: 11; width: 600px">
+  <div class="position-fixed bottom-0 start-50 translate-middle-x p-5" style="z-index: 11; width: 600px;">
     <div class="toast align-items-center text-white bg-dark border-0" id="saveReportsToast" role="alert"
          aria-live="assertive" aria-atomic="true">
       <div class="d-flex justify-content-evenly flex-row toast-body">
@@ -411,6 +440,7 @@
     </div>
   </div>
   <script>
+
   </script>
 </body>
 </HTML>

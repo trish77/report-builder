@@ -511,6 +511,11 @@ h5 {
   pointer-events: inherit !important;
 }
 
+#exportBtn.dropdown-toggle-split::after, #exportBtn.dropup .dropdown-toggle-split::after, #exportBtn.dropend .dropdown-toggle-split::after {
+  margin-left: 0;
+  padding-left: 10px;
+}
+
 .btn.btn-white {
   color: $gray-700 !important;
   background-color: $white;
@@ -529,11 +534,6 @@ h5 {
   content: "\e936";
   font-family: "report-icons";
   margin-right: 10px;
-}
-
-#exportBtn.dropdown-toggle-split::after, #exportBtn.dropup .dropdown-toggle-split::after, #exportBtn.dropend .dropdown-toggle-split::after {
-  margin-left: 0;
-  padding-left: 10px;
 }
 
 .btn-success-lt {
@@ -778,20 +778,15 @@ hr {
   font-size: 12px;
 }
 
-/*.form-check-input:checked {
+.form-check-input:checked {
   background-color: $green !important;
   border-color: $white !important;
-}*/
+}
 
 .form-check-input:focus {
   border-color: $green !important;
   outline: 0;
   box-shadow: ($form-select-focus-box-shadow, $input-btn-focus-color-opacity) !important;
-}
-
-.form-check-input:checked[type=checkbox] {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e") !important;
-  background-color: $green !important;
 }
 
 .condensed tr td:nth-of-type(2) {

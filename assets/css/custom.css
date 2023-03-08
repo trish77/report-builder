@@ -117,6 +117,11 @@ h5, .h5 {
   pointer-events: inherit !important;
 }
 
+#exportBtn.dropdown-toggle-split::after, #exportBtn.dropup .dropdown-toggle-split::after, #exportBtn.dropend .dropdown-toggle-split::after {
+  margin-left: 0;
+  padding-left: 10px;
+}
+
 .btn.btn-white {
   color: #6D7E82 !important;
   background-color: #fff;
@@ -136,11 +141,6 @@ h5, .h5 {
   content: "\e936";
   font-family: "report-icons";
   margin-right: 10px;
-}
-
-#exportBtn.dropdown-toggle-split::after, #exportBtn.dropup .dropdown-toggle-split::after, #exportBtn.dropend .dropdown-toggle-split::after {
-  margin-left: 0;
-  padding-left: 10px;
 }
 
 .btn-success-lt {
@@ -382,20 +382,16 @@ hr {
   font-size: 12px;
 }
 
-/*.form-check-input:checked {
-  background-color: $green !important;
-  border-color: $white !important;
-}*/
+.form-check-input:checked {
+  background-color: #00BA7C !important;
+  border-color: #fff !important;
+}
+
 .form-check-input:focus {
   border-color: #00BA7C !important;
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.2rem #00BA7C, 0.25 !important;
           box-shadow: 0 0 0 0.2rem #00BA7C, 0.25 !important;
-}
-
-.form-check-input:checked[type=checkbox] {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e") !important;
-  background-color: #00BA7C !important;
 }
 
 .condensed tr td:nth-of-type(2) {
@@ -522,20 +518,6 @@ div.dataTables_wrapper span.select-item {
   font-weight: 700;
   src: url("../fonts/AddingtonCF-Bold.otf");
   src: url("../fonts/AddingtonCF-Bold.ttf") format("truetype");
-}
-@font-face {
-  font-family: Addington, serif;
-  font-style: normal;
-  font-weight: 700;
-  src: url("../fonts/AddingtonCF-ExtraBold.otf");
-  src: url("../fonts/AddingtonCF-ExtraBold.ttf") format("truetype");
-}
-@font-face {
-  font-family: Addington, serif;
-  font-style: normal;
-  font-weight: 600;
-  src: url("../fonts/AddingtonCF-DemiBold.otf");
-  src: url("../fonts/AddingtonCF-DemiBold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Open Sans";
@@ -3195,9 +3177,13 @@ div.dtsr-confirmation-text {
   white-space: normal !important;
 }
 
-.form-switch .form-check-input:checked[type=checkbox] {
+.form-check-input:checked[type=checkbox] {
   background-position: right center;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e") !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e") !important;
+}
+
+.form-check-input:checked[type=radio] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e") !important;
 }
 
 a#assgLink.dropdown-toggle.text-decoration-none::after {
@@ -3223,7 +3209,7 @@ a#assgLink.dropdown-toggle.text-decoration-none::after {
 }
 
 .dropdown-menu.show[aria-labelledby=filterBy] {
-  width: 320px !important;
+  width: 220px !important;
   -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 5px 20px rgba(0, 0, 0, 0.04), 0px 1px 4px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04) !important;
           box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 5px 20px rgba(0, 0, 0, 0.04), 0px 1px 4px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04) !important;
 }
@@ -3797,6 +3783,8 @@ a#assgLink.dropdown-toggle.text-decoration-none::after {
   cursor: pointer;
   margin-left: 1rem;
   width: 94%;
+  max-height: 83px;
+  overflow-y: auto;
 }
 
 /*
@@ -4000,15 +3988,15 @@ div.dataTables_processing {
   top: 24% !important;
 }
 
-.fl-scrolls::-webkit-scrollbar {
+.fl-scrolls::-webkit-scrollbar, .viewbar::-webkit-scrollbar {
   width: 10px;
 }
 
-.dataTables_scrollBody::-webkit-scrollbar-track {
+.dataTables_scrollBody {
   background: #ffffff;
 }
 
-.fl-scrolls::-webkit-scrollbar-thumb {
+.fl-scrolls::-webkit-scrollbar-thumb, .viewbar::-webkit-scrollbar {
   background-color: rgba(var(--bs-fade-blue-rgb), var(--bs-bg-opacity)) !important;
   border-radius: 10px;
   border: 2px solid #ffffff;
@@ -4017,6 +4005,10 @@ div.dataTables_processing {
 .scrollbar-width-thin {
   scrollbar-width: thin;
   width: 10px;
+}
+
+.box {
+  display: none;
 }
 
 div.dataTables_processing > div:last-child > div {

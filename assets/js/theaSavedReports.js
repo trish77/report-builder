@@ -56,13 +56,13 @@ $(function () {
         className: 'actions',
         render: function ( data, columns, row ) {
           return ` <div id="dropdown">
-            <a class="dropdown-toggle text-decoration-none" id=""
+            <a class="dropdown-toggle text-decoration-none" id="dropActions"
                data-bs-toggle="dropdown" aria-expanded="false">
               <i class="icon-hamburger"></i>
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropActions">
               <li><a class="dropdown-item" href="assg-progress-report.html">Run</a></li>
-              <li><a class="dropdown-item" href="assg-progress-report.html">Edit</a></li>
+              <li><a class="dropdown-item" href="edit-report.html">Edit</a></li>
               <li><a class="dropdown-item" href="#">Duplicate</a></li>
               <li><a class="dropdown-item" href="#">Make private</a></li>
               <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
@@ -121,37 +121,37 @@ $(function () {
         data: 'actions',
         render: function ( data, columns, row ) {
           return `<div id="dropdown">
-            <a class="dropdown-toggle text-decoration-none" id="tableActions"       
+            <a class="dropdown-toggle tableActions text-decoration-none" 
+            id="dropActions"       
                data-bs-toggle="dropdown" aria-expanded="false">
               <i class="icon-hamburger"></i>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="tableActions">
+            <ul class="dropdown-menu" aria-labelledby="dropActions">
               <li><a class="dropdown-item" href="assg-progress-report.html">Run</a></li>
-              <li><a class="dropdown-item" href="assg-progress-report.html">Edit</a></li>
+              <li><a class="dropdown-item" href="edit-report.html">Edit</a></li>
               <li><a class="dropdown-item" href="#">Duplicate</a></li>
               <li><a class="dropdown-item" href="#">Make private</a></li>
-              <li><a class="dropdown-item text-warning" href="#">Delete</a></li>
+              <li><a class="dropdown-item text-warning" id="deleteRow" href="#">Delete</a></li>
             </ul>
-          </div><div hidden id="dropOut" class="p-2 bg-white d-flex align-items-center">
+          </div><div id="dropOut" class="bg-white invisible d-flex flex-row align-items-center">
             <div data-name="popover-content">
               <i className="text-decoration-none text-secondary icon icon-run me-2"></i>
                <a href="assg-progress-report.html" class="text-secondary text-decoration-none text-dark">Run</a>
               <i class="text-decoration-none text-secondary icon icon-edit ms-5 me-2 mx-1"></i>
-              <a href="select-students.html" class="text-secondary text-dark text-decoration-none">Edit</a>
+              <a href="edit-report.html" class="text-secondary text-dark text-decoration-none">Edit</a>
               </div>
         </div>`
         },
       }
-    ]/*,
-     initComplete: function () {
-     var api = this.api();
-     count = 0;
-     this.api().rows().every(function (rowIdx) {
-     var row = this;
-     console.log(rowIdx);
-     })
-     }*/
+    ]
   });
+
+ /* savedReportTable.rows().eq(0).each( function ( index ) {
+    var row = table.row( index );
+
+    var data = row.data();
+    // ... do something with data(), or row.node(), etc
+  } );*/
 
   $('th.select-checkbox').on("click", function ( e ) {
     if ( $(this).parent().hasClass('selected') ) {
@@ -179,28 +179,41 @@ $(function () {
     return new bootstrap.Popover(popoverTriggerEl)
   })
 
-  $('.table').on("mouseover hover", 'tbody > tr', function () {
-    $('.table tr').each(function () {
-      var self = $(this);
-      // $(this).find('.actions > #dropout');
-      var dropOut =  $(this).children('.actions').children('#dropout').removeClass('invisible');
 
-      // self.find("#dropOut").show();
-    //  self.find(dropOut).removeClass('invisible');
-      console.log(dropOut);
+/*  $('.table').on('click', 'tbody > tr', function(){
+    var rowValue = $(this).attr("value");
+    var targetBox = $("." + inputValue);
+    $(".box").not(targetBox).hide();
+    $(targetBox).show();
+  });*/
+
+  /*var triggerTabList = [].slice.call(document.querySelectorAll('#tabs button'))
+  triggerTabList.forEach(function (triggerEl) {
+    var tabTrigger = new bootstrap.Tab(triggerEl)
+
+    triggerEl.addEventListener('click', function (event) {
+      event.preventDefault()
+      tabTrigger.show()
     })
-  });
+  })*/
+
+  $('.table').on( "mouseover", 'tbody > tr', function (  ) {
+      $('#dropOut').removeClass('invisible');
+    });
 
 
-  $('.table').on("mouseout blur", 'tbody > tr', function () {
-    $('.table tbody tr').each(function () {
-      var self = $(this);
-      var dropOut = $(this).closest('#dropout');
-      // self.find("#dropOut").show();
-      self.find('#dropOut').addClass('invisible');
-      console.log('target');
+  $('.table').on( "mouseout", 'tbody > tr', function (  ) {
+      $('#dropOut').addClass('invisible')
+    });
+
+  var myDropdown = $('tbody > tr #dropdown')
+  if ( myDropdown ) {
+    myDropdown.on('click', '#dropActions 1', function () {
+      $('#dropOut').addClass('invisible')
+
     })
-  });
+  }
+
 
 
 });
